@@ -1,0 +1,1 @@
+Zmiany: dodanie gulpfile.js, instalacja gulp-watch, instalacja PostCSS, instalacja autoprefixer, instalacja postcss-simple-vars do obsługi zmiennych, dodanie postcss-nested do zagnieżdżonego kodu

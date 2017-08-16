@@ -1,0 +1,9 @@
+$testColor: #ffccee;
+
+body{
+	color: $testColor;
+
+	&--test{
+		color: red;
+	}
+}
