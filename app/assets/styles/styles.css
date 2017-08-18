@@ -1,13 +1,7 @@
 @import "normalize.css";
-@import "base/_global.css";
+@import "base/_global";
+@import "base/_mixins";
+
+/*moduł do testowania */
 @import "modules/_test";
 
-$testColor: #000; 
-
-body{
-	color: $testColor; 
-
-	&--test{
-		color: red; 
-	}
-}

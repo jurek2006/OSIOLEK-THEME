@@ -1,6 +1,3 @@
 Zmiany:
-Instalacja postcss import,
-utworzenie folderu base (na style globalne) i modules(na moduły css) w app/assets/styles,
-użycie normalize.css, 
-użycie Browsersync do automatycznego odświeżania strony po zmianach index.html, injekcja stylów css
-uporządkowanie plików Gulp do 
+
+Dodana obsługa błędów css w gulp (styles) - nie jest przerywany watch
