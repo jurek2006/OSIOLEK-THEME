@@ -1,1 +1,6 @@
-Zmiany: dodanie gulpfile.js, instalacja gulp-watch, instalacja PostCSS, instalacja autoprefixer, instalacja postcss-simple-vars do obsługi zmiennych, dodanie postcss-nested do zagnieżdżonego kodu
+Zmiany:
+Instalacja postcss import,
+utworzenie folderu base (na style globalne) i modules(na moduły css) w app/assets/styles,
+użycie normalize.css, 
+użycie Browsersync do automatycznego odświeżania strony po zmianach index.html, injekcja stylów css
+uporządkowanie plików Gulp do 

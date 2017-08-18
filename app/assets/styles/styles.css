@@ -1,9 +1,13 @@
-$testColor: #ffccee;
+@import "normalize.css";
+@import "base/_global.css";
+@import "modules/_test";
+
+$testColor: #000; 
 
 body{
-	color: $testColor;
+	color: $testColor; 
 
 	&--test{
-		color: red;
+		color: red; 
 	}
 }
