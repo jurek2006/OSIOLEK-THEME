@@ -5,7 +5,9 @@ const 	gulp = require('gulp'),
 		nested = require('postcss-nested'),
 		cssImport = require('postcss-import'),
 		mixins = require('postcss-mixins'),
-		hexrgba = require('postcss-hexrgba');
+		hexrgba = require('postcss-hexrgba'),
+		rename = require('gulp-rename'),
+		del = require('del');
 
 // zadanie styles
 gulp.task('styles', function(){

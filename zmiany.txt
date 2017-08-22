@@ -1,3 +1,3 @@
 Zmiany:
 
-Dodana obsługa błędów css w gulp (styles) - nie jest przerywany watch
+Instalacja gulp-rename, del, dodanie pliku skryptów App.js, dodanie folderu app/assets/scripts/modules na moduły js, dodanie i konfiguracja webpack, import jquery w webpack (App.js). Dodanie automatyzacji zmian plików js (po dowolnej zmianie webpack generuje jeden plik App.js w temp/scripts), instalacja i konfiguracja babel (babel-core babel-loader babel-preset-es2015) - teraz można już importować moduły js za pomocą import (z es6). Dziala dodany ModulTestowy.js (w app/assets/scripts/modules) importowany za pomocą webpacka do App.js.
