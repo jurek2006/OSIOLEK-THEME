@@ -1,8 +1,13 @@
-.flexbox{
+.cssgrid{
+/* klasa o tej nazwie musi być w arkuszu, żeby gulp-modernizr testował css-grid */
 	/*display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-gap: 20px;*/
-	display: flex;
+	display: grid;
+}
+
+.flexbox{
+/* klasa o tej nazwie musi być w arkuszu, żeby gulp-modernizr testował flexbox */
 }
 
 .container .test{
