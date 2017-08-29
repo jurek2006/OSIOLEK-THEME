@@ -1,7 +1,9 @@
 class ModulTestowy{
 	constructor(){
-		console.log("ModulTestowy");
+		console.log("ModulTestowqqqWWy");
 	}
 }
+
+
 
 export default ModulTestowy;
