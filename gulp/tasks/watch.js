@@ -23,10 +23,20 @@ gulp.task('watch', function(){
 		gulp.start('cssInject');
 	});
 
+	// obserwowanie wszystkich zmian plików js i generowanie App.js za pomocą webpacka
+	watch('./app/assets/scripts/**/*.js', function(){
+		gulp.start('scriptsRefresh');
+	});
+
 	// automatyczne injectowanie stylów do strony, bez jej przeładowywania
 	gulp.task('cssInject', ['styles'], function(){
 		return gulp.src('./app/temp/styles/styles.css')
             .pipe(browserSync.stream());
 	})
+
+	// odświeżanie przeglądarki - po wykonaniu zadania scripts (uruchamiającego webpack)
+	gulp.task('scriptsRefresh', ['scripts'], function(){
+		browserSync.reload();
+	});
 
 });

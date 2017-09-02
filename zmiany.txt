@@ -1,6 +1,9 @@
 Zmiany:
-Instalacja postcss import,
-utworzenie folderu base (na style globalne) i modules(na moduły css) w app/assets/styles,
-użycie normalize.css, 
-użycie Browsersync do automatycznego odświeżania strony po zmianach index.html, injekcja stylów css
-uporządkowanie plików Gulp do 
+3. Dodana podstawowa struktura strony
+
+2. 
+- Instalacja gulp-modernizr (dodanie pliku Vendor.js) i konfiguracja. Dodanie zadania modernizr do gulp, które generuje plik modernizr.js. Dodanie do zadania scripts zależności zadania modernizr - tak aby plik był generowany za każdym razem, kiedy zmieniany jest jakiś plik .js. 
+Działa dodawanie klasy dla flexbox (dla grid nie)
+- Dodanie w zadaniu scripts wyświetlania błędów z plików js. 
+
+1.  Instalacja gulprename, del, dodanie pliku skryptów App.js, dodanie folderu app/assets/scripts/modules na moduły js, dodanie i konfiguracja webpack, import jquery w webpack (App.js). Dodanie automatyzacji zmian plików js (po dowolnej zmianie webpack generuje jeden plik App.js w temp/scripts), instalacja i konfiguracja babel (babelcore babelloader babelpresetes2015) - teraz można już importować moduły js za pomocą import (z es6). Dziala dodany ModulTestowy.js (w app/assets/scripts/modules) importowany za pomocą webpacka do App.js.

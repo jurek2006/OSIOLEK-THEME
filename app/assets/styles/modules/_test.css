@@ -1,3 +1,9 @@
-.testowa{
-	background-color: blue;
+.cssgrid{
+/* klasa o tej nazwie musi być w arkuszu, żeby gulp-modernizr testował css-grid */
+	display: grid;
 }
+
+.flexbox{
+/* klasa o tej nazwie musi być w arkuszu, żeby gulp-modernizr testował flexbox */
+}
+
