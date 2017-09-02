@@ -1,4 +1,5 @@
 Zmiany:
+3.
 
 2. 
 - Instalacja gulp-modernizr (dodanie pliku Vendor.js) i konfiguracja. Dodanie zadania modernizr do gulp, które generuje plik modernizr.js. Dodanie do zadania scripts zależności zadania modernizr - tak aby plik był generowany za każdym razem, kiedy zmieniany jest jakiś plik .js. 
