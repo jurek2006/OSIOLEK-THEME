@@ -1,0 +1,10 @@
+.zobaczCS{
+	grid-area: zobaczCS;
+
+	background-color: $pomaranczowy;
+
+	&__link{
+		color: $tekstJasny;
+		text-decoration: none;
+	}
+}
