@@ -1,0 +1,10 @@
+.pageContainer{
+	display: grid;
+	grid-template-columns: 1fr 100px;
+	grid-template-areas:
+		"header 	zobaczCS"
+		"repertuar 	zobaczCS"
+		"promocje 	zobaczCS"
+		"cennik 	zobaczCS"
+		"footer 	zobaczCS";
+}
