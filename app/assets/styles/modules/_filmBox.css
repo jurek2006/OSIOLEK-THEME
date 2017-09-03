@@ -1,33 +1,37 @@
 .filmBox{
 	border: 1px solid black; /*TESTOWE*/
-	height: 280px;
-	display: grid;
-	grid-template-columns: 200px 1fr;
-	grid-template-rows: repeat(6, 1fr);
-	grid-column-gap: 10px;
-	align-items: start;
 
 	& *{
 		margin: 0;
 	}
 
-	&__plakat{
-		grid-column: 1/2;
-		grid-row: 1 / 7;
-		width: 200px;
+	@mixin atMedium{
 		height: 280px;
-	}
+		display: grid;
+		grid-template-columns: 200px 1fr;
+		grid-template-rows: repeat(6, 1fr);
+		grid-column-gap: 10px;
+		align-items: start;
 
-	&__info{
-		grid-column: 2/3;
-	}
 
-	&__seanseDnia{
-		grid-column: 2/3;
-	}
+		&__plakat{
+			grid-column: 1/2;
+			grid-row: 1 / 7;
+			width: 200px;
+			height: 280px;
+		}
 
-	&__zobaczWszystkie{
-		grid-column: 2/3;
+		&__info{
+			grid-column: 2/3;
+		}
+
+		&__seanseDnia{
+			grid-column: 2/3;
+		}
+
+		&__zobaczWszystkie{
+			grid-column: 2/3;
+		}
 	}
 
 	&__wszystkieSeanse--initUkryty{
