@@ -5,15 +5,17 @@
 @import "base/_system-font";
 
 @import "modules/_pageContainer";
-@import "modules/_header";
+@import "modules/_wrapper";
+@import "modules/_site-header";
 @import "modules/_repertuar";
 @import "modules/_promocje";
 @import "modules/_cennik";
 @import "modules/_footer";
-@import "modules/_navigation";
+@import "modules/_primary-nav";
 @import "modules/_filmBox";
 @import "modules/_repertuarDnia";
 @import "modules/_zobaczCS";
+@import "modules/_btn";
 
 /*moduł do testowania */
 @import "modules/_test";

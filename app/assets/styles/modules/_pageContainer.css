@@ -1,24 +1,28 @@
 .pageContainer{
 
 	width: 100vw;
-	
-	display: grid;
-	grid-template-areas:
-		"header"
-		"repertuar"
-		"promocje"
-		"cennik"
-		"zobaczCS"
-		"footer";
 
-	@mixin atMedium{
+	.XXXcssgrid &{
+
 		display: grid;
-		grid-template-columns: 1fr 100px;
 		grid-template-areas:
-			"header 	zobaczCS"
-			"repertuar 	zobaczCS"
-			"promocje 	zobaczCS"
-			"cennik 	zobaczCS"
-			"footer 	zobaczCS";
+			"header"
+			"repertuar"
+			"promocje"
+			"cennik"
+			"zobaczCS"
+			"footer";
+
+		@mixin atMedium{
+			display: grid;
+			grid-template-columns: 1fr 100px;
+			grid-template-areas:
+				"header 	zobaczCS"
+				"repertuar 	zobaczCS"
+				"promocje 	zobaczCS"
+				"cennik 	zobaczCS"
+				"footer 	zobaczCS";
+		}
+
 	}
 }

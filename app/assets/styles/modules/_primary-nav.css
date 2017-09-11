@@ -1,0 +1,40 @@
+.primary-nav{
+	
+	grid-area: navigation;
+	font-size: 110%;
+
+	ul{
+		list-style: none;
+		padding: 0;
+		/*border: 1px solid $primaryNavCol; /* TESTOWE */
+
+		.flexbox &{
+			display: flex;
+		}
+		
+		li {
+			/*border: 1px solid $primaryNavCol; /* TESTOWE */
+			float: left;
+			/*margin-left: 1.3em;*/
+		}
+	}
+
+	&__element a{
+		padding: 0.5em;
+		color: $primaryNavCol; 
+		text-decoration: none;
+		display: block;
+
+		&:hover{
+			color: $headerBg;
+			background-color: $primaryNavCol;
+		}
+
+		&:active{
+			background-color: $pomaranczowy;
+			transform: scale(0.7, 0.7);
+		}
+	}
+
+
+}

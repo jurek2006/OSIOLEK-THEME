@@ -1,0 +1,23 @@
+.site-header{
+	grid-area: header;
+
+	background-color: $headerBg;
+	color: $headerCol;
+	border: 1px solid $headerBg; /* TESTOWE */
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+	&__logo{
+		height: 100px;
+		float: left;
+	}
+
+	&__heading--initUkryte{
+		display: none;
+	}
+
+	.flexbox &{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
