@@ -5,7 +5,7 @@
 	grid-gap: 10px;
 
 	&__heading{
-		display: none;
+		/*display: none;*/
 	}
 
 	&--initUkryty{
