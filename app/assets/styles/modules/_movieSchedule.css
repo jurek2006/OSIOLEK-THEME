@@ -1,0 +1,17 @@
+.movieSchedule{
+/* na razie tylko za pomocą grid */
+
+	&__ofDay{
+	/* Repertuar dla konkretnego dnia */
+	display: grid;
+	grid-gap: 20px;
+
+		&--hidden{
+			display: none;
+		}
+		
+		&__heading{
+			grid-column: span 3;
+		}
+	}
+}

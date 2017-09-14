@@ -1,0 +1,54 @@
+.dayPicker{
+
+	display: flex;
+	justify-content: center;
+	
+	&__list{
+		list-style: none;
+		display: flex;
+	}
+
+	&__btn{
+	  color: #000;
+	  margin: 1px;
+	  padding: 2rem;
+	  display: block;
+	  border:none;
+	  background-color: transparent;
+
+	  &--day{
+		background-color: #ccc;
+
+		/* styl każdego przycisku dnia*/
+		&__weekday, &__monthday, &__month{
+			display: block;
+		}
+		
+		&__monthday{
+			font-size: 2rem;
+		}
+
+		/* styl przycisku dnia w zależności od tego czy wybrany/nieaktywny*/
+		&--selected{
+			background-color: #333;
+  			color: #fff;
+		}
+
+		&--inactive{
+			color: #666;
+  			cursor: not-allowed;
+		}
+
+	  }
+
+	  &--prevDay, &--nextDay{
+	  	font-size: 2rem;
+
+	  	&:hover{
+	  		color: red;
+	  	}
+	  }
+	}
+
+	
+}
