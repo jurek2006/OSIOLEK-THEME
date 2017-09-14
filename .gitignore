@@ -33,3 +33,6 @@ temp/
 
 # testowo package-lock
 package-lock.json
+
+# zawartość folderu *dodatkowe
+*dodatkowe/
