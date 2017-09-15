@@ -34,7 +34,7 @@
   			color: #fff;
 		}
 
-		&--inactive{
+		&:disabled{
 			color: #666;
   			cursor: not-allowed;
 		}
