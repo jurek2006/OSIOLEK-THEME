@@ -7,13 +7,13 @@
 @import "modules/_pageContainer";
 @import "modules/_wrapper";
 @import "modules/_site-header";
-@import "modules/_repertuar";
+@import "modules/_movieSchedule";
+@import "modules/_dayPicker";
 @import "modules/_promocje";
 @import "modules/_cennik";
 @import "modules/_footer";
 @import "modules/_primary-nav";
-@import "modules/_filmBox";
-@import "modules/_repertuarDnia";
+@import "modules/_movieBox";
 @import "modules/_zobaczCS";
 @import "modules/_btn";
 

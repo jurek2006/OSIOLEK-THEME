@@ -1,0 +1,39 @@
+<section class="movieSchedule wrapper">
+	
+	<!-- dayPicker -->
+	<nav class="dayPicker">
+		<!-- Przycisk dnia poprzedniego -->
+		<button class="dayPicker__btn dayPicker__btn--prevDay"></button>
+
+		<!-- Lista dni do wyboru -->
+		<ul class="dayPicker__list">
+			
+			<li>
+				<!-- Przycisk wyboru dnia -->
+				<button class="dayPicker__btn--day">
+				<!-- .dayPicker__btn--day--selected dla dnia wybranego -->
+				<!-- .dayPicker__btn--day--disabled + atrybut disabled dla dnia nieaktywnego -->
+					<time datetime="YYYY-MM-DD">
+						<span class="dayPicker__btn--day__weekday">Pt</span>
+						<span class="dayPicker__btn--day__monthday">1</span>
+						<span class="dayPicker__btn--day__month"></span>
+					</time>
+				</button>
+			</li>
+
+		</ul>
+
+		<!-- Przycisk dnia następnego -->
+		<button class="dayPicker__btn dayPicker__btn--nextDay"></button>
+	</nav>
+	
+	<!-- days' schedule -->
+	<article class="movieSchedule__ofDay" day="YYYY-MM-DD">
+	<!-- .movieSchedule__ofDay--hidden dla dni repertuaru ukrytych -->
+		<h1 class="movieSchedule__ofDay__heading">Repertuar na YYYY-MM-DD</h1>
+		<section class="movieBox">
+			<!-- Box dla filmu na konkretny dzień -->
+		</section>
+	</article>
+
+</section>

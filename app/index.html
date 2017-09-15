@@ -31,55 +31,113 @@
   </nav>
 </header>
 
-<section class="repertuar wrapper">
+<section class="movieSchedule wrapper">
   <h1>Repertuar kina</h1>
-  <nav>
-    <ul>
-      <li><a href="#">2017-09-01</a></li>
-      <li><a href="#">2017-09-02</a></li>
-      <li><a href="#">2017-09-03</a></li>
-      <li><a href="#">2017-09-04</a></li>
-      <li><a href="#">2017-09-05</a></li>
-      <li><a href="#">2017-09-06</a></li>
-      <li><a href="#">2017-09-07</a></li>
-      <li><a href="#">2017-09-08</a></li>
-      <li><a href="#">2017-09-09</a></li>
-      <li><a href="#">2017-09-10</a></li>
-      <li><a href="#">2017-09-11</a></li>
-      <li><a href="#">2017-09-12</a></li>
-      <li><a href="#">2017-09-13</a></li>
-      <li><a href="#">2017-09-14</a></li>
-      <li><a href="#">2017-09-15</a></li>
-      <li><a href="#">2017-09-16</a></li>
-      <li><a href="#">2017-09-17</a></li>
-      <li><a href="#">2017-09-18</a></li>
-      <li><a href="#">2017-09-19</a></li>
-      <li><a href="#">2017-09-20</a></li>
-      <li><a href="#">2017-09-21</a></li>
-      <li><a href="#">2017-09-22</a></li>
-      <li><a href="#">2017-09-23</a></li>
-      <li><a href="#">2017-09-24</a></li>
-      <li><a href="#">2017-09-25</a></li>
-      <li><a href="#">2017-09-26</a></li>
-      <li><a href="#">2017-09-27</a></li>
-      <li><a href="#">2017-09-28</a></li>
-      <li><a href="#">2017-09-29</a></li>
-      <li><a href="#">2017-09-30</a></li>
+
+  <!-- dayPicker -->
+  <nav class="dayPicker">
+    <!-- Przycisk dnia poprzedniego -->
+    <button class="dayPicker__btn dayPicker__btn--prevDay"><</button>
+
+    <!-- Lista dni do wyboru -->
+    <ul class="dayPicker__list">
+      
+      <li>
+        <!-- Przycisk wyboru dnia -->
+        <button class="dayPicker__btn dayPicker__btn--day dayPicker__btn--day--selected">
+          <time datetime="2017-09-01">
+            <span class="dayPicker__btn--day__weekday">Pt</span>
+            <span class="dayPicker__btn--day__monthday">1</span>
+            <span class="dayPicker__btn--day__month">wrz</span>
+          </time>
+        </button>
+      </li>
+
+      <li>
+        <!-- Przycisk wyboru dnia -->
+        <button class="dayPicker__btn dayPicker__btn--day">
+          <time datetime="2017-09-02">
+            <span class="dayPicker__btn--day__weekday">Sob</span>
+            <span class="dayPicker__btn--day__monthday">2</span>
+            <span class="dayPicker__btn--day__month">wrz</span>
+          </time>
+        </button>
+      </li>
+
+      <li>
+        <!-- Przycisk wyboru dnia -->
+        <button class="dayPicker__btn dayPicker__btn--day">
+          <time datetime="2017-09-03">
+            <span class="dayPicker__btn--day__weekday">Nie</span>
+            <span class="dayPicker__btn--day__monthday">3</span>
+            <span class="dayPicker__btn--day__month">wrz</span>
+          </time>
+        </button>
+      </li>
+
+      <li>
+        <!-- Przycisk wyboru dnia -->
+        <button class="dayPicker__btn dayPicker__btn--day dayPicker__btn--day--disabled" disabled>
+          <time datetime="2017-09-04">
+            <span class="dayPicker__btn--day__weekday">Pon</span>
+            <span class="dayPicker__btn--day__monthday">4</span>
+            <span class="dayPicker__btn--day__month">wrz</span>
+          </time>
+        </button>
+      </li>
+
+      <li>
+        <!-- Przycisk wyboru dnia -->
+        <button class="dayPicker__btn dayPicker__btn--day">
+          <time datetime="2017-09-05">
+            <span class="dayPicker__btn--day__weekday">Wt</span>
+            <span class="dayPicker__btn--day__monthday">5</span>
+            <span class="dayPicker__btn--day__month">wrz</span>
+          </time>
+        </button>
+      </li>
+
+      <li>
+        <!-- Przycisk wyboru dnia -->
+        <button class="dayPicker__btn dayPicker__btn--day">
+          <time datetime="2017-09-06">
+            <span class="dayPicker__btn--day__weekday">Śr</span>
+            <span class="dayPicker__btn--day__monthday">6</span>
+            <span class="dayPicker__btn--day__month">wrz</span>
+          </time>
+        </button>
+      </li>
+
+      <li>
+        <!-- Przycisk wyboru dnia -->
+        <button class="dayPicker__btn dayPicker__btn--day">
+          <time datetime="2017-09-07">
+            <span class="dayPicker__btn--day__weekday">Czw</span>
+            <span class="dayPicker__btn--day__monthday">7</span>
+            <span class="dayPicker__btn--day__month">wrz</span>
+          </time>
+        </button>
+      </li>
+
     </ul>
+
+    <!-- Przycisk dnia następnego -->
+    <button class="dayPicker__btn dayPicker__btn--nextDay">></button>
   </nav>
 
-  <article class="repertuarDnia">
-    <h1 class="repertuarDnia__heading">Repertuar na 2017-09-01</h1>
+  <!-- 1 wrz 2017 -->
+  <article class="movieSchedule__ofDay" day="2017-09-01">
+    <h1 class="movieSchedule__ofDay__heading">Repertuar na 2017-09-01 (piątek)</h1>
 
     <!-- O czym szumi las -->
-    <section class="filmBox">
-      <h2 class="filmBox__tytul">O czym szumi las</h2>
-      <img class="filmBox__plakat" src="/assets/images/moviesImages/oCzymSzumiLas.jpg" alt="Plakat filmu - O czym szumi las.">
-      <p class="filmBox__info"><span class="filmBox__etykieta--ukryte">Czas trwania: </span>75 min</p>
-      <p class="filmBox__info"><span class="filmBox__etykieta--ukryte">Kategoria wiekowa: </span>b/o</p>
-      <p class="filmBox__info"><span class="filmBox__etykieta--ukryte">Gatunek: </span>Animowany | Familijny</p>
+    <section class="movieBox">
+      <h2 class="movieBox__tytul">O czym szumi las</h2>
+      <img class="movieBox__plakat" src="/assets/images/moviesImages/oCzymSzumiLas.jpg" alt="Plakat filmu - O czym szumi las.">
+      <p class="movieBox__info"><span class="movieBox__etykieta--ukryte">Czas trwania: </span>75 min</p>
+      <p class="movieBox__info"><span class="movieBox__etykieta--ukryte">Kategoria wiekowa: </span>b/o</p>
+      <p class="movieBox__info"><span class="movieBox__etykieta--ukryte">Gatunek: </span>Animowany | Familijny</p>
       
-      <div class="filmBox__seanseDnia">
+      <div class="movieBox__seanseDnia">
         <p>Seanse w dniu 1 wrz:</p>
         <a class="btn btn--seans">
           2D dubbing 16:00
@@ -91,8 +149,8 @@
         </a>
       </div>
 
-      <a href="#" class="btn filmBox__zobaczWszystkie">Zobacz wszystkie seanse</a>
-      <div class="filmBox__wszystkieSeanse filmBox__wszystkieSeanse--initUkryty">
+      <a href="#" class="btn movieBox__zobaczWszystkie">Zobacz wszystkie seanse</a>
+      <div class="movieBox__wszystkieSeanse movieBox__wszystkieSeanse--initUkryty">
         <h3>Seanse w dniu 1 wrz:</h3>
         <a class="btn btn--seans">
           2D dubbing 16:00
@@ -111,12 +169,12 @@
     </section>
 
     <!-- Anabelle -->
-    <section class="filmBox">
-      <h2 class="filmBox__tytul">Anabelle: Narodziny zła</h2>
-      <img class="filmBox__plakat" src="/assets/images/moviesImages/anabelle.jpg" alt="Plakat filmu - Anabelle: Narodziny zła.">
-      <p class="filmBox__info"><span class="filmBox__etykieta--ukrytefilmBox__etykieta--ukryte">Czas trwania: </span>109 min</p>
-      <p class="filmBox__info"><span class="filmBox__etykieta--ukrytefilmBox__etykieta--ukryte">Kategoria wiekowa: </span>od 15 lat</p>
-      <p class="filmBox__info"><span class="filmBox__etykieta--ukrytefilmBox__etykieta--ukryte">Gatunek: </span>Horror</p>
+    <section class="movieBox">
+      <h2 class="movieBox__tytul">Anabelle: Narodziny zła</h2>
+      <img class="movieBox__plakat" src="/assets/images/moviesImages/anabelle.jpg" alt="Plakat filmu - Anabelle: Narodziny zła.">
+      <p class="movieBox__info"><span class="movieBox__etykieta--ukrytemovieBox__etykieta--ukryte">Czas trwania: </span>109 min</p>
+      <p class="movieBox__info"><span class="movieBox__etykieta--ukrytemovieBox__etykieta--ukryte">Kategoria wiekowa: </span>od 15 lat</p>
+      <p class="movieBox__info"><span class="movieBox__etykieta--ukrytemovieBox__etykieta--ukryte">Gatunek: </span>Horror</p>
 
       <p>Seanse w dniu 1 wrz:</p>
       <a class="btn btn--seans">
@@ -127,8 +185,8 @@
         3D dubbing 22:00
       </a>
 
-      <a href="#" class="btn filmBox__zobaczWszystkie">Zobacz wszystkie seanse</a>
-      <div class="filmBox__wszystkieSeanse filmBox__wszystkieSeanse--initUkryty">
+      <a href="#" class="btn movieBox__zobaczWszystkie">Zobacz wszystkie seanse</a>
+      <div class="movieBox__wszystkieSeanse movieBox__wszystkieSeanse--initUkryty">
         <h3>Seanse w dniu 1 wrz:</h3>
         <a class="btn btn--seans">
           2D napisy 19:30
@@ -147,20 +205,20 @@
     </section>
 
     <!-- Bodyguard -->
-    <section class="filmBox">
-      <h2 class="filmBox__tytul">Bodyguard Zawodowiec</h2>
-      <img class="filmBox__plakat" src="/assets/images/moviesImages/bodyguardZawodowiec.jpg" alt="Plakat filmu - Bodyguard Zawodowiec.">
-      <p class="filmBox__info"><span class="filmBox__etykieta--ukryte">Czas trwania: </span>118 min</p>
-      <p class="filmBox__info"><span class="filmBox__etykieta--ukryte">Kategoria wiekowa: </span>od 15 lat</p>
-      <p class="filmBox__info"><span class="filmBox__etykieta--ukryte">Gatunek: </span>Akcja | Komedia</p>
+    <section class="movieBox">
+      <h2 class="movieBox__tytul">Bodyguard Zawodowiec</h2>
+      <img class="movieBox__plakat" src="/assets/images/moviesImages/bodyguardZawodowiec.jpg" alt="Plakat filmu - Bodyguard Zawodowiec.">
+      <p class="movieBox__info"><span class="movieBox__etykieta--ukryte">Czas trwania: </span>118 min</p>
+      <p class="movieBox__info"><span class="movieBox__etykieta--ukryte">Kategoria wiekowa: </span>od 15 lat</p>
+      <p class="movieBox__info"><span class="movieBox__etykieta--ukryte">Gatunek: </span>Akcja | Komedia</p>
 
       <p>Seanse w dniu 1 wrz:</p>
       <a class="btn btn--seans">
         2D napisy 11:15
       </a>
 
-      <a href="#" class="btn filmBox__zobaczWszystkie">Zobacz wszystkie seanse</a>
-      <div class="filmBox__wszystkieSeanse filmBox__wszystkieSeanse--initUkryty">
+      <a href="#" class="btn movieBox__zobaczWszystkie">Zobacz wszystkie seanse</a>
+      <div class="movieBox__wszystkieSeanse movieBox__wszystkieSeanse--initUkryty">
         <h3>Seanse w dniu 1 wrz:</h3>
         <a class="btn btn--seans">
           2D napisy 11:15
@@ -177,31 +235,231 @@
 
       </div>
     </section>
-
   </article>
 
-  <article class="repertuarDnia repertuarDnia--initUkryty">
-    <h1 class="repertuarDnia__heading">Repertuar na 2017-09-02</h1>
+    <!-- 2 wrz 2017 -->
+  <article class="movieSchedule__ofDay movieSchedule__ofDay--hidden"  day="2017-09-02">
+    <h1 class="movieSchedule__ofDay__heading">Repertuar na 2017-09-02 (sobota)</h1>
+
+    <!-- O czym szumi las -->
+    <section class="movieBox">
+      <h2 class="movieBox__tytul">O czym szumi las</h2>
+      <img class="movieBox__plakat" src="/assets/images/moviesImages/oCzymSzumiLas.jpg" alt="Plakat filmu - O czym szumi las.">
+      <p class="movieBox__info"><span class="movieBox__etykieta--ukryte">Czas trwania: </span>75 min</p>
+      <p class="movieBox__info"><span class="movieBox__etykieta--ukryte">Kategoria wiekowa: </span>b/o</p>
+      <p class="movieBox__info"><span class="movieBox__etykieta--ukryte">Gatunek: </span>Animowany | Familijny</p>
+      
+      <div class="movieBox__seanseDnia">
+        <p>Seanse w dniu 2 wrz:</p>
+        <a class="btn btn--seans">
+          2D dubbing 16:00
+        </a>
+
+
+        <a class="btn btn--seans">
+          3D dubbing 18:00
+        </a>
+      </div>
+
+      <a href="#" class="btn movieBox__zobaczWszystkie">Zobacz wszystkie seanse</a>
+      <div class="movieBox__wszystkieSeanse movieBox__wszystkieSeanse--initUkryty">
+        <h3>Seanse w dniu 1 wrz:</h3>
+        <a class="btn btn--seans">
+          2D dubbing 16:00
+        </a>
+
+        <a class="btn btn--seans">
+          3D dubbing 18:00
+        </a>
+
+        <h3>Seanse w dniu 2 wrz:</h3>
+        <a class="btn btn--seans">
+          2D dubbing 16:00
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Anabelle -->
+    <section class="movieBox">
+      <h2 class="movieBox__tytul">Anabelle: Narodziny zła</h2>
+      <img class="movieBox__plakat" src="/assets/images/moviesImages/anabelle.jpg" alt="Plakat filmu - Anabelle: Narodziny zła.">
+      <p class="movieBox__info"><span class="movieBox__etykieta--ukrytemovieBox__etykieta--ukryte">Czas trwania: </span>109 min</p>
+      <p class="movieBox__info"><span class="movieBox__etykieta--ukrytemovieBox__etykieta--ukryte">Kategoria wiekowa: </span>od 15 lat</p>
+      <p class="movieBox__info"><span class="movieBox__etykieta--ukrytemovieBox__etykieta--ukryte">Gatunek: </span>Horror</p>
+
+      <p>Seanse w dniu 2 wrz:</p>
+      <a class="btn btn--seans">
+        2D napisy 19:30
+      </a>
+
+      <a class="btn btn--seans">
+        3D dubbing 22:00
+      </a>
+
+      <a href="#" class="btn movieBox__zobaczWszystkie">Zobacz wszystkie seanse</a>
+      <div class="movieBox__wszystkieSeanse movieBox__wszystkieSeanse--initUkryty">
+        <h3>Seanse w dniu 1 wrz:</h3>
+        <a class="btn btn--seans">
+          2D napisy 19:30
+        </a>
+
+        <a class="btn btn--seans">
+          3D dubbing 22:00
+        </a>
+
+        <h3>Seanse w dniu 2 wrz:</h3>
+        <a class="btn btn--seans">
+          2D dubbing 18:00
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Bodyguard -->
+    <section class="movieBox">
+      <h2 class="movieBox__tytul">Bodyguard Zawodowiec</h2>
+      <img class="movieBox__plakat" src="/assets/images/moviesImages/bodyguardZawodowiec.jpg" alt="Plakat filmu - Bodyguard Zawodowiec.">
+      <p class="movieBox__info"><span class="movieBox__etykieta--ukryte">Czas trwania: </span>118 min</p>
+      <p class="movieBox__info"><span class="movieBox__etykieta--ukryte">Kategoria wiekowa: </span>od 15 lat</p>
+      <p class="movieBox__info"><span class="movieBox__etykieta--ukryte">Gatunek: </span>Akcja | Komedia</p>
+
+      <p>Seanse w dniu 2 wrz:</p>
+      <a class="btn btn--seans">
+        2D napisy 11:15
+      </a>
+
+      <a href="#" class="btn movieBox__zobaczWszystkie">Zobacz wszystkie seanse</a>
+      <div class="movieBox__wszystkieSeanse movieBox__wszystkieSeanse--initUkryty">
+        <h3>Seanse w dniu 1 wrz:</h3>
+        <a class="btn btn--seans">
+          2D napisy 11:15
+        </a>
+
+        <a class="btn btn--seans">
+          3D dubbing 17:00
+        </a>
+
+        <h3>Seanse w dniu 2 wrz:</h3>
+        <a class="btn btn--seans">
+          2D dubbing 20:45
+        </a>
+
+      </div>
+    </section>
   </article>
 
-  <article class="repertuarDnia repertuarDnia--initUkryty">
-    <h1 class="repertuarDnia__heading">Repertuar na 2017-09-03</h1>
-  </article>
+    <!-- 3 wrz 2017 -->
+  <article class="movieSchedule__ofDay movieSchedule__ofDay--hidden"  day="2017-09-03">
+    
+    <h1 class="movieSchedule__ofDay__heading">Repertuar na 2017-09-03 (niedziela)</h1>
 
-  <article class="repertuarDnia repertuarDnia--initUkryty">
-    <h1 class="repertuarDnia__heading">Repertuar na 2017-09-04</h1>
-  </article>
+    <!-- O czym szumi las -->
+    <section class="movieBox">
+      <h2 class="movieBox__tytul">O czym szumi las</h2>
+      <img class="movieBox__plakat" src="/assets/images/moviesImages/oCzymSzumiLas.jpg" alt="Plakat filmu - O czym szumi las.">
+      <p class="movieBox__info"><span class="movieBox__etykieta--ukryte">Czas trwania: </span>75 min</p>
+      <p class="movieBox__info"><span class="movieBox__etykieta--ukryte">Kategoria wiekowa: </span>b/o</p>
+      <p class="movieBox__info"><span class="movieBox__etykieta--ukryte">Gatunek: </span>Animowany | Familijny</p>
+      
+      <div class="movieBox__seanseDnia">
+        <p>Seanse w dniu 3 wrz:</p>
+        <a class="btn btn--seans">
+          2D dubbing 16:00
+        </a>
 
-  <article class="repertuarDnia repertuarDnia--initUkryty">
-    <h1 class="repertuarDnia__heading">Repertuar na 2017-09-05</h1>
-  </article>
 
-  <article class="repertuarDnia repertuarDnia--initUkryty">
-    <h1 class="repertuarDnia__heading">Repertuar na 2017-09-06</h1>
-  </article>
+        <a class="btn btn--seans">
+          3D dubbing 18:00
+        </a>
+      </div>
 
-  <article class="repertuarDnia repertuarDnia--initUkryty">
-    <h1 class="repertuarDnia__heading">Repertuar na 2017-09-07</h1>
+      <a href="#" class="btn movieBox__zobaczWszystkie">Zobacz wszystkie seanse</a>
+      <div class="movieBox__wszystkieSeanse movieBox__wszystkieSeanse--initUkryty">
+        <h3>Seanse w dniu 1 wrz:</h3>
+        <a class="btn btn--seans">
+          2D dubbing 16:00
+        </a>
+
+        <a class="btn btn--seans">
+          3D dubbing 18:00
+        </a>
+
+        <h3>Seanse w dniu 2 wrz:</h3>
+        <a class="btn btn--seans">
+          2D dubbing 16:00
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Anabelle -->
+    <section class="movieBox">
+      <h2 class="movieBox__tytul">Anabelle: Narodziny zła</h2>
+      <img class="movieBox__plakat" src="/assets/images/moviesImages/anabelle.jpg" alt="Plakat filmu - Anabelle: Narodziny zła.">
+      <p class="movieBox__info"><span class="movieBox__etykieta--ukrytemovieBox__etykieta--ukryte">Czas trwania: </span>109 min</p>
+      <p class="movieBox__info"><span class="movieBox__etykieta--ukrytemovieBox__etykieta--ukryte">Kategoria wiekowa: </span>od 15 lat</p>
+      <p class="movieBox__info"><span class="movieBox__etykieta--ukrytemovieBox__etykieta--ukryte">Gatunek: </span>Horror</p>
+
+      <p>Seanse w dniu 3 wrz:</p>
+      <a class="btn btn--seans">
+        2D napisy 19:30
+      </a>
+
+      <a class="btn btn--seans">
+        3D dubbing 22:00
+      </a>
+
+      <a href="#" class="btn movieBox__zobaczWszystkie">Zobacz wszystkie seanse</a>
+      <div class="movieBox__wszystkieSeanse movieBox__wszystkieSeanse--initUkryty">
+        <h3>Seanse w dniu 1 wrz:</h3>
+        <a class="btn btn--seans">
+          2D napisy 19:30
+        </a>
+
+        <a class="btn btn--seans">
+          3D dubbing 22:00
+        </a>
+
+        <h3>Seanse w dniu 2 wrz:</h3>
+        <a class="btn btn--seans">
+          2D dubbing 18:00
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Bodyguard -->
+    <section class="movieBox">
+      <h2 class="movieBox__tytul">Bodyguard Zawodowiec</h2>
+      <img class="movieBox__plakat" src="/assets/images/moviesImages/bodyguardZawodowiec.jpg" alt="Plakat filmu - Bodyguard Zawodowiec.">
+      <p class="movieBox__info"><span class="movieBox__etykieta--ukryte">Czas trwania: </span>118 min</p>
+      <p class="movieBox__info"><span class="movieBox__etykieta--ukryte">Kategoria wiekowa: </span>od 15 lat</p>
+      <p class="movieBox__info"><span class="movieBox__etykieta--ukryte">Gatunek: </span>Akcja | Komedia</p>
+
+      <p>Seanse w dniu 3 wrz:</p>
+      <a class="btn btn--seans">
+        2D napisy 11:15
+      </a>
+
+      <a href="#" class="btn movieBox__zobaczWszystkie">Zobacz wszystkie seanse</a>
+      <div class="movieBox__wszystkieSeanse movieBox__wszystkieSeanse--initUkryty">
+        <h3>Seanse w dniu 1 wrz:</h3>
+        <a class="btn btn--seans">
+          2D napisy 11:15
+        </a>
+
+        <a class="btn btn--seans">
+          3D dubbing 17:00
+        </a>
+
+        <h3>Seanse w dniu 2 wrz:</h3>
+        <a class="btn btn--seans">
+          2D dubbing 20:45
+        </a>
+
+      </div>
+    </section>
   </article>
 
 </section>

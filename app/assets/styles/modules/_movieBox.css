@@ -1,5 +1,7 @@
-.filmBox{
-	border: 1px solid black; /*TESTOWE*/
+.movieBox{
+
+
+border: 1px solid black; /*TESTOWE*/
 
 	& *{
 		margin: 0;
