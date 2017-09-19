@@ -55,7 +55,7 @@ class GenerateSchedule{
 
 						// generowanie i wstawianie do szablonu etykiet filmu (są w tablicy, może ich być więcej niż 1)
 						movieBoxTemplate = movieBoxTemplate.replace('%%movieLabels%%', () => {
-							
+							// ZREFAKTORYZOWAĆ
 							let labels = '';
 							if(currMovie.movieLabelsArr !== undefined && currMovie.movieLabelsArr.length > 0){
 							// jeśli zdefiniowano tablicę etykiet dla filmu i jest w niej przynajmniej 1 element placeholder %%movieLabel%% zastępowany jest etykietami (w span) - jeśli nie, od razu zwracany jest pusty string
@@ -71,7 +71,7 @@ class GenerateSchedule{
 						// iteracja po wszystkich projekcjach filmu w danym dniu
 						// (przykład obiektu Movie: anabelle.projections.2017-09-01 - iterujemy po obiektach tego obiektu)
 						for (let currProjectionHour in currMovie.projections[day]) {
-							let generatedBtn = '<button class="btn btn--projection"> %%ifProj3d%% %%projLangVer%% %%projHour%%</button>';
+							let generatedBtn = '<button class="btn btn--projection"><span class="btn--projection__hour">%%projHour%%</span> <span class="btn--projection__info">%%ifProj3d%%</span> %%projLangVer%% %%specProjLabels%%</span>  </button>';
 
 							// skip loop if the currMovieerty is from prototype
 							if(!currMovie.projections[day].hasOwnProperty(currProjectionHour)) continue;
@@ -80,6 +80,23 @@ class GenerateSchedule{
 							generatedBtn = generatedBtn.replace('%%projHour%%', currProjectionHour);
 							generatedBtn = generatedBtn.replace('%%projLangVer%%', currProjectionData.languageVer);
 							generatedBtn = generatedBtn.replace('%%ifProj3d%%', currProjectionData.if3d ? '3D' : '2D');
+
+							// dodanie ewentualnych etykiet do projekcji (może być więcej niż jedna etykieta do projekcji - są w tablicy)
+
+							// '<span class="btn--projection__lbl">Etykieta test</span>'
+							generatedBtn = generatedBtn.replace('%%specProjLabels%%', () => {
+								// ZREFAKTORYZOWAĆ
+
+								let labels = '';
+								if(currProjectionData.specProjLabelArr !== undefined && currProjectionData.specProjLabelArr.length > 0){
+								// jeśli zdefiniowano tablicę etykiet dla projekcji i jest w niej przynajmniej 1 element placeholder %%specProjLabels%% zastępowany jest etykietami (w span) - jeśli nie, od razu zwracany jest pusty string
+									currProjectionData.specProjLabelArr.forEach(currLabel => {
+										labels += `<span class="btn--projection__lbl">${currLabel}</span>`;
+									});
+								}
+								return labels;
+
+							});
 
 							// dodanie wygenerowanego buttona do wszystkich buttonów
 							generatedProjBtns += generatedBtn; 
