@@ -124,8 +124,48 @@ class Schedule{
 		this.addProjection('2017-09-01', 'bodyguard', '15:00', false, 'dubbing');
 		this.addProjection('2017-09-01', 'bodyguard', '20:00', true, 'napisy');
 		this.addProjection('2017-09-01', 'o-czym-szumi-las', '18:00', false, 'dubbing');
+		this.addProjection('2017-09-01', 'fantastyczne-zwierzeta', '10:00', false, 'dubbing');
+		this.addProjection('2017-09-01', 'vaiana', '10:00', true, 'dubbing');
+		this.addProjection('2017-09-01', 'vaiana', '12:00', false, 'audiodeskrypcja');
+		this.addProjection('2017-09-01', 'lotr1', '8:00', true, 'dubbing');
+		this.addProjection('2017-09-01', 'lotr1', '10:00', false, 'napisy');
+		this.addProjection('2017-09-01', 'lotr1', '8:00', true, 'dubbing');
+		this.addProjection('2017-09-01', 'lotr1', '10:00', false, 'napisy');
+		this.addProjection('2017-09-01', 'lotr1', '12:00', true, 'dubbing');
+		this.addProjection('2017-09-01', 'lotr1', '14:00', false, 'napisy');
+		this.addProjection('2017-09-01', 'lotr1', '16:00', true, 'dubbing');
+		this.addProjection('2017-09-01', 'lotr1', '18:00', false, 'napisy');
+		this.addProjection('2017-09-01', 'mother', '22:00', false, 'audiodeskrypcja');
+		this.addProjection('2017-09-01', 'to', '0:00', true, 'lektor');
 
-		this.addProjection('2017-09-02', 'bodyguard', '10:00', false, 'dubbing');
+		this.addProjection('2017-09-02', 'mother', '10:00', false, 'na żywo');
+
+		this.addProjection('2017-09-03', 'vaiana', '10:00', false, 'napisy');
+		this.addProjection('2017-09-03', 'lotr1', '8:00', true, 'dubbing');
+
+		this.addProjection('2017-09-05', 'o-czym-szumi-las', '18:00', false, 'dubbing');
+		this.addProjection('2017-09-05', 'o-czym-szumi-las', '21:00', true, 'dubbing');
+		this.addProjection('2017-09-05', 'fantastyczne-zwierzeta', '10:00', false, 'dubbing');
+		this.addProjection('2017-09-05', 'fantastyczne-zwierzeta', '12:00', false, 'dubbing');
+		this.addProjection('2017-09-05', 'fantastyczne-zwierzeta', '16:00', false, 'dubbing');
+		this.addProjection('2017-09-05', 'vaiana', '10:00', true, 'napisy');
+		this.addProjection('2017-09-05', 'vaiana', '10:00', true, 'napisy');
+		this.addProjection('2017-09-05', 'vaiana', '11:00', true, 'napisy');
+		this.addProjection('2017-09-05', 'vaiana', '12:00', true, 'napisy');
+		this.addProjection('2017-09-05', 'vaiana', '13:00', true, 'napisy');
+
+		this.addProjection('2017-09-06', 'lotr1', '7:00', false, 'dubbing');
+		this.addProjection('2017-09-06', 'mother', '10:00', false, 'dubbing');
+		this.addProjection('2017-09-06', 'vaiana', '10:00', true, 'napisy');
+		this.addProjection('2017-09-06', 'vaiana', '12:00', false, 'napisy');
+		this.addProjection('2017-09-06', 'vaiana', '14:00', true, 'napisy');
+		this.addProjection('2017-09-06', 'vaiana', '16:00', true, 'napisy');
+
+		this.addProjection('2017-09-07', 'anabelle', '12:00', false, 'dubbing');
+		this.addProjection('2017-09-07', 'bodyguard', '15:00', false, 'dubbing');
+		this.addProjection('2017-09-07', 'bodyguard', '20:00', true, 'napisy');
+		this.addProjection('2017-09-07', 'o-czym-szumi-las', '18:00', false, 'dubbing');
+		this.addProjection('2017-09-07', 'vaiana', '14:00', true, 'napisy');
 
 	}
 
@@ -178,6 +218,51 @@ class MoviesDB{
 						'118 min',
 						'od 15 lat',
 						['Akcja', 'Komedia'], 
+						'',
+						'');
+
+		this.addMovie(	'fantastyczne-zwierzeta', 
+						'Fantastyczne zwierzęta i jak je znaleźć', 
+						'/assets/images/moviesImages/fantastyczne-zwierzeta.jpg',
+						'118 min',
+						'od 7 lat',
+						['Przygodowy', 'Familijny', 'Fantasy'], 
+						'',
+						'');
+
+		this.addMovie(	'vaiana', 
+						'Vaiana: Skarb oceanu', 
+						'/assets/images/moviesImages/vaiana.jpg',
+						'107 min',
+						'b/o',
+						['Przygodowy', 'Komedia', 'Animacja'], 
+						'',
+						'');
+
+		this.addMovie(	'to', 
+						'To', 
+						'/assets/images/moviesImages/to.jpg',
+						'145 min',
+						'od 18 lat',
+						['Horror', 'Dramat'], 
+						'',
+						'');
+
+		this.addMovie(	'lotr1', 
+						'Łotr 1. Gwiezdne wojny - historie', 
+						'/assets/images/moviesImages/lotr1.jpg',
+						'113 min',
+						'od 13 lat',
+						['Sci-F', 'Przygodowy'], 
+						'',
+						'');
+
+		this.addMovie(	'mother', 
+						'Mother!', 
+						'/assets/images/moviesImages/mother.jpg',
+						'121 min',
+						'od 18 lat',
+						['Dramat', 'Horror'], 
 						'',
 						'');
 	}
