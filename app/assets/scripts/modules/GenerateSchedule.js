@@ -27,7 +27,6 @@ class GenerateSchedule{
 
 			if(scheduleOfDay !== undefined){
 			// jeśli został zdefiniowany dzień w schedule
-				console.log(scheduleOfDay);
 
 				// iteracja po wszystkich filmach (obiektach) obiektu scheduleOfDay (obiektu repertuaru na dany dzień)
 				for (let currMovie in scheduleOfDay) {
@@ -93,7 +92,7 @@ class Schedule{
 		this.generateScheduleData();
 	}
 
-	addProjection(day, movieSlug, time, if3d, languageVer, specProjLabel){
+	addProjection(day, movieSlug, time, if3d, languageVer, specProjLabelArr){
 	// dodaje projekcję dla filmu (w dniu day, film o movieSlug)
 		
 		// sprawdzenie czy istnieje film o podanym slug w movies (zdefiniowanej bazie filmów)
@@ -101,7 +100,7 @@ class Schedule{
 		if(movieObj !== undefined && movieObj !== null){
 		// jeśli znaleziono odpowiedni film, dodanie do niego projekcji i dodanie referencji do filmu do schedule dla danego dnia
 
-			movieObj.addProjection(day, time, if3d, languageVer, specProjLabel);
+			movieObj.addProjection(day, time, if3d, languageVer, specProjLabelArr);
 
 			// sprawdzenie czy dla danego dnia jest już jakaś projekcja (jeśli nie, to trzeba dla niego utworzyć pustą tablicę)
 			if(this.schedule[day] === undefined || this.schedule[day] === null){
@@ -138,9 +137,9 @@ class Schedule{
 		this.addProjection('2017-09-01', 'mother', '22:00', false, 'audiodeskrypcja');
 		this.addProjection('2017-09-01', 'to', '0:00', true, 'lektor');
 
-		this.addProjection('2017-09-02', 'mother', '10:00', false, 'na żywo');
+		this.addProjection('2017-09-02', 'mother', '10:00', false, 'na żywo', ['maraton filmowy']);
 
-		this.addProjection('2017-09-03', 'vaiana', '10:00', false, 'napisy');
+		this.addProjection('2017-09-03', 'vaiana', '10:00', false, 'napisy', ['filmowy poranek']);
 		this.addProjection('2017-09-03', 'lotr1', '8:00', true, 'dubbing');
 
 		this.addProjection('2017-09-05', 'o-czym-szumi-las', '18:00', false, 'dubbing');
@@ -155,7 +154,7 @@ class Schedule{
 		this.addProjection('2017-09-05', 'vaiana', '13:00', true, 'napisy');
 
 		this.addProjection('2017-09-06', 'lotr1', '7:00', false, 'dubbing');
-		this.addProjection('2017-09-06', 'mother', '10:00', false, 'dubbing');
+		this.addProjection('2017-09-06', 'mother', '10:00', false, 'dubbing', ['filmowy poranek']);
 		this.addProjection('2017-09-06', 'vaiana', '10:00', true, 'napisy');
 		this.addProjection('2017-09-06', 'vaiana', '12:00', false, 'napisy');
 		this.addProjection('2017-09-06', 'vaiana', '14:00', true, 'napisy');
@@ -163,7 +162,7 @@ class Schedule{
 
 		this.addProjection('2017-09-07', 'anabelle', '12:00', false, 'dubbing');
 		this.addProjection('2017-09-07', 'bodyguard', '15:00', false, 'dubbing');
-		this.addProjection('2017-09-07', 'bodyguard', '20:00', true, 'napisy');
+		this.addProjection('2017-09-07', 'bodyguard', '20:00', true, 'napisy', ['kino seniora', 'kinomaniak'] );
 		this.addProjection('2017-09-07', 'o-czym-szumi-las', '18:00', false, 'dubbing');
 		this.addProjection('2017-09-07', 'vaiana', '14:00', true, 'napisy');
 
@@ -171,7 +170,6 @@ class Schedule{
 
 	getScheduleOfDay(day){
 	// zwraca repertuar dla danego dnia
-		// console.log('getScheduleOfDay dla dnia: ' + day); TESTOWE
 
 		// Zwrócenie schedule dla dnia day
 		return this.schedule[day];
@@ -199,72 +197,64 @@ class MoviesDB{
 						'/assets/images/moviesImages/oCzymSzumiLas.jpg',
 						'75 min',
 						'b/o',
-						['Animowany', 'Familijny'], 
-						'',
-						'');
+						['Animowany', 'Familijny']
+						);
 
 		this.addMovie(	'anabelle', 
 						'Anabelle: Narodziny zła', 
 						'/assets/images/moviesImages/anabelle.jpg',
 						'109 min',
 						'od 15 lat',
-						['Horror'], 
-						'',
-						'');
+						['Horror']
+						);
 
 		this.addMovie(	'bodyguard', 
 						'Bodyguard Zawodowiec', 
 						'/assets/images/moviesImages/bodyguardZawodowiec.jpg',
 						'118 min',
 						'od 15 lat',
-						['Akcja', 'Komedia'], 
-						'',
-						'');
+						['Akcja', 'Komedia']
+						);
 
 		this.addMovie(	'fantastyczne-zwierzeta', 
 						'Fantastyczne zwierzęta i jak je znaleźć', 
 						'/assets/images/moviesImages/fantastyczne-zwierzeta.jpg',
 						'118 min',
 						'od 7 lat',
-						['Przygodowy', 'Familijny', 'Fantasy'], 
-						'',
-						'');
+						['Przygodowy', 'Familijny', 'Fantasy']
+						);
 
 		this.addMovie(	'vaiana', 
 						'Vaiana: Skarb oceanu', 
 						'/assets/images/moviesImages/vaiana.jpg',
 						'107 min',
 						'b/o',
-						['Przygodowy', 'Komedia', 'Animacja'], 
-						'',
-						'');
+						['Przygodowy', 'Komedia', 'Animacja']
+						);
 
 		this.addMovie(	'to', 
 						'To', 
 						'/assets/images/moviesImages/to.jpg',
 						'145 min',
 						'od 18 lat',
-						['Horror', 'Dramat'], 
-						'',
-						'');
+						['Horror', 'Dramat']
+						);
 
 		this.addMovie(	'lotr1', 
 						'Łotr 1. Gwiezdne wojny - historie', 
 						'/assets/images/moviesImages/lotr1.jpg',
 						'113 min',
 						'od 13 lat',
-						['Sci-F', 'Przygodowy'], 
-						'',
-						'');
+						['Sci-F', 'Przygodowy'],
+						['Star Wars Zone', 'Etykieta beznazwowa']);
 
 		this.addMovie(	'mother', 
 						'Mother!', 
 						'/assets/images/moviesImages/mother.jpg',
 						'121 min',
 						'od 18 lat',
-						['Dramat', 'Horror'], 
-						'',
-						'');
+						['Dramat', 'Horror'],
+						['Kino filmowego kosmity']);
 	}
 
 	// testowe
@@ -274,7 +264,7 @@ class MoviesDB{
 }
 
 class Movie{
-	constructor(slug, title, image, runtime, ageCat, genre, specialLabel){
+	constructor(slug, title, image, runtime, ageCat, genre, movieLabelsArr){
 		this.slug = slug;
 		this.title = title;
 		this.image = image;
@@ -282,10 +272,10 @@ class Movie{
 		this.ageCat = ageCat;
 		this.genre = genre;
 		this.projections = {};
-		this.specialLabel = specialLabel;
+		this.movieLabelsArr = movieLabelsArr;
 	}
 
-	addProjection(day, time, if3d, languageVer, specProjLabel){
+	addProjection(day, time, if3d, languageVer, specProjLabelArr){
 
 		// sprawdzenie czy są już projekcje dla danego dnia - jeśli nie to trzeba utworzyć dla niego puste pole
 		if(this.projections[day] === undefined || this.projections[day] === null){
@@ -293,7 +283,7 @@ class Movie{
 		}
 		this.projections[day][time] = {	'if3d': if3d,
 										'languageVer': languageVer,
-										'specProjLabel': specProjLabel};
+										'specProjLabelArr': specProjLabelArr};
 	}
 }
 
