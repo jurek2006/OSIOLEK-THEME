@@ -42,7 +42,7 @@ class GenerateSchedule{
 						dayLabel = formatter.format(dayLabel);
 
 						// template movieBox - repertuaru konkretnego filmu w danym dniu
-						let movieBoxTemplate = '<section class="movieBox"><h2 class="movieBox__tytul">%%title%%</h2> <img class="movieBox__plakat" src="%%image%%" alt="Plakat filmu - %%title%%."> <p class="movieBox__info"><span class="movieBox__etykieta--ukryte">Czas trwania: </span>%%runtime%%</p> <p class="movieBox__info"><span class="movieBox__etykieta--ukryte">Kategoria wiekowa: </span>%%ageCat%%</p> <p class="movieBox__info"><span class="movieBox__etykieta--ukryte">Gatunek: </span>%%genre%%</p> <div class="movieBox__seanseDnia"><p>Seanse w dniu %%currDayLabel%%:</p> %%currDayProjections%% </div> <button href="#" class="btn movieBox__zobaczWszystkie">Zobacz wszystkie seanse</button> <div class="movieBox__wszystkieSeanse movieBox__wszystkieSeanse--initUkryty"> <h3>Seanse w dniu 1 wrz:</h3> <button class="btn btn--seans"> 2D dubbing 16:00</button> <button class="btn btn--seans"> 3D dubbing 18:00</button> <h3>Seanse w dniu 2 wrz:</h3> <button class="btn btn--seans"> 2D dubbing 16:00</button> </div>	</section>';
+						let movieBoxTemplate = '<section class="movieBox"><h2 class="movieBox__tytul">%%title%%</h2>  <img class="movieBox__plakat" src="%%image%%" alt="Plakat filmu - %%title%%."> %%movieLabels%% <p class="movieBox__info"><span class="movieBox__etykieta--ukryte">Czas trwania: </span>%%runtime%%</p> <p class="movieBox__info"><span class="movieBox__etykieta--ukryte">Kategoria wiekowa: </span>%%ageCat%%</p> <p class="movieBox__info"><span class="movieBox__etykieta--ukryte">Gatunek: </span>%%genre%%</p> <div class="movieBox__seanseDnia"><p>Seanse w dniu %%currDayLabel%%:</p> %%currDayProjections%% </div> <button href="#" class="btn movieBox__zobaczWszystkie">Zobacz wszystkie seanse</button> <div class="movieBox__wszystkieSeanse movieBox__wszystkieSeanse--initUkryty"> <h3>Seanse w dniu 1 wrz:</h3> <button class="btn btn--seans"> 2D dubbing 16:00</button> <button class="btn btn--seans"> 3D dubbing 18:00</button> <h3>Seanse w dniu 2 wrz:</h3> <button class="btn btn--seans"> 2D dubbing 16:00</button> </div>	</section>';
 
 						// wypełnienie powyższego template danymi filmu
 						movieBoxTemplate = movieBoxTemplate.replace('%%title%%', currMovie.title);
@@ -52,6 +52,20 @@ class GenerateSchedule{
 						// Movie.genre jest tablicą gatunków filmowych - więc łączymy je w jeden string
 						movieBoxTemplate = movieBoxTemplate.replace('%%genre%%', currMovie.genre.join(' | '));
 						movieBoxTemplate = movieBoxTemplate.replace('%%currDayLabel%%', dayLabel);
+
+						// generowanie i wstawianie do szablonu etykiet filmu (są w tablicy, może ich być więcej niż 1)
+						movieBoxTemplate = movieBoxTemplate.replace('%%movieLabels%%', () => {
+							
+							let labels = '';
+							if(currMovie.movieLabelsArr !== undefined && currMovie.movieLabelsArr.length > 0){
+							// jeśli zdefiniowano tablicę etykiet dla filmu i jest w niej przynajmniej 1 element placeholder %%movieLabel%% zastępowany jest etykietami (w span) - jeśli nie, od razu zwracany jest pusty string
+								console.log(currMovie); //TESTOWE
+								currMovie.movieLabelsArr.forEach(currLabel => {
+									labels += `<span class="movieBox__movieLabel">${currLabel}</span>`;
+								});
+							}
+							return labels;
+						});
 
 						// pobranie projekcji danego filmu w danym dniu - generowanie buttons dla każdej takiej projekcji
 						let generatedProjBtns = '';
