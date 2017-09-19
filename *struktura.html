@@ -34,14 +34,17 @@
 		<section class="movieBox">
 			<!-- Box dla filmu na konkretny dzień -->
 
-	      <h2 class="movieBox__tytul">Tytuł filmu</h2>
-	      <img class="movieBox__plakat" src=sciezka_do_plakatu >
+				<h2 class="movieBox__tytul">Tytuł filmu</h2>
+				<button class="movieBox__aboutBtn btn btn--aboutMovie">O filmie</button>
+				<img class="movieBox__plakat" src=sciezka_do_plakatu >
+				<span class="movieBox__movieLabel"></span> <!-- może ich być więcej niż jedna -->
 	      <p class="movieBox__info"><span class="movieBox__etykieta--ukrytemovieBox__etykieta--ukryte">Czas trwania: </span>XXX min</p>
 	      <p class="movieBox__info"><span class="movieBox__etykieta--ukrytemovieBox__etykieta--ukryte">Kategoria wiekowa: </span>od XX lat</p>
 	      <p class="movieBox__info"><span class="movieBox__etykieta--ukrytemovieBox__etykieta--ukryte">Gatunek: </span>Horror</p>
 			
 		  <!-- Przyciski seansów danego filmu w danym dniu -->
-	      <p>Seanse w dniu 1 wrz:</p>
+				<p>Seanse w dniu 1 wrz:</p>
+				<span class="movieBox__pickProjectionLbl movieBox__pickProjectionLbl--hidden">Wybierz seans aby kupić/zarezerwować</span>
 	      <buton class="btn btn--seans">
 	        2D napisy 19:30
 	      </buton>
