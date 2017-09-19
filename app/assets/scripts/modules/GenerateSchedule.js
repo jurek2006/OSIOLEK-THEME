@@ -27,7 +27,6 @@ class GenerateSchedule{
 
 			if(scheduleOfDay !== undefined){
 			// jeśli został zdefiniowany dzień w schedule
-				console.log(scheduleOfDay);
 
 				// iteracja po wszystkich filmach (obiektach) obiektu scheduleOfDay (obiektu repertuaru na dany dzień)
 				for (let currMovie in scheduleOfDay) {
@@ -43,7 +42,7 @@ class GenerateSchedule{
 						dayLabel = formatter.format(dayLabel);
 
 						// template movieBox - repertuaru konkretnego filmu w danym dniu
-						let movieBoxTemplate = '<section class="movieBox"><h2 class="movieBox__tytul">%%title%%</h2> <img class="movieBox__plakat" src="%%image%%" alt="Plakat filmu - %%title%%."> <p class="movieBox__info"><span class="movieBox__etykieta--ukryte">Czas trwania: </span>%%runtime%%</p> <p class="movieBox__info"><span class="movieBox__etykieta--ukryte">Kategoria wiekowa: </span>%%ageCat%%</p> <p class="movieBox__info"><span class="movieBox__etykieta--ukryte">Gatunek: </span>%%genre%%</p> <div class="movieBox__seanseDnia"><p>Seanse w dniu %%currDayLabel%%:</p> %%currDayProjections%% </div> <button href="#" class="btn movieBox__zobaczWszystkie">Zobacz wszystkie seanse</button> <div class="movieBox__wszystkieSeanse movieBox__wszystkieSeanse--initUkryty"> <h3>Seanse w dniu 1 wrz:</h3> <button class="btn btn--seans"> 2D dubbing 16:00</button> <button class="btn btn--seans"> 3D dubbing 18:00</button> <h3>Seanse w dniu 2 wrz:</h3> <button class="btn btn--seans"> 2D dubbing 16:00</button> </div>	</section>';
+						let movieBoxTemplate = '<section class="movieBox"><h2 class="movieBox__title">%%title%%</h2> <button class="movieBox__aboutBtn btn btn--aboutMovie">O filmie</button> <img class="movieBox__poster" src="%%image%%" alt="Plakat filmu - %%title%%."> %%movieLabels%% <p class="movieBox__info"><span class="movieBox__lbl--hidden">Czas trwania: </span>%%runtime%%</p> <p class="movieBox__info"><span class="movieBox__lbl--hidden">Kategoria wiekowa: </span>%%ageCat%%</p> <p class="movieBox__info"><span class="movieBox__lbl--hidden">Gatunek: </span>%%genre%%</p> <div class="movieBox__seanseDnia"><p>Seanse w dniu %%currDayLabel%%:</p> <span class="movieBox__pickProjectionLbl movieBox__pickProjectionLbl--hidden">Wybierz seans aby kupić/zarezerwować</span> %%currDayProjections%% </div> <button href="#" class="movieBox__seeAllBtn">Zobacz wszystkie seanse</button> <div class="movieBox__wszystkieSeanse movieBox__wszystkieSeanse--initUkryty"> <h3>Seanse w dniu 1 wrz:</h3> <button class="btn btn--projection"> 2D dubbing 16:00</button> <button class="btn btn--projection"> 3D dubbing 18:00</button> <h3>Seanse w dniu 2 wrz:</h3> <button class="btn btn--projection"> 2D dubbing 16:00</button> </div>	</section>';
 
 						// wypełnienie powyższego template danymi filmu
 						movieBoxTemplate = movieBoxTemplate.replace('%%title%%', currMovie.title);
@@ -54,12 +53,25 @@ class GenerateSchedule{
 						movieBoxTemplate = movieBoxTemplate.replace('%%genre%%', currMovie.genre.join(' | '));
 						movieBoxTemplate = movieBoxTemplate.replace('%%currDayLabel%%', dayLabel);
 
+						// generowanie i wstawianie do szablonu etykiet filmu (są w tablicy, może ich być więcej niż 1)
+						movieBoxTemplate = movieBoxTemplate.replace('%%movieLabels%%', () => {
+							// ZREFAKTORYZOWAĆ
+							let labels = '';
+							if(currMovie.movieLabelsArr !== undefined && currMovie.movieLabelsArr.length > 0){
+							// jeśli zdefiniowano tablicę etykiet dla filmu i jest w niej przynajmniej 1 element placeholder %%movieLabel%% zastępowany jest etykietami (w span) - jeśli nie, od razu zwracany jest pusty string
+								currMovie.movieLabelsArr.forEach(currLabel => {
+									labels += `<span class="movieBox__movieLabel">${currLabel}</span>`;
+								});
+							}
+							return labels;
+						});
+
 						// pobranie projekcji danego filmu w danym dniu - generowanie buttons dla każdej takiej projekcji
 						let generatedProjBtns = '';
 						// iteracja po wszystkich projekcjach filmu w danym dniu
 						// (przykład obiektu Movie: anabelle.projections.2017-09-01 - iterujemy po obiektach tego obiektu)
 						for (let currProjectionHour in currMovie.projections[day]) {
-							let generatedBtn = '<button class="btn btn--seans"> %%ifProj3d%% %%projLangVer%% %%projHour%%</button>';
+							let generatedBtn = '<button class="btn btn--projection"><span class="btn--projection__hour">%%projHour%%</span> <span class="btn--projection__info">%%ifProj3d%%</span> %%projLangVer%% %%specProjLabels%%</span>  </button>';
 
 							// skip loop if the currMovieerty is from prototype
 							if(!currMovie.projections[day].hasOwnProperty(currProjectionHour)) continue;
@@ -68,6 +80,23 @@ class GenerateSchedule{
 							generatedBtn = generatedBtn.replace('%%projHour%%', currProjectionHour);
 							generatedBtn = generatedBtn.replace('%%projLangVer%%', currProjectionData.languageVer);
 							generatedBtn = generatedBtn.replace('%%ifProj3d%%', currProjectionData.if3d ? '3D' : '2D');
+
+							// dodanie ewentualnych etykiet do projekcji (może być więcej niż jedna etykieta do projekcji - są w tablicy)
+
+							// '<span class="btn--projection__lbl">Etykieta test</span>'
+							generatedBtn = generatedBtn.replace('%%specProjLabels%%', () => {
+								// ZREFAKTORYZOWAĆ
+
+								let labels = '';
+								if(currProjectionData.specProjLabelArr !== undefined && currProjectionData.specProjLabelArr.length > 0){
+								// jeśli zdefiniowano tablicę etykiet dla projekcji i jest w niej przynajmniej 1 element placeholder %%specProjLabels%% zastępowany jest etykietami (w span) - jeśli nie, od razu zwracany jest pusty string
+									currProjectionData.specProjLabelArr.forEach(currLabel => {
+										labels += `<span class="btn--projection__lbl">${currLabel}</span>`;
+									});
+								}
+								return labels;
+
+							});
 
 							// dodanie wygenerowanego buttona do wszystkich buttonów
 							generatedProjBtns += generatedBtn; 
@@ -93,7 +122,7 @@ class Schedule{
 		this.generateScheduleData();
 	}
 
-	addProjection(day, movieSlug, time, if3d, languageVer, specProjLabel){
+	addProjection(day, movieSlug, time, if3d, languageVer, specProjLabelArr){
 	// dodaje projekcję dla filmu (w dniu day, film o movieSlug)
 		
 		// sprawdzenie czy istnieje film o podanym slug w movies (zdefiniowanej bazie filmów)
@@ -101,7 +130,7 @@ class Schedule{
 		if(movieObj !== undefined && movieObj !== null){
 		// jeśli znaleziono odpowiedni film, dodanie do niego projekcji i dodanie referencji do filmu do schedule dla danego dnia
 
-			movieObj.addProjection(day, time, if3d, languageVer, specProjLabel);
+			movieObj.addProjection(day, time, if3d, languageVer, specProjLabelArr);
 
 			// sprawdzenie czy dla danego dnia jest już jakaś projekcja (jeśli nie, to trzeba dla niego utworzyć pustą tablicę)
 			if(this.schedule[day] === undefined || this.schedule[day] === null){
@@ -124,14 +153,53 @@ class Schedule{
 		this.addProjection('2017-09-01', 'bodyguard', '15:00', false, 'dubbing');
 		this.addProjection('2017-09-01', 'bodyguard', '20:00', true, 'napisy');
 		this.addProjection('2017-09-01', 'o-czym-szumi-las', '18:00', false, 'dubbing');
+		this.addProjection('2017-09-01', 'fantastyczne-zwierzeta', '10:00', false, 'dubbing');
+		this.addProjection('2017-09-01', 'vaiana', '10:00', true, 'dubbing');
+		this.addProjection('2017-09-01', 'vaiana', '12:00', false, 'audiodeskrypcja');
+		this.addProjection('2017-09-01', 'lotr1', '8:00', true, 'dubbing');
+		this.addProjection('2017-09-01', 'lotr1', '10:00', false, 'napisy');
+		this.addProjection('2017-09-01', 'lotr1', '8:00', true, 'dubbing');
+		this.addProjection('2017-09-01', 'lotr1', '10:00', false, 'napisy');
+		this.addProjection('2017-09-01', 'lotr1', '12:00', true, 'dubbing');
+		this.addProjection('2017-09-01', 'lotr1', '14:00', false, 'napisy');
+		this.addProjection('2017-09-01', 'lotr1', '16:00', true, 'dubbing');
+		this.addProjection('2017-09-01', 'lotr1', '18:00', false, 'napisy');
+		this.addProjection('2017-09-01', 'mother', '22:00', false, 'audiodeskrypcja');
+		this.addProjection('2017-09-01', 'to', '0:00', true, 'lektor');
 
-		this.addProjection('2017-09-02', 'bodyguard', '10:00', false, 'dubbing');
+		this.addProjection('2017-09-02', 'mother', '10:00', false, 'na żywo', ['maraton filmowy']);
+
+		this.addProjection('2017-09-03', 'vaiana', '10:00', false, 'napisy', ['filmowy poranek']);
+		this.addProjection('2017-09-03', 'lotr1', '8:00', true, 'dubbing');
+
+		this.addProjection('2017-09-05', 'o-czym-szumi-las', '18:00', false, 'dubbing');
+		this.addProjection('2017-09-05', 'o-czym-szumi-las', '21:00', true, 'dubbing');
+		this.addProjection('2017-09-05', 'fantastyczne-zwierzeta', '10:00', false, 'dubbing');
+		this.addProjection('2017-09-05', 'fantastyczne-zwierzeta', '12:00', false, 'dubbing');
+		this.addProjection('2017-09-05', 'fantastyczne-zwierzeta', '16:00', false, 'dubbing');
+		this.addProjection('2017-09-05', 'vaiana', '10:00', true, 'napisy');
+		this.addProjection('2017-09-05', 'vaiana', '10:00', true, 'napisy');
+		this.addProjection('2017-09-05', 'vaiana', '11:00', true, 'napisy');
+		this.addProjection('2017-09-05', 'vaiana', '12:00', true, 'napisy');
+		this.addProjection('2017-09-05', 'vaiana', '13:00', true, 'napisy');
+
+		this.addProjection('2017-09-06', 'lotr1', '7:00', false, 'dubbing');
+		this.addProjection('2017-09-06', 'mother', '10:00', false, 'dubbing', ['filmowy poranek']);
+		this.addProjection('2017-09-06', 'vaiana', '10:00', true, 'napisy');
+		this.addProjection('2017-09-06', 'vaiana', '12:00', false, 'napisy');
+		this.addProjection('2017-09-06', 'vaiana', '14:00', true, 'napisy');
+		this.addProjection('2017-09-06', 'vaiana', '16:00', true, 'napisy');
+
+		this.addProjection('2017-09-07', 'anabelle', '12:00', false, 'dubbing');
+		this.addProjection('2017-09-07', 'bodyguard', '15:00', false, 'dubbing');
+		this.addProjection('2017-09-07', 'bodyguard', '20:00', true, 'napisy', ['kino seniora', 'kinomaniak'] );
+		this.addProjection('2017-09-07', 'o-czym-szumi-las', '18:00', false, 'dubbing');
+		this.addProjection('2017-09-07', 'vaiana', '14:00', true, 'napisy');
 
 	}
 
 	getScheduleOfDay(day){
 	// zwraca repertuar dla danego dnia
-		// console.log('getScheduleOfDay dla dnia: ' + day); TESTOWE
 
 		// Zwrócenie schedule dla dnia day
 		return this.schedule[day];
@@ -159,27 +227,64 @@ class MoviesDB{
 						'/assets/images/moviesImages/oCzymSzumiLas.jpg',
 						'75 min',
 						'b/o',
-						['Animowany', 'Familijny'], 
-						'',
-						'');
+						['Animowany', 'Familijny']
+						);
 
 		this.addMovie(	'anabelle', 
 						'Anabelle: Narodziny zła', 
 						'/assets/images/moviesImages/anabelle.jpg',
 						'109 min',
 						'od 15 lat',
-						['Horror'], 
-						'',
-						'');
+						['Horror']
+						);
 
 		this.addMovie(	'bodyguard', 
 						'Bodyguard Zawodowiec', 
 						'/assets/images/moviesImages/bodyguardZawodowiec.jpg',
 						'118 min',
 						'od 15 lat',
-						['Akcja', 'Komedia'], 
-						'',
-						'');
+						['Akcja', 'Komedia']
+						);
+
+		this.addMovie(	'fantastyczne-zwierzeta', 
+						'Fantastyczne zwierzęta i jak je znaleźć', 
+						'/assets/images/moviesImages/fantastyczne-zwierzeta.jpg',
+						'118 min',
+						'od 7 lat',
+						['Przygodowy', 'Familijny', 'Fantasy']
+						);
+
+		this.addMovie(	'vaiana', 
+						'Vaiana: Skarb oceanu', 
+						'/assets/images/moviesImages/vaiana.jpg',
+						'107 min',
+						'b/o',
+						['Przygodowy', 'Komedia', 'Animacja']
+						);
+
+		this.addMovie(	'to', 
+						'To', 
+						'/assets/images/moviesImages/to.jpg',
+						'145 min',
+						'od 18 lat',
+						['Horror', 'Dramat']
+						);
+
+		this.addMovie(	'lotr1', 
+						'Łotr 1. Gwiezdne wojny - historie', 
+						'/assets/images/moviesImages/lotr1.jpg',
+						'113 min',
+						'od 13 lat',
+						['Sci-F', 'Przygodowy'],
+						['Star Wars Zone', 'Etykieta beznazwowa']);
+
+		this.addMovie(	'mother', 
+						'Mother!', 
+						'/assets/images/moviesImages/mother.jpg',
+						'121 min',
+						'od 18 lat',
+						['Dramat', 'Horror'],
+						['Kino filmowego kosmity']);
 	}
 
 	// testowe
@@ -189,7 +294,7 @@ class MoviesDB{
 }
 
 class Movie{
-	constructor(slug, title, image, runtime, ageCat, genre, specialLabel){
+	constructor(slug, title, image, runtime, ageCat, genre, movieLabelsArr){
 		this.slug = slug;
 		this.title = title;
 		this.image = image;
@@ -197,10 +302,10 @@ class Movie{
 		this.ageCat = ageCat;
 		this.genre = genre;
 		this.projections = {};
-		this.specialLabel = specialLabel;
+		this.movieLabelsArr = movieLabelsArr;
 	}
 
-	addProjection(day, time, if3d, languageVer, specProjLabel){
+	addProjection(day, time, if3d, languageVer, specProjLabelArr){
 
 		// sprawdzenie czy są już projekcje dla danego dnia - jeśli nie to trzeba utworzyć dla niego puste pole
 		if(this.projections[day] === undefined || this.projections[day] === null){
@@ -208,7 +313,7 @@ class Movie{
 		}
 		this.projections[day][time] = {	'if3d': if3d,
 										'languageVer': languageVer,
-										'specProjLabel': specProjLabel};
+										'specProjLabelArr': specProjLabelArr};
 	}
 }
 

@@ -34,35 +34,42 @@
 		<section class="movieBox">
 			<!-- Box dla filmu na konkretny dzień -->
 
-	      <h2 class="movieBox__tytul">Tytuł filmu</h2>
-	      <img class="movieBox__plakat" src=sciezka_do_plakatu >
-	      <p class="movieBox__info"><span class="movieBox__etykieta--ukrytemovieBox__etykieta--ukryte">Czas trwania: </span>XXX min</p>
-	      <p class="movieBox__info"><span class="movieBox__etykieta--ukrytemovieBox__etykieta--ukryte">Kategoria wiekowa: </span>od XX lat</p>
-	      <p class="movieBox__info"><span class="movieBox__etykieta--ukrytemovieBox__etykieta--ukryte">Gatunek: </span>Horror</p>
+				<h2 class="movieBox__title">Tytuł filmu</h2>
+				<button class="movieBox__aboutBtn btn btn--aboutMovie">O filmie</button>
+				<img class="movieBox__poster" src=sciezka_do_plakatu alt="Platak do filmu - %%tytul%%">
+				<span class="movieBox__movieLabel"></span> <!-- może ich być więcej niż jedna -->
+	      <p class="movieBox__info"><span class="movieBox__lbl--hidden">Czas trwania: </span>XXX min</p>
+	      <p class="movieBox__info"><span class="movieBox__lbl--hidden">Kategoria wiekowa: </span>od XX lat</p>
+	      <p class="movieBox__info"><span class="movieBox__lbl--hidden">Gatunek: </span>Horror</p>
 			
 		  <!-- Przyciski seansów danego filmu w danym dniu -->
-	      <p>Seanse w dniu 1 wrz:</p>
-	      <buton class="btn btn--seans">
-	        2D napisy 19:30
+				<p>Seanse w dniu 1 wrz:</p>
+				<span class="movieBox__pickProjectionLbl movieBox__pickProjectionLbl--hidden">Wybierz seans aby kupić/zarezerwować</span>
+	      <buton class="btn btn--projection">
+					<span class="btn--projection__hour">19:30</span>
+					<span class="btn--projection__info">2D napisy</span>
+					<span class="btn--projection__lbl">Kino Seniora</span> <!-- ewentualne wtykiety projekcji - może ich być więcej niż 1 -->
+					<span class="btn--projection__lbl">Etykieta 2</span> <!-- przykład drugiej etykiety -->
 	      </buton>
 
-	      <buton class="btn btn--seans">
-	        3D dubbing 22:00
-	      </buton>
+	      <buton class="btn btn--projection">
+						<span class="btn--projection__hour">22:00</span>
+						<span class="btn--projection__info">3D dubbing</span>
+					</buton>
 
-	      <button href="#" class="btn movieBox__zobaczWszystkie">Zobacz wszystkie seanse</button>
+	      <button href="#" class="btn movieBox__seeAllBtn">Zobacz wszystkie seanse</button>
 	      <!-- <div class="movieBox__wszystkieSeanse movieBox__wszystkieSeanse--initUkryty">
 	        <h3>Seanse w dniu 1 wrz:</h3>
-	        <button class="btn btn--seans">
+	        <button class="btn btn--projection">
 	          2D napisy 19:30
 	        </button>
 
-	        <button class="btn btn--seans">
+	        <button class="btn btn--projection">
 	          3D dubbing 22:00
 	        </button>
 
 	        <h3>Seanse w dniu 2 wrz:</h3>
-	        <button class="btn btn--seans">
+	        <button class="btn btn--projection">
 	          2D dubbing 18:00
 	        </button>
 
