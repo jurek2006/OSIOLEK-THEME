@@ -7,9 +7,16 @@
 	margin: 20px 0;
 
 	&__poster{
-		width: 150px;
-		height: 210px;
+		/* width: 150px;
+		height: 210px; */
+		width: 200px;
+		height: 280px;
 		float: left;
+	}
+
+	&__movieLabel{
+		color: red;
+		position: absolute;
 	}
 
 	&__lbl--hidden{
@@ -23,27 +30,46 @@
 
 		&--hidden{
 			visibility: hidden;
+			display: none;
 		}
 	}
 
-	&:hover{
+	&__projections{
+		.flexbox & ul{
+		/* lista zawierająca btn'y projekcji danego dnia - FLEX */
+			display: flex;
+			justify-content: center;
+		}
+	}
+
+	/* jeśli nie ma przycisku "wybierz seans" to zbędne */
+	/* &:hover{
 		.movieBox__pickProjectionLbl--hidden{
 			visibility: visible;
 		}
+	} */
+
+}
+
+
+/* ----- CSSGRID -----*/
+.cssgrid .movieBox{
+	margin: 0;
+	display: grid;
+	grid-template-columns: 200px 1fr;
+	grid-template-rows: repeat(5, max-content);
+	grid-column-gap: 20px;
+	padding-right: 20px;
+
+	&__poster{
+		grid-row: span 5;
 	}
 
-	/* ----- CSSGRID -----*/
-	.cssgrid &{
-		margin: 0;
-		display: grid;
-		grid-template-columns: 150px 1fr;
-		grid-template-rows: repeat(7, max-content);
-		grid-column-gap: 20px;
-		padding-right: 20px;
-
-		&__poster{
-			grid-row: span 7;
-		}
+	&__aboutBtn{
+		display: none;
 	}
 
+	&__seeAllBtn{
+		display: none;
+	}
 }

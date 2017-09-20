@@ -3,6 +3,16 @@
     background-color: transparent;
 
     &--projection{
+        padding: 0.1em;
+        margin: 0.05em;
+
+        &__hour{
+            font-size: 2rem;
+        }
+    }
+
+    /* FLEXBOX */
+    .flexbox &--projection{
         display: flex;
         flex-direction: column;
     }

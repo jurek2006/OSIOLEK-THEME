@@ -1,5 +1,6 @@
 /* Zestaw kolorow 1 */
 $szaryCiemny: #333;
+$szarySredni: #B3B3B3;
 $szaryJasny: #f6f6f6;
 $pomaranczowy: #EA7217;
 
@@ -19,5 +20,5 @@ $btnNavBg: $pomaranczowy;
 $movieBoxBg: #FFF;
 
 /* btn */
-$btnBorder: $szaryJasny;
+$btnBorder: $szarySredni;
 

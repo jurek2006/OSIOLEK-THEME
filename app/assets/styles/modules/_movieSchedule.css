@@ -3,10 +3,10 @@
 	&__ofDay{
 	/* Repertuar dla konkretnego dnia */
 	margin-top: 3em;
+	
 
 		&--hidden{
 			display: none;
-			color: red;
 		}
 		
 		&__heading{
@@ -18,5 +18,9 @@
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		grid-gap: 20px;
+
+		&--hidden{
+			display: none;
+		}
 	}
 }
