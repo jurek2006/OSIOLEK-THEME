@@ -4,7 +4,7 @@
 	background-color: $pomaranczowy;
 
 	&__link{
-		color: $tekstJasny;
+		color: #FFF;
 		text-decoration: none;
 	}
 }

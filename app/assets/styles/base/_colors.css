@@ -1,14 +1,23 @@
 /* Zestaw kolorow 1 */
 $szaryCiemny: #333;
-$tekstJasny: #eee;
+$szaryJasny: #f6f6f6;
 $pomaranczowy: #EA7217;
 
 
 /* Użycie kolorów */
 
+/* body */
+$bodyBg: $szaryJasny;
+
 /* Nagłówek */
 $headerBg: $szaryCiemny;
-$headerCol: $tekstJasny;
-$primaryNavCol: $tekstJasny;
-
+$headerCol: $szaryJasny;
+$primaryNavCol: $szaryJasny;
 $btnNavBg: $pomaranczowy;
+
+/* movieBox */
+$movieBoxBg: #FFF;
+
+/* btn */
+$btnBorder: $szaryJasny;
+

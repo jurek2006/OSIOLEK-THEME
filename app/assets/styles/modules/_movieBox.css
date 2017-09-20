@@ -1,47 +1,49 @@
 .movieBox{
+	/* color: red;  */
+	background-color: $movieBoxBg;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
 
-border: 1px solid black; /*TESTOWE*/
+	margin: 20px 0;
 
-	& *{
-		margin: 0;
-	}
-
-	@mixin atMedium{
-		height: 280px;
-		display: grid;
-		grid-template-columns: 200px 1fr;
-		grid-template-rows: repeat(6, 1fr);
-		grid-column-gap: 10px;
-		align-items: start;
-
-
-		&__poster{
-			grid-column: 1/2;
-			grid-row: 1 / 7;
-			width: 200px;
-			height: 280px;
-		}
-
-		&__info{
-			grid-column: 2/3;
-		}
-
-		&__seanseDnia{
-			grid-column: 2/3;
-		}
-
-		&__seeAllBtn{
-			grid-column: 2/3;
-		}
-	}
-
-	&__wszystkieSeanse--initUkryty{
-		display: none;
+	&__poster{
+		width: 150px;
+		height: 210px;
+		float: left;
 	}
 
 	&__lbl--hidden{
+		/* etykiety pól informacji (np. gatunek, kategoria wiekowa) */
 		display: none;
+	}
+
+	&__pickProjectionLbl{
+		/* napis "Wybierz seans aby kupić/zarezerwować */
+		display: block;
+
+		&--hidden{
+			visibility: hidden;
+		}
+	}
+
+	&:hover{
+		.movieBox__pickProjectionLbl--hidden{
+			visibility: visible;
+		}
+	}
+
+	/* ----- CSSGRID -----*/
+	.cssgrid &{
+		margin: 0;
+		display: grid;
+		grid-template-columns: 150px 1fr;
+		grid-template-rows: repeat(7, max-content);
+		grid-column-gap: 20px;
+		padding-right: 20px;
+
+		&__poster{
+			grid-row: span 7;
+		}
 	}
 
 }

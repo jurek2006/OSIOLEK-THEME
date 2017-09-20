@@ -1,3 +1,9 @@
 .btn{
-	
+    border: 1px solid $btnBorder;
+    background-color: transparent;
+
+    &--projection{
+        display: flex;
+        flex-direction: column;
+    }
 }
