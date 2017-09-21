@@ -15,7 +15,7 @@
 	}
 
 	/* ---------------- tymczasowo ukryte --------------- */
-	&__aboutBtn, &__pickProjectionLbl, &__seeAllBtn, &__movieLabel{
+	&__aboutBtn, &__pickProjectionLbl, &__movieLabel{
 		display: none;
 	}
 
@@ -23,18 +23,24 @@
 
 /* FLEXBOX */
 .flexbox .movieBox {
+
+	&__projections{
+		display: flex;
+		flex-direction: column;
+	}
 	
 	&__projections ul{
 		display: flex;
 		flex-wrap: wrap;
 	}
+
 }
 		
 /* CSSGRID */
 .cssgrid .movieBox {
 
 	display: grid;
-    grid-template-columns: min-content max-content;
+    grid-template-columns: min-content 1fr;
     grid-template-rows: repeat(5, max-content);
 	grid-column-gap: 20px;
 

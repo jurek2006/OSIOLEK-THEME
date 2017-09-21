@@ -18,7 +18,14 @@
 .cssgrid .movieSchedule{
 	&__ofDay{
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(1, 1fr);
+		@mixin atLarge{
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@mixin atHuge{
+			grid-template-columns: repeat(3, 1fr);
+		}
 		grid-gap: 20px;
 	}
+	
 }
