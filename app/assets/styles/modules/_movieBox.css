@@ -32,6 +32,14 @@
 	&__projections ul{
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: center;
+
+		li{
+			/* flex: 1; */
+			flex-grow: 1;
+			flex-shrink: 0;
+			flex-basis: 100px;
+		}
 	}
 
 }
