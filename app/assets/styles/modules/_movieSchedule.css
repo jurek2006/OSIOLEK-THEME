@@ -1,26 +1,3 @@
 .movieSchedule{
 
-	&__ofDay{
-	/* Repertuar dla konkretnego dnia */
-	margin-top: 3em;
-	
-
-		&--hidden{
-			display: none;
-		}
-		
-		&__heading{
-			display: none;
-		}
-	}
-
-	.cssgrid &__ofDay{
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		grid-gap: 20px;
-
-		&--hidden{
-			display: none;
-		}
-	}
 }
