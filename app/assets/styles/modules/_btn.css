@@ -3,6 +3,7 @@
     background-color: transparent;
 
     &--projection{
+        border: none;
         padding: 0.1em;
         margin: 0.05em;
 
