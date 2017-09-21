@@ -72,7 +72,7 @@ class GenerateSchedule{
 						// iteracja po wszystkich projekcjach filmu w danym dniu
 						// (przykład obiektu Movie: anabelle.projections.2017-09-01 - iterujemy po obiektach tego obiektu)
 						for (let currProjectionHour in currMovie.projections[day]) {
-							let generatedBtn = '<li> <button class="btn btn--projection"> <span class="btn--projection__hour">%%projHour%%</span> <span class="btn--projection__info">%%ifProj3d%% %%projLangVer%%</span>  %%specProjLabels%% </button></li>';
+							let generatedBtn = '<li> <button class="btn btn--projection"> %%specProjLabels%% <span class="btn--projection__hour">%%projHour%%</span> <span class="btn--projection__info">%%ifProj3d%% %%projLangVer%%</span>   </button></li>';
 
 							// skip loop if the currMovieerty is from prototype
 							if(!currMovie.projections[day].hasOwnProperty(currProjectionHour)) continue;
@@ -82,20 +82,18 @@ class GenerateSchedule{
 							generatedBtn = generatedBtn.replace('%%projLangVer%%', currProjectionData.languageVer);
 							generatedBtn = generatedBtn.replace('%%ifProj3d%%', currProjectionData.if3d ? '3D' : '2D');
 
-							// dodanie ewentualnych etykiet do projekcji (może być więcej niż jedna etykieta do projekcji - są w tablicy)
+							// dodanie ewentualnej etykiety do projekcji (może być tylko jedna, mimo iż są w tablicy - ale wyświetlana będzie tylko jedna)
 
-							// '<span class="btn--projection__lbl">Etykieta test</span>'
 							generatedBtn = generatedBtn.replace('%%specProjLabels%%', () => {
-								// ZREFAKTORYZOWAĆ
 
-								let labels = '';
 								if(currProjectionData.specProjLabelArr !== undefined && currProjectionData.specProjLabelArr.length > 0){
-								// jeśli zdefiniowano tablicę etykiet dla projekcji i jest w niej przynajmniej 1 element placeholder %%specProjLabels%% zastępowany jest etykietami (w span) - jeśli nie, od razu zwracany jest pusty string
-									currProjectionData.specProjLabelArr.forEach(currLabel => {
-										labels += `<span class="btn--projection__lbl">${currLabel}</span>`;
-									});
+									// jeśli ustawiona jest właściwość etykiet projekcji (i jest przynajmniej jedna)
+									// to jest ta etykieta wyświetlana
+									return `<span class="btn--projection__lbl">${currProjectionData.specProjLabelArr[0]}</span>`;
+								} else {
+									// jeśli nie ma żadnej etykiety dla projekcji to dodawany jest "placeholder" (ukrywany później stylami, ale tak, żeby zajmował miejsce)
+									return '<span class="btn--projection__noLbl">projekcja</span>';
 								}
-								return labels;
 
 							});
 
@@ -186,7 +184,7 @@ class Schedule{
 
 		this.addProjection('2017-09-06', 'lotr1', '7:00', false, 'dubbing');
 		this.addProjection('2017-09-06', 'mother', '10:00', false, 'dubbing', ['filmowy poranek']);
-		this.addProjection('2017-09-06', 'vaiana', '10:00', true, 'napisy');
+		this.addProjection('2017-09-06', 'vaiana', '10:00', true, 'napisy', ['filmowy poranek']);
 		this.addProjection('2017-09-06', 'vaiana', '12:00', false, 'napisy');
 		this.addProjection('2017-09-06', 'vaiana', '14:00', true, 'napisy');
 		this.addProjection('2017-09-06', 'vaiana', '16:00', true, 'napisy');
