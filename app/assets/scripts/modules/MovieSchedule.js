@@ -27,8 +27,8 @@ class MovieSchedule{
 
 				        if (dayToHide != null && dayToHide !== undefined && dayToShow != null && dayToShow !== undefined) {
 							// jeśli udało się pobrać article dla odpowiednich dni - wyświetlenie wybranego i ukrycie dotychczasowego, oraz zmiana "wybranego" przycisku       
-							dayToHide.classList.add("movieSchedule__ofDay--hidden");
-							dayToShow.classList.remove("movieSchedule__ofDay--hidden");
+							dayToHide.classList.add("visually-hidden");
+							dayToShow.classList.remove("visually-hidden");
 
 							// dezaktywacja przycisku dotychczasowej daty
 							deactivDayBtn.classList.remove("dayPicker__btn--day--selected");

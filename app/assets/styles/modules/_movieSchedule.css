@@ -1,3 +1,8 @@
 .movieSchedule{
 
 }
+
+.movieSchedule__ofDay{
+	/* dodatkowo klasa visually-hidden (z osobnego modułu) jest używana do ukrywania wizualnego nieaktywnych dni */
+	display: flex;
+}

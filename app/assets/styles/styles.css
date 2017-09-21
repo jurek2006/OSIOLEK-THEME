@@ -5,6 +5,7 @@
 @import "base/_system-font";
 
 @import "modules/_group";
+@import "modules/_visually-hidden";
 
 @import "modules/_body";
 @import "modules/_pageContainer";
