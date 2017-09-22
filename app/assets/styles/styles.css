@@ -20,6 +20,7 @@
 @import "modules/_movieBox";
 @import "modules/_zobaczCS";
 @import "modules/_btn";
+@import "modules/_label";
 
 /*moduł do testowania */
 @import "modules/_test";

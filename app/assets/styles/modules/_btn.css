@@ -1,6 +1,18 @@
 .btn{
     border: 1px solid $btnBorder;
     background-color: transparent;
+    border-radius: 4px;
+    
+    &--light:hover, &--light:focus{
+        background-color: $btnLightBg-hover;
+        color: $btnLightCol-hover;
+    }
+
+    &--aboutMovie{
+        background-color: $btnAboutMovieRGBA;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+		border: none;
+    }
 
     &--projection{
         border: none;
@@ -14,6 +26,7 @@
         &__noLbl{
             visibility: hidden;
         }
+
     }
 
     /* FLEXBOX */

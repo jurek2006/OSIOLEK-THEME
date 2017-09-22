@@ -35,12 +35,16 @@
 			<!-- Box dla filmu na konkretny dzień -->
 
 				<h2 class="movieBox__title">Tytuł filmu</h2>
-				<button class="movieBox__aboutBtn btn btn--aboutMovie">O filmie</button> <!-- na razie ukryte stylami -->
+				<button class="movieBox__aboutBtn btn btn--light btn--aboutMovie">O filmie</button> <!-- na razie ukryte stylami -->
 				<img class="movieBox__poster" src=sciezka_do_plakatu alt="Plakat filmu - %%tytul%%">
-				<span class="movieBox__movieLabel"></span> <!-- może ich być więcej niż jedna -->
-	      <p class="movieBox__info"><span class="movieBox__lbl--hidden">Czas trwania: </span>XXX min</p>
-	      <p class="movieBox__info"><span class="movieBox__lbl--hidden">Kategoria wiekowa: </span>od XX lat</p>
-	      <p class="movieBox__info"><span class="movieBox__lbl--hidden">Gatunek: </span>Horror</p>
+
+				<div class="movieBox__movieLabels">
+					<span class="label label--movie"></span> <!-- może ich być więcej niż jedna -->
+				</div>
+
+	      <p class="movieBox__info movieBox__info--runtime"><span class="movieBox__lbl visually-hidden">Czas trwania: </span>XXX min</p>
+	      <p class="movieBox__info movieBox__info--ageCat"><span class="movieBox__lbl visually-hidden">Kategoria wiekowa: </span>od XX lat</p>
+	      <p class="movieBox__info movieBox__info--genre"><span class="movieBox__lbl visually-hidden">Gatunek: </span>Horror</p>
 			
 			<!-- Przyciski seansów danego filmu w danym dniu -->
 				<section class="movieBox__projections">
@@ -50,17 +54,16 @@
 					<ul>
 
 						<li>
-						<buton class="btn btn--projection">
-								<span class="btn--projection__lbl">Kino Seniora</span> <!-- ewentualne wtykiety projekcji - może ich być więcej niż 1 -->
-								<!-- <span class="btn--projection__lbl">Etykieta 2</span> przykład drugiej etykiety - WYŚwietlana jest tylko jedna etykieta projekcji-->
+						<buton class="btn btn--light btn--projection">
+							<span class="btn--projection__lbl">Kino Seniora</span> <!-- ewentualne wtykiety projekcji - może być tylko 1!! -->
 							<span class="btn--projection__hour">19:30</span>
 							<span class="btn--projection__info">2D napisy</span>
 						</buton>
 						</li>
 
 						<li>
-						<buton class="btn btn--projection">
-							<span class="btn-projection__noLbl">projekcjs</span> <!-- jeśli nie ma etykiety -->
+						<buton class="btn btn--light btn--projection">
+							<span class="btn--projection__noLbl">projekcja</span> <!-- jeśli nie ma etykiety -->
 							<span class="btn--projection__hour">22:00</span>
 							<span class="btn--projection__info">3D dubbing</span>
 						</buton>
@@ -68,7 +71,7 @@
 
 					</ul>
 
-					<button href="#" class="btn movieBox__seeAllBtn">Zobacz wszystkie seanse</button> <!-- na razie ukryte stylami -->
+					<button href="#" class="btn btn--light movieBox__seeAllBtn">Zobacz wszystkie seanse</button> <!-- na razie ukryte stylami -->
 				</section>
 
 				<!-- TEGO NA RAZIE NIE MA -->

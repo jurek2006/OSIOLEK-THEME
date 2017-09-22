@@ -1,0 +1,6 @@
+.label{
+    background-color: $labelBg;
+    color: $labelCol;
+    padding: 3px;
+    display: block;
+}

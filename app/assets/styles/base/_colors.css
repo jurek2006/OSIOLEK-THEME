@@ -3,7 +3,7 @@ $szaryCiemny: #333;
 $szarySredni: #B3B3B3;
 $szaryJasny: #f6f6f6;
 $pomaranczowy: #EA7217;
-
+$bialy: #ffffff;
 
 /* Użycie kolorów */
 
@@ -17,8 +17,19 @@ $primaryNavCol: $szaryJasny;
 $btnNavBg: $pomaranczowy;
 
 /* movieBox */
-$movieBoxBg: #FFF;
+$movieBoxBg: $bialy;
 
 /* btn */
 $btnBorder: $szarySredni;
+
+    /* btn-light - kolory dla jasnego przycisku przy hoverze i focusie */
+    $btnLightBg-hover: $szaryCiemny;
+    $btnLightCol-hover: $bialy;
+
+    /* btn-aboutMovie */
+    $btnAboutMovieRGBA: $bialy;
+
+/* label */
+$labelBg: $pomaranczowy;
+$labelCol: $bialy;
 
