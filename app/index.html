@@ -11,6 +11,17 @@
   <meta name="description" content=""> -->
   <link rel="stylesheet" type="text/css" href="temp/styles/styles.css">
   <script src="/temp/scripts/Vendor.js"></script>
+
+  <!-- PROWIZORYCZNE DODANIE KARUZELI SLICK -->
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <!-- Add the slick-theme.css if you want default styling -->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick.css"/>
+  <!-- Add the slick-theme.css if you want default styling -->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick-theme.css"/>
+
 </head>
 <body>
 
@@ -148,12 +159,22 @@
 
 </section>
 
-<section>
+<section class="filmy wrapper">
     <!-- Aktualnie i wkrótce w kinie -->
+    <h1>Filmy</h1>
+    <div class="slick">
+      <div><h3>1</h3></div>
+      <div><h3>2</h3></div>
+      <div><h3>3</h3></div>
+      <div><h3>4</h3></div>
+      <div><h3>5</h3></div>
+      <div><h3>6</h3></div>
+    </div>
   </section>
 
 <section class="promocje wrapper">
   <h1>Promocje kinowe</h1>
+  
 </section>
 
 <section class="cennik wrapper">
@@ -171,5 +192,46 @@
 </div>
 
 <script src="/temp/scripts/App.js"></script>
+<!-- PROWIZORYCZNE DODANIE KARUZELI SLICK -->
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.slick').slick({
+          dots: true,
+  infinite: false,
+  speed: 300,
+  slidesToShow: 4,
+  slidesToScroll: 4,
+  responsive: [
+    // {
+    //   breakpoint: 1024,
+    //   settings: {
+    //     slidesToShow: 3,
+    //     slidesToScroll: 3,
+    //     infinite: true,
+    //     dots: true
+    //   }
+    // },
+    // {
+    //   breakpoint: 600,
+    //   settings: {
+    //     slidesToShow: 2,
+    //     slidesToScroll: 2
+    //   }
+    // },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+        });
+    });
+</script>
 </body>
 </html>
