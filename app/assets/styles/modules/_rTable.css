@@ -4,21 +4,37 @@
 
 /* PODSTAWOWE STYLE */
 .rTable{
-    /* flex do ustawiania __cell */
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
+
+    min-width: 250px;
+
+    /* style dla wersji najmniejszej */
+    &--collapse{
+        display: block;
+
+        /* & > .rTable__cell {
+            width: 100%;
+        } */
+
+        /* & > .rTable__cell--foot{
+            margin-bottom: 1em;
+        } */
+
+    }
 
     &__cell{
+        width: 100%;
         box-sizing: border-box;
         flex-grow: 1;
         overflow: hidden;
         /* flex do ustawiania __subcell */
         display: flex;
         flex-wrap: wrap;
+
+        &--foot{
+            margin-bottom: 1em;
+        }
     }
 
-    /* podkolumny */
     &__subcell{
         box-sizing: border-box;
         flex-grow: 1;
@@ -32,12 +48,39 @@
             width: 50%;
         }
 
-        /* ukrywanie 'podkolumn' etykiet (poza pierwszą) na dużych rozdzielczościach */
         &--hideBig{
-            display: none;
+            display: block;
         }
 
+        &--empty{
+            display: none;
+        }
     }
+
+    @mixin atSmall{
+        /* flex do ustawiania __cell */
+        display: flex;
+        flex-wrap: wrap;
+
+        @mixin rTableCellWidth 3{ };
+
+        /* podkolumny */
+        &__subcell{
+
+           
+
+            &--empty{
+                display: block;
+            }
+
+            /* ukrywanie 'podkolumn' etykiet (poza pierwszą) na dużych rozdzielczościach */
+            &--hideBig{
+                display: none;
+            }
+
+        }
+    }
+
 
 }
 
@@ -56,33 +99,8 @@ co jest nadpisywane poniżej */
 }
 
 /* wygenerowanie stylu szerokości dla 3 kolumn (dla innej ilości można zrobić analogicznie) */
-@mixin rTableCellWidth 3{ };
-
-/* RESPONSYWNOŚĆ */
-/* zastąpić gotowymi media queries */
-
-@media all and (max-width: 500px){
-    .rTable{
-        &--collapse{
-            display: block;
-
-            & > .rTable__cell {
-                width: 100%;
-            }
-
-            & > .rTable__cell--foot{
-                margin-bottom: 1em;
-            }
-
-        }
-
-        &__subcell{
-            &--hideBig{
-                display: block;
-            }
-            &--empty{
-                display: none;
-            }
-        }
-    }
+@mixin atSmall{
+    @mixin rTableCellWidth 3{ };
 }
+
+
