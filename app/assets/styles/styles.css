@@ -22,6 +22,9 @@
 @import "modules/_btn";
 @import "modules/_label";
 
+/* moduł responsywnej tabeli na cennik */
+@import "modules/_rTable";
+
 /*moduł do testowania */
 @import "modules/_test";
 

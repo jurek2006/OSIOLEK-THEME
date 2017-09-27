@@ -1,0 +1,88 @@
+/* moduł responsywnej "tabeli" cennika (działa wyłącznie za pomocą css) */
+/* na małych (mobilnych ekranach wyświetla się jako trzy osobne tabelki (dla każdej wersji - wt,cz - tania środy - weekendy & święta */
+/* 'tabela' traktowana jest jako trzykolumnowa, w każdej z kolumn są dwie 'podkolumny' --label na etykiety i --value */
+
+/* PODSTAWOWE STYLE */
+.rTable{
+    /* flex do ustawiania __cell */
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+
+    &__cell{
+        box-sizing: border-box;
+        flex-grow: 1;
+        overflow: hidden;
+        /* flex do ustawiania __subcell */
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    /* podkolumny */
+    &__subcell{
+        box-sizing: border-box;
+        flex-grow: 1;
+        border: 1px solid #CECDCD;
+
+        &--label{
+            width: 50%;
+        }
+
+        &--value{
+            width: 50%;
+        }
+
+        /* ukrywanie 'podkolumn' etykiet (poza pierwszą) na dużych rozdzielczościach */
+        &--hideBig{
+            display: none;
+        }
+
+    }
+
+}
+
+/* ROZMIARY KOMÓREK - wersja standardowa na różne ilości kolumn */
+/* Na szerokich ekranach (przy ukryciu --label w --otherRegion) kolumny są nierówne
+co jest nadpisywane poniżej */
+
+@define-mixin rTableCellWidth $colsNumber{
+    /*  mixin generuje przykładowo dla 3 kolumn:
+    .rTable--3cols > .rTable__cell{
+        width: calc(100% / 3);
+    } */
+    .rTable--$(colsNumber)cols > .rTable__cell{
+        width: calc(100% / $colsNumber);
+    }
+}
+
+/* wygenerowanie stylu szerokości dla 3 kolumn (dla innej ilości można zrobić analogicznie) */
+@mixin rTableCellWidth 3{ };
+
+/* RESPONSYWNOŚĆ */
+/* zastąpić gotowymi media queries */
+
+@media all and (max-width: 500px){
+    .rTable{
+        &--collapse{
+            display: block;
+
+            & > .rTable__cell {
+                width: 100%;
+            }
+
+            & > .rTable__cell--foot{
+                margin-bottom: 1em;
+            }
+
+        }
+
+        &__subcell{
+            &--hideBig{
+                display: block;
+            }
+            &--empty{
+                display: none;
+            }
+        }
+    }
+}
