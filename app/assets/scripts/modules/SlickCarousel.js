@@ -2,7 +2,7 @@ class SlickCarousel{
     constructor(){
         
         $(document).ready(function(){
-            $('.slickCarousel--filmy').slick({
+            $('.slickCarousel--movies').slick({
               infinite: true,
               slidesToShow: 1,
               slidesToScroll: 1,
