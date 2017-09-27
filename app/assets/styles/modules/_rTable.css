@@ -51,9 +51,9 @@
             &__subcell{
     
                
-    
                 &--empty{
                     display: block;
+                    border: none;
                 }
     
                 /* ukrywanie 'podkolumn' etykiet (poza pierwszą) na dużych rozdzielczościach */
@@ -93,6 +93,20 @@
         }
     }
     
-    
+/* fallback dla przeglądarek nie obsługujących flexbox */
+
+.no-flexbox .rTable{
+    display: block;
+
+    & > .rTable__cell{
+        width: 100%;
+        display: block;
+    }
+
+    & .rTable__subcell--hideBig{
+        display: block;
+    }
+
+}
     
     
