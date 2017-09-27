@@ -5,20 +5,9 @@
 /* PODSTAWOWE STYLE */
 .rTable{
 
-    min-width: 250px;
-
     /* style dla wersji najmniejszej */
     &--collapse{
         display: block;
-
-        /* & > .rTable__cell {
-            width: 100%;
-        } */
-
-        /* & > .rTable__cell--foot{
-            margin-bottom: 1em;
-        } */
-
     }
 
     &__cell{
@@ -84,23 +73,32 @@
 
 }
 
-/* ROZMIARY KOMÓREK - wersja standardowa na różne ilości kolumn */
+/* ROZMIARY KOMÓREK - wersja standardowa na różne ilości kolumn NIEUŻYWANE */
 /* Na szerokich ekranach (przy ukryciu --label w --otherRegion) kolumny są nierówne
 co jest nadpisywane poniżej */
 
-@define-mixin rTableCellWidth $colsNumber{
-    /*  mixin generuje przykładowo dla 3 kolumn:
-    .rTable--3cols > .rTable__cell{
-        width: calc(100% / 3);
-    } */
+/* @define-mixin rTableCellWidth $colsNumber{
+
     .rTable--$(colsNumber)cols > .rTable__cell{
         width: calc(100% / $colsNumber);
     }
+} */
+
+@mixin atSmall{
+    /* wygenerowanie stylu szerokości dla 3 kolumn (dla innej ilości można zrobić analogicznie) */
+    /* @mixin rTableCellWidth 3{ } */
+
+    /* ręczne ustawienie szerokości kolumn (dla wersji szerszej) - biorące pod uwagę, że we wszystkich 'kolumnach' (poza pierwszą) ukryta jest 'podkolumna' --label - co za tym idzie - trzeba wyliczać szerokość komórek tak, jakby była jedna 'kolumna' więcej (właśnie ta 'podkolumna' label)*/
+
+    .rTable--3cols > .rTable__cell--firstRegion{
+        width: 50%;
+    }
+
+    .rTable--3cols > .rTable__cell--otherRegion{
+        width: 25%;
+    }
 }
 
-/* wygenerowanie stylu szerokości dla 3 kolumn (dla innej ilości można zrobić analogicznie) */
-@mixin atSmall{
-    @mixin rTableCellWidth 3{ };
-}
+
 
 
