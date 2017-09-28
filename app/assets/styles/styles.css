@@ -4,6 +4,9 @@
 @import "base/_colors";
 @import "base/_system-font";
 
+/*moduł do testowania */
+@import "modules/_test";
+
 @import "modules/_group";
 @import "modules/_visually-hidden";
 
@@ -13,7 +16,8 @@
 @import "modules/_site-header";
 @import "modules/_movieSchedule";
 @import "modules/_dayPicker";
-@import "modules/_promocje";
+@import "modules/_promotions";
+@import "modules/_fGallery";
 @import "modules/_cennik";
 @import "modules/_footer";
 @import "modules/_primary-nav";
@@ -22,6 +26,8 @@
 @import "modules/_btn";
 @import "modules/_label";
 
-/*moduł do testowania */
-@import "modules/_test";
+/* karuzela slick */
+@import "modules/_slickCarousel";
+
+
 

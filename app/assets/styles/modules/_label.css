@@ -3,4 +3,8 @@
     color: $labelCol;
     padding: 3px;
     display: block;
+
+    &--movies{
+        text-align: center;
+    }
 }
