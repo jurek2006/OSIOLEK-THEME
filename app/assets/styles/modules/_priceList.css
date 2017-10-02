@@ -1,0 +1,44 @@
+.priceList{
+    position: relative;
+
+    &__Tab{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @mixin atLarge{
+            flex-direction: row;
+        }
+    }
+
+    &__Elem{
+
+        flex-basis: calc(50% - 10px); /* w połączeniu z justify-content zapewnia odstęp pomiędzy tabelami */
+    }
+
+    /* style cen w komórkach */
+    &__value{
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+    &__currency{
+        font-weight: 600;
+        margin-left: 0.1em;
+    }
+}
+
+h2.priceList{
+	margin-bottom: 1rem;
+}
+
+/* fallback dla przeglądarek nie obsługujących flexbox */
+
+.no-flexbox .priceList{
+    
+    &__Tab{
+        display: block;
+        width: 50%;
+        max-width: 500px;
+    }
+}

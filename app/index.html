@@ -156,80 +156,163 @@
   <h1>Promocje kinowe</h1>
 </section>
 
-<section class="cennik wrapper">
+<section class="priceList wrapper">
   <h1>Cennik</h1>
 
-  <!-- Responsywna tabela cennika 2D -->
-<div class="rTable rTable--3cols rTable--collapse">
+  <div class="priceList__Tab">
 
-  <!-- cennik wt-czw (--firstRegion - co oznacza, że 'podkolumna' --label NIE będzie w nim znikać na szerokim ekranie  -->
-    <div style="order: 1" class="rTable__cell rTable__cell--firstRegion rTable__cell--head">
-      <div class="rTable__subcell rTable__subcell--label rTable__subcell--empty"></div>
-      <div class="rTable__subcell rTable__subcell--value"><h3>wt, czw</h3></div>
-    </div>
-    <div style="order: 2" class="rTable__cell rTable__cell--firstRegion">
-      <div class="rTable__subcell rTable__subcell--label">normalny</div>
-      <div class="rTable__subcell rTable__subcell--value">16zł</div>
-    </div>
-    <div style="order: 3" class="rTable__cell rTable__cell--firstRegion">
-      <div class="rTable__subcell rTable__subcell--label">ulgowy</div>
-      <div class="rTable__subcell rTable__subcell--value">13zł</div>
-    </div>
-    <div style="order: 4" class="rTable__cell rTable__cell--firstRegion">
-      <div class="rTable__subcell rTable__subcell--label">rodzinny</div>
-      <div class="rTable__subcell rTable__subcell--value">13zł</div>
-    </div>
-    <div style="order: 5" class="rTable__cell rTable__cell--firstRegion rTable__cell--foot">
-      <div class="rTable__subcell rTable__subcell--label">grupowy</div>
-      <div class="rTable__subcell rTable__subcell--value">12zł</div>
-    </div>
+    <!-- Responsywna tabela cennika 2D -->
+    <section class="priceList__Elem priceList__Elem--2d">
+      <h2 class="priceList">Bilety na seanse 2D</h2>
+      <div class="rTable rTable--3cols rTable--collapse rTable--priceList">
 
-  <!-- cennik tania środa (--otherRegion - co oznacza, że 'podkolumna' --label będzie w nim znikać na szerokim ekranie  -->
-    <div style="order: 1" class="rTable__cell rTable__cell--otherRegion rTable__cell--head">
-      <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig rTable__subcell--empty"></div>
-      <div class="rTable__subcell rTable__subcell--value"><h3>tania środa</h3></div>
-    </div>
-    <div style="order: 2" class="rTable__cell rTable__cell--otherRegion">
-      <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig">normalny</div>
-      <div class="rTable__subcell rTable__subcell--value">11zł</div>
-    </div>
-    <div style="order: 3" class="rTable__cell rTable__cell--otherRegion">
-      <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig">ulgowy</div>
-      <div class="rTable__subcell rTable__subcell--value">11zł</div>
-    </div>
-    <div style="order: 4" class="rTable__cell rTable__cell--otherRegion">
-      <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig">rodzinny</div>
-      <div class="rTable__subcell rTable__subcell--value">11zł</div>
-    </div>
-    <div style="order: 5" class="rTable__cell rTable__cell--otherRegion rTable__cell--foot">
-      <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig">grupowy</div>
-      <div class="rTable__subcell rTable__subcell--value">11zł</div>
-    </div>
+        <!-- cennik wt-czw (--firstRegion - co oznacza, że 'podkolumna' --label NIE będzie w nim znikać na szerokim ekranie  -->
+          <div style="order: 1" class="rTable__cell rTable__cell--firstRegion rTable__cell--head">
+            <div class="rTable__subcell rTable__subcell--label rTable__subcell--empty"></div>
+            <div class="rTable__subcell rTable__subcell--value"><h3 class="priceList">wt, czw</h3></div>
+          </div>
+          <div style="order: 2" class="rTable__cell rTable__cell--firstRegion">
+            <div class="rTable__subcell rTable__subcell--label"><h4 class="priceList">normalny 2D</h4></div>
+            <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">16</span><span class="priceList__currency">zł</span></div>
+          </div>
+          <div style="order: 3" class="rTable__cell rTable__cell--firstRegion">
+            <div class="rTable__subcell rTable__subcell--label"><h4 class="priceList">ulgowy 2D</h4></div>
+            <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">13</span><span class="priceList__currency">zł</span></div>
+          </div>
+          <div style="order: 4" class="rTable__cell rTable__cell--firstRegion">
+            <div class="rTable__subcell rTable__subcell--label"><h4 class="priceList">rodzinny 2D</h4></div>
+            <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">13</span><span class="priceList__currency">zł</span></div>
+          </div>
+          <div style="order: 5" class="rTable__cell rTable__cell--firstRegion rTable__cell--foot">
+            <div class="rTable__subcell rTable__subcell--label"><h4 class="priceList">grupowy 2D</h4></div>
+            <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">12</span><span class="priceList__currency">zł</span></div>
+          </div>
 
-  <!-- cennik weekendy i święta (--otherRegion - co oznacza, że 'podkolumna' --label będzie w nim znikać na szerokim ekranie  -->
-    <div style="order: 1" class="rTable__cell rTable__cell--otherRegion rTable__cell--head">
-      <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig rTable__subcell--empty"></div>
-      <div class="rTable__subcell rTable__subcell--value"><h3>pt-nd, święta</h3></div>
-    </div>
-    <div style="order: 2" class="rTable__cell rTable__cell--otherRegion">
-      <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig">normalny</div>
-      <div class="rTable__subcell rTable__subcell--value">18zł</div>
-    </div>
-    <div style="order: 3" class="rTable__cell rTable__cell--otherRegion">
-      <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig">ulgowy</div>
-      <div class="rTable__subcell rTable__subcell--value">15zł</div>
-    </div>
-    <div style="order: 4" class="rTable__cell rTable__cell--otherRegion">
-      <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig">rodzinny</div>
-      <div class="rTable__subcell rTable__subcell--value">15zł</div>
-    </div>
-    <div style="order: 5" class="rTable__cell rTable__cell--otherRegion rTable__cell--foot">
-      <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig">grupowy</div>
-      <div class="rTable__subcell rTable__subcell--value">14zł</div>
-    </div>
+        <!-- cennik tania środa (--otherRegion - co oznacza, że 'podkolumna' --label będzie w nim znikać na szerokim ekranie  -->
+          <div style="order: 1" class="rTable__cell rTable__cell--otherRegion rTable__cell--head">
+            <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig rTable__subcell--empty"></div>
+            <div class="rTable__subcell rTable__subcell--value"><h3 class="priceList">tania środa</h3></div>
+          </div>
+          <div style="order: 2" class="rTable__cell rTable__cell--otherRegion">
+            <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig"><h4 class="priceList">normalny 2D</h4></div>
+            <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">11</span><span class="priceList__currency">zł</span></div>
+          </div>
+          <div style="order: 3" class="rTable__cell rTable__cell--otherRegion">
+            <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig"><h4 class="priceList">ulgowy 2D</h4></div>
+            <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">11</span><span class="priceList__currency">zł</span></div>
+          </div>
+          <div style="order: 4" class="rTable__cell rTable__cell--otherRegion">
+            <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig"><h4 class="priceList">rodzinny 2D</h4></div>
+            <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">11</span><span class="priceList__currency">zł</span></div>
+          </div>
+          <div style="order: 5" class="rTable__cell rTable__cell--otherRegion rTable__cell--foot">
+            <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig"><h4 class="priceList">grupowy 2D</h4></div>
+            <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">11</span><span class="priceList__currency">zł</span></div>
+          </div>
 
-</div>
-  
+        <!-- cennik weekendy i święta (--otherRegion - co oznacza, że 'podkolumna' --label będzie w nim znikać na szerokim ekranie  -->
+          <div style="order: 1" class="rTable__cell rTable__cell--otherRegion rTable__cell--head">
+            <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig rTable__subcell--empty"></div>
+            <div class="rTable__subcell rTable__subcell--value"><h3 class="priceList">pt-nd, święta</h3></div>
+          </div>
+          <div style="order: 2" class="rTable__cell rTable__cell--otherRegion">
+            <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig"><h4 class="priceList">normalny 2D</h4></div>
+            <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">18</span><span class="priceList__currency">zł</span></div>
+          </div>
+          <div style="order: 3" class="rTable__cell rTable__cell--otherRegion">
+            <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig"><h4 class="priceList">ulgowy 2D</h4></div>
+            <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">15</span><span class="priceList__currency">zł</span></div>
+          </div>
+          <div style="order: 4" class="rTable__cell rTable__cell--otherRegion">
+            <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig"><h4 class="priceList">rodzinny 2D</h4></div>
+            <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">15</span><span class="priceList__currency">zł</span></div>
+          </div>
+          <div style="order: 5" class="rTable__cell rTable__cell--otherRegion rTable__cell--foot">
+            <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig"><h4 class="priceList">grupowy 2D</h4></div>
+            <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">14</span><span class="priceList__currency">zł</span></div>
+          </div>
+
+      </div>
+    </section>
+
+    <!-- Responsywna tabela cennika 3D -->
+    <section class="priceList__Elem priceList__Elem--3d">
+      <h2 class="priceList">Bilety na seanse 3D</h2>
+      <div class="rTable rTable--3cols rTable--collapse rTable--priceList">
+
+        <!-- cennik wt-czw (--firstRegion - co oznacza, że 'podkolumna' --label NIE będzie w nim znikać na szerokim ekranie  -->
+          <div style="order: 1" class="rTable__cell rTable__cell--firstRegion rTable__cell--head">
+            <div class="rTable__subcell rTable__subcell--label rTable__subcell--empty"></div>
+            <div class="rTable__subcell rTable__subcell--value"><h3 class="priceList">wt, czw</h3></div>
+          </div>
+          <div style="order: 2" class="rTable__cell rTable__cell--firstRegion">
+            <div class="rTable__subcell rTable__subcell--label"><h4 class="priceList">normalny 3D</h4></div>
+            <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">19</span><span class="priceList__currency">zł</span></div>
+          </div>
+          <div style="order: 3" class="rTable__cell rTable__cell--firstRegion">
+            <div class="rTable__subcell rTable__subcell--label"><h4 class="priceList">ulgowy 3D</h4></div>
+            <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">16</span><span class="priceList__currency">zł</span></div>
+          </div>
+          <div style="order: 4" class="rTable__cell rTable__cell--firstRegion">
+            <div class="rTable__subcell rTable__subcell--label"><h4 class="priceList">rodzinny 3D</h4></div>
+            <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">17</span><span class="priceList__currency">zł</span></div>
+          </div>
+          <div style="order: 5" class="rTable__cell rTable__cell--firstRegion rTable__cell--foot">
+            <div class="rTable__subcell rTable__subcell--label"><h4 class="priceList">grupowy 3D</h4></div>
+            <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">16</span><span class="priceList__currency">zł</span></div>
+          </div>
+
+        <!-- cennik tania środa (--otherRegion - co oznacza, że 'podkolumna' --label będzie w nim znikać na szerokim ekranie  -->
+          <div style="order: 1" class="rTable__cell rTable__cell--otherRegion rTable__cell--head">
+            <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig rTable__subcell--empty"></div>
+            <div class="rTable__subcell rTable__subcell--value"><h3 class="priceList">tania środa</h3></div>
+          </div>
+          <div style="order: 2" class="rTable__cell rTable__cell--otherRegion">
+            <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig"><h4 class="priceList">normalny 3D</h4></div>
+            <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">15</span><span class="priceList__currency">zł</span></div>
+          </div>
+          <div style="order: 3" class="rTable__cell rTable__cell--otherRegion">
+            <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig"><h4 class="priceList">ulgowy 3D</h4></div>
+            <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">15</span><span class="priceList__currency">zł</span></div>
+          </div>
+          <div style="order: 4" class="rTable__cell rTable__cell--otherRegion">
+            <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig"><h4 class="priceList">rodzinny 3D</h4></div>
+            <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">15</span><span class="priceList__currency">zł</span></div>
+          </div>
+          <div style="order: 5" class="rTable__cell rTable__cell--otherRegion rTable__cell--foot">
+            <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig"><h4 class="priceList">grupowy 3D</h4></div>
+            <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">15</span><span class="priceList__currency">zł</span></div>
+          </div>
+
+        <!-- cennik weekendy i święta (--otherRegion - co oznacza, że 'podkolumna' --label będzie w nim znikać na szerokim ekranie  -->
+          <div style="order: 1" class="rTable__cell rTable__cell--otherRegion rTable__cell--head">
+            <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig rTable__subcell--empty"></div>
+            <div class="rTable__subcell rTable__subcell--value"><h3 class="priceList">pt-nd, święta</h3></div>
+          </div>
+          <div style="order: 2" class="rTable__cell rTable__cell--otherRegion">
+            <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig"><h4 class="priceList">normalny 3D</h4></div>
+            <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">21</span><span class="priceList__currency">zł</span></div>
+          </div>
+          <div style="order: 3" class="rTable__cell rTable__cell--otherRegion">
+            <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig"><h4 class="priceList">ulgowy 3D</h4></div>
+            <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">18</span><span class="priceList__currency">zł</span></div>
+          </div>
+          <div style="order: 4" class="rTable__cell rTable__cell--otherRegion">
+            <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig"><h4 class="priceList">rodzinny 3D</h4></div>
+            <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">19</span><span class="priceList__currency">zł</span></div>
+          </div>
+          <div style="order: 5" class="rTable__cell rTable__cell--otherRegion rTable__cell--foot">
+            <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig"><h4 class="priceList">grupowy 3D</h4></div>
+            <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">17</span><span class="priceList__currency">zł</span></div>
+          </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <button class="btn btn--light btn--readMore">Cennik - więcej informacji</button>
+
 </section>
 
 <aside class="zobaczCS">

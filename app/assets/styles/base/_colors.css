@@ -33,3 +33,7 @@ $btnBorder: $szarySredni;
 $labelBg: $pomaranczowy;
 $labelCol: $bialy;
 
+/* rTable */
+$rTableBgCol: $szarySredni;
+$rTableBorCol: $bialy;
+
