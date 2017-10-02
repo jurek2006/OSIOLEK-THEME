@@ -1,5 +1,4 @@
 .priceList{
-    position: relative;
 
     &__Tab{
         display: flex;

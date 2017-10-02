@@ -22,12 +22,17 @@ $movieBoxBg: $bialy;
 /* btn */
 $btnBorder: $szarySredni;
 
-    /* btn-light - kolory dla jasnego przycisku przy hoverze i focusie */
+    /* btn--light - kolory dla jasnego przycisku przy hoverze i focusie */
     $btnLightBg-hover: $szaryCiemny;
     $btnLightCol-hover: $bialy;
 
-    /* btn-aboutMovie */
+    /* btn--aboutMovie */
     $btnAboutMovieRGBA: $bialy;
+
+    /* btn--seeCS */
+    $btnSeeCSCol: $bialy;
+
+
 
 /* label */
 $labelBg: $pomaranczowy;
@@ -36,4 +41,9 @@ $labelCol: $bialy;
 /* rTable */
 $rTableBgCol: $szarySredni;
 $rTableBorCol: $bialy;
+
+/* seeCS */
+$seeCSBg: $pomaranczowy;
+
+
 

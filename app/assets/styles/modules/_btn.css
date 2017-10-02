@@ -39,6 +39,14 @@
         transform: translateX(-50%);
     }
 
+    &--seeCS{
+        color: $btnSeeCSCol;
+        text-decoration: none;
+        left: 0;
+        margin: 0 auto;
+        text-align: center;
+    }
+
     /* FLEXBOX */
     .flexbox &--projection{
         width: 100%;
