@@ -1,0 +1,134 @@
+
+.rTable{
+    
+        /* style dla wersji najmniejszej */
+        min-width: 170px;
+
+        &--collapse{
+            display: block;
+        }
+
+        /* wyśrodkowanie h4 w pionie */
+        h4.priceList{
+                /* wyśrodkowanie w komórce */
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+        }
+    
+        &__cell{
+            width: 100%;
+            box-sizing: border-box;
+            flex-grow: 1;
+            overflow: hidden;
+            /* flex do ustawiania __subcell */
+            display: flex;
+            flex-wrap: wrap;
+    
+            &--foot{
+                margin-bottom: 1em;
+            }
+        }
+    
+        &__subcell{
+            box-sizing: border-box;
+            flex-grow: 1;
+            border: 1px solid $rTableBorCol;
+            background-color: $rTableBgCol;
+            padding: .3rem;
+    
+            &--label{
+                width: 50%;
+            }
+    
+            &--value{
+                width: 50%;
+                text-align: center;
+            }
+    
+            &--hideBig{
+                display: block;
+            }
+    
+            &--empty{
+                display: none;
+            }
+        }
+    
+        @mixin atSmall{
+            /* flex do ustawiania __cell */
+            display: flex;
+            flex-wrap: wrap;
+    
+            /* podkolumny */
+            &__subcell{
+    
+               
+                &--empty{
+                    display: block;
+                    background-color: transparent;
+                    border: none;
+                }
+    
+                /* ukrywanie 'podkolumn' etykiet (poza pierwszą) na dużych rozdzielczościach */
+                &--hideBig{
+                    display: none;
+                }
+    
+            }
+        }
+    
+    
+    }
+    
+    /* ROZMIARY KOMÓREK - wersja standardowa na różne ilości kolumn NIEUŻYWANE */
+    /* Na szerokich ekranach (przy ukryciu --label w --otherRegion) kolumny są nierówne
+    co jest nadpisywane poniżej */
+    
+    /* @define-mixin rTableCellWidth $colsNumber{
+    
+        .rTable--$(colsNumber)cols > .rTable__cell{
+            width: calc(100% / $colsNumber);
+        }
+    } */
+    
+    @mixin atSmall{
+        /* wygenerowanie stylu szerokości dla 3 kolumn (dla innej ilości można zrobić analogicznie) */
+        /* @mixin rTableCellWidth 3{ } */
+    
+        /* ręczne ustawienie szerokości kolumn (dla wersji szerszej) - biorące pod uwagę, że we wszystkich 'kolumnach' (poza pierwszą) ukryta jest 'podkolumna' --label - co za tym idzie - trzeba wyliczać szerokość komórek tak, jakby była jedna 'kolumna' więcej (właśnie ta 'podkolumna' label)*/
+    
+        .rTable--3cols > .rTable__cell--firstRegion{
+            width: 50%;
+        }
+    
+        .rTable--3cols > .rTable__cell--otherRegion{
+            width: 25%;
+        }
+    }
+    
+/* fallback dla przeglądarek nie obsługujących flexbox */
+
+.no-flexbox .rTable{
+    display: block;
+
+    & > .rTable__cell{
+        width: 100%;
+        display: block;
+    }
+
+    & .rTable__subcell{
+        width: 100%;
+    }
+
+    & .rTable__subcell--hideBig{
+        display: block;
+    }
+
+    /* zresetowanie wyśrodkowania h4 w pionie */
+    h4.priceList{
+            transform: translateY(0%);
+        }
+
+}
+    

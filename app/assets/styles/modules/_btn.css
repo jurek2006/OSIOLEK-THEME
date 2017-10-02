@@ -29,6 +29,16 @@
 
     }
 
+    &--readMore{
+        padding: 0.5em;
+        font-weight: 300;
+        font-size: 1.3rem;
+        position: relative;
+        /* wyśrodkowanie na stronie: */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
     /* FLEXBOX */
     .flexbox &--projection{
         width: 100%;

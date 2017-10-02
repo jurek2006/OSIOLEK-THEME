@@ -18,7 +18,7 @@
 @import "modules/_dayPicker";
 @import "modules/_promotions";
 @import "modules/_fGallery";
-@import "modules/_cennik";
+@import "modules/_priceList";
 @import "modules/_footer";
 @import "modules/_primary-nav";
 @import "modules/_movieBox";
@@ -29,5 +29,9 @@
 /* karuzela slick */
 @import "modules/_slickCarousel";
 
+/* moduł responsywnej tabeli na cennik */
+@import "modules/_rTable";
 
+/*moduł do testowania */
+@import "modules/_test";
 
