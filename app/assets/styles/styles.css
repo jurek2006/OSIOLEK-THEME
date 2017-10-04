@@ -26,6 +26,12 @@
 @import "modules/_btn";
 @import "modules/_label";
 
+/* dane kontaktowe w stopce */
+@import "modules/_contact";
+
+/* responsywna Google Maps */
+@import "modules/_mapResponsive";
+
 /* karuzela slick */
 @import "modules/_slickCarousel";
 

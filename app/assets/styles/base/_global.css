@@ -10,7 +10,7 @@ body, button{
 }
 
 h1{
-	font-size: 2rem;
+	font-size: 3rem;
 }
 
 h2{
@@ -21,3 +21,9 @@ h3{
 	font-size: 1.15rem;
 	font-weight: 600;
 }
+
+/* dodanie znaku-symbolu telefonu do wszystkich linków telefonicznych (tel) */
+a[href^="tel:"]:before {
+	content: "\260e";
+	margin-right: 0.5em;
+  }

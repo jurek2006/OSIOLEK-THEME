@@ -1,0 +1,57 @@
+.contact{
+
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+
+    flex-direction: column;
+    @mixin atMedium{
+        flex-direction: row;
+    }
+
+    &__tab{
+        background-color: white;
+        text-align: center;
+        padding: 3em 1em;
+        margin-bottom: 10px;
+
+        &--address{
+            flex-basis: calc(25% - 5px);
+            background-color: $contactAddressBg;
+            color: $contactAddressCol;
+
+            p{
+                line-height: 1.5;
+            }
+        }
+
+        &--phone{
+            flex-basis: calc(75% - 5px);
+            background-color: $contactPhoneBg;
+            color: $contactPhoneCol;
+            
+        }
+    }
+
+    &__phone{
+        /* kolor odnośnika telefonu */
+        color: $contactPhoneCol;
+        display: block;
+        text-align: center;
+        font-weight: 900;
+        text-decoration-line: none;
+        /* font-size: 1.5rem; */
+
+        @mixin atTiny{
+            font-size: 1.5rem;
+        }
+
+        @mixin atSmall{
+            font-size: 3rem;
+        }
+
+        @mixin atMedium{
+            font-size: 4rem;
+        }
+    }
+}
