@@ -1,5 +1,6 @@
 .seeCS{
 
 	background-color: $seeCSBg;
-	padding: 2em 0;
+	text-align: center;
+	/* padding: 2em 0; */
 }

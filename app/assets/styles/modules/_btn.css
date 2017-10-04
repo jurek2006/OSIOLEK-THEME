@@ -29,22 +29,24 @@
 
     }
 
-    &--readMore{
-        padding: 0.5em;
-        font-weight: 300;
-        font-size: 1.3rem;
+    &--centered{
         position: relative;
         /* wyśrodkowanie na stronie: */
         left: 50%;
         transform: translateX(-50%);
     }
 
+    &--readMore{
+        padding: 0.5em;
+        font-weight: 300;
+        font-size: 1.3rem;
+    }
+
     &--seeCS{
+        display: block;
         color: $btnSeeCSCol;
         text-decoration: none;
-        left: 0;
-        margin: 0 auto;
-        text-align: center;
+        margin: 1em auto;
     }
 
     /* FLEXBOX */
