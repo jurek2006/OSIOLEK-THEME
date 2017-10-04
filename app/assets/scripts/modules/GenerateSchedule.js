@@ -229,7 +229,7 @@ class MoviesDB{
 		// TUTAJ DOPISUJEMY FILMY - DANE TESTOWE
 		this.addMovie(	'o-czym-szumi-las', 
 						'O czym szumi las', 
-						'/assets/images/moviesImages/oCzymSzumiLas.jpg',
+						'assets/images/moviesImages/oCzymSzumiLas.jpg',
 						'75 min',
 						'b/o',
 						['Animowany', 'Familijny']
@@ -237,7 +237,7 @@ class MoviesDB{
 
 		this.addMovie(	'anabelle', 
 						'Anabelle: Narodziny zła', 
-						'/assets/images/moviesImages/anabelle.jpg',
+						'assets/images/moviesImages/anabelle.jpg',
 						'109 min',
 						'od 15 lat',
 						['Horror']
@@ -245,7 +245,7 @@ class MoviesDB{
 
 		this.addMovie(	'bodyguard', 
 						'Bodyguard Zawodowiec', 
-						'/assets/images/moviesImages/bodyguardZawodowiec.jpg',
+						'assets/images/moviesImages/bodyguardZawodowiec.jpg',
 						'118 min',
 						'od 15 lat',
 						['Akcja', 'Komedia']
@@ -253,7 +253,7 @@ class MoviesDB{
 
 		this.addMovie(	'fantastyczne-zwierzeta', 
 						'Fantastyczne zwierzęta i jak je znaleźć', 
-						'/assets/images/moviesImages/fantastyczne-zwierzeta.jpg',
+						'assets/images/moviesImages/fantastyczne-zwierzeta.jpg',
 						'118 min',
 						'od 7 lat',
 						['Przygodowy', 'Familijny', 'Fantasy']
@@ -261,7 +261,7 @@ class MoviesDB{
 
 		this.addMovie(	'vaiana', 
 						'Vaiana: Skarb oceanu', 
-						'/assets/images/moviesImages/vaiana.jpg',
+						'assets/images/moviesImages/vaiana.jpg',
 						'107 min',
 						'b/o',
 						['Przygodowy', 'Komedia', 'Animacja']
@@ -269,7 +269,7 @@ class MoviesDB{
 
 		this.addMovie(	'to', 
 						'To', 
-						'/assets/images/moviesImages/to.jpg',
+						'assets/images/moviesImages/to.jpg',
 						'145 min',
 						'od 18 lat',
 						['Horror', 'Dramat']
@@ -277,7 +277,7 @@ class MoviesDB{
 
 		this.addMovie(	'lotr1', 
 						'Łotr 1. Gwiezdne wojny - historie', 
-						'/assets/images/moviesImages/lotr1.jpg',
+						'assets/images/moviesImages/lotr1.jpg',
 						'113 min',
 						'od 13 lat',
 						['Sci-F', 'Przygodowy'],
@@ -285,7 +285,7 @@ class MoviesDB{
 
 		this.addMovie(	'mother', 
 						'Mother!', 
-						'/assets/images/moviesImages/mother.jpg',
+						'assets/images/moviesImages/mother.jpg',
 						'121 min',
 						'od 18 lat',
 						['Dramat', 'Horror'],
