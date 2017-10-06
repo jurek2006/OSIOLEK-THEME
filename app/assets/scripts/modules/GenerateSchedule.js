@@ -14,7 +14,7 @@ class GenerateSchedule{
 	// wypełnia poszczególne dni w repertuarze zdefiniowanymi projekcjami
 
 		// znajdź wszystkie elementy (article.movieSchedule__ofDay) dni repertuaru
-		const daySchedulesArr = document.querySelectorAll('.movieSchedule__ofDay');
+		const daySchedulesArr = [...document.querySelectorAll('.movieSchedule__ofDay')];
 
 		// dla każdego dnia w repertuarze (wg zdefiniowanych sekcji w index.html)
 		daySchedulesArr.forEach(function(currDayEl){

@@ -7,7 +7,7 @@ class MovieSchedule{
 
 	addBtnsClick(){
 	// funkcja dodająca obsługę kliknięcia dnia na dayPickerze (pomijając dni --inactive)
-		const daysBtns = document.querySelectorAll('.dayPicker__btn--day');
+		const daysBtns = [...document.querySelectorAll('.dayPicker__btn--day')]; //konwersja do Array
 		daysBtns.forEach(function(dayBtn){
 			if(!dayBtn.classList.contains('dayPicker__btn--day--disabled')){
 				dayBtn.addEventListener('click', function(){

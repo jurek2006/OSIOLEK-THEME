@@ -5,7 +5,7 @@
 
 class Modal{
     constructor(){
-
+        
         this.addEventListenerAll('.btn--openModal', 'click', this.addModalOpenEventListener); 
     }
 
@@ -26,7 +26,7 @@ class Modal{
 
     // metoda iterująca po tablicy/NodeList (btnNL) elementów i przypisująca im funkcje obsługi zdarzenia
     addEventListenerAll(buttonsSelector, eventType = 'click', callbackFunc){
-        const buttonsSelectedArr = document.body.querySelectorAll(buttonsSelector); //tablica obiektów w DOM (button/a) wybranych za pomocą selektora
+        const buttonsSelectedArr = [...document.querySelectorAll(buttonsSelector)]; //tablica obiektów w DOM (button/a) wybranych za pomocą selektora
         buttonsSelectedArr.forEach(btn => callbackFunc(btn, eventType)); //dla każdego elementu w tablicy dodanie jako obsugi zdarzenia eventType (np. click) funkcji callbackFunc
     }
 
