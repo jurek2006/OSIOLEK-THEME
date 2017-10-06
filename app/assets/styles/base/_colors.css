@@ -52,5 +52,11 @@ $contactPhoneBg: $bialy;
 $contactAddressCol: $bialy;
 $contactAddressBg: $pomaranczowy;
 
+/* modal */
+$modalBgRGBA: rgba($szarySredni, 0.8);
+$modalContentBg: $szaryJasny;
+$modalCloseBtnHoverCol: $pomaranczowy;
+$modalCloseBtnCol: $szaryCiemny;
+
 
 

@@ -1,14 +1,35 @@
 .modal{
     position: fixed;
     z-index: 5;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: $modalBgRGBA;
     top:0;
     bottom: 0;
     left: 0;
     right: 0;
+    overflow: auto;
 
     display: none;
+
     &--is-visible{
         display: block;
+    }
+
+    &__closeBtn{
+        color: $modalCloseBtnCol;
+        float: right;
+        font-size: 2rem;
+
+        &:hover, &:focus{
+            color: $modalCloseBtnHoverCol;
+            text-decoration: none;
+            coursor: pointer;
+        }
+    }
+
+    &__content{
+        margin: 5% 20px;
+        padding: 20px;
+        background-color: $modalContentBg;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     }
 }
