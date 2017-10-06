@@ -1,11 +1,11 @@
-// klasa Modal przypisuje do wszystkich elementów (btn lub a) o klasie btn--openModal wyświetlania modala/overlay
+// klasa Modal przypisuje do wszystkich elementów (btn lub a ale właściwie mogą być też innych typów) o klasie btn--openModal wyświetlania modala/overlay
 // każdy taki element musi mieć atrybut data-open-modal w którym wskazany jest selektor modala, który ma wyświetlać
 
 // np. przy atrybucie data-open-modal="#priceList-more" ma wyświetlić się element o id priceList-more
 
 class Modal{
     constructor(){
-        
+        // dla wszystkich elementów (w uproszczeniu "przycisków") przypisanie na click funkcji otwierającej modal
         this.addEventListenerAll('.btn--openModal', 'click', this.addModalOpenEventListener); 
     }
 
@@ -24,12 +24,11 @@ class Modal{
         }
     }
 
-    // metoda iterująca po tablicy/NodeList (btnNL) elementów i przypisująca im funkcje obsługi zdarzenia
+    // metoda iterująca po tablicy/NodeList (btnNL) elementów i przypisująca im funkcje obsługi zdarzenia (callback)
     addEventListenerAll(buttonsSelector, eventType = 'click', callbackFunc){
         const buttonsSelectedArr = [...document.querySelectorAll(buttonsSelector)]; //tablica obiektów w DOM (button/a) wybranych za pomocą selektora
         buttonsSelectedArr.forEach(btn => callbackFunc(btn, eventType)); //dla każdego elementu w tablicy dodanie jako obsugi zdarzenia eventType (np. click) funkcji callbackFunc
     }
-
 
 }
 
