@@ -25,6 +25,7 @@
 @import "modules/_seeCS";
 @import "modules/_btn";
 @import "modules/_label";
+@import "modules/_modal";
 
 /* dane kontaktowe w stopce */
 @import "modules/_contact";

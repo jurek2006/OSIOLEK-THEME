@@ -36,8 +36,8 @@
   <img class="site-header__logo" src="assets/images/logo_kino_odra.png" alt="Logo Kina Odra w Oławie">
   <nav class="primary-nav">
     <ul>
-      <li class="primary-nav__element"><a href="#">Repertuar</a></li>
-      <li class="primary-nav__element"><a href="#">Filmy</a></li>
+      <li class="primary-nav__element"><a class="btn--openModal" href="#">Repertuar</a></li> <!-- TESTOWE -->
+      <li class="primary-nav__element"><a class="btn--openModal" data-open-modal=".nieMAtakiej" href="#">Filmy</a></li> <!-- TESTOWE -->
       <li class="primary-nav__element"><a href="#">Promocje</a></li>
       <li class="primary-nav__element"><a href="#">Cennik</a></li>
       <li class="primary-nav__element"><a href="#">Kontakt</a></li>
@@ -356,7 +356,8 @@
 
   </div>
 
-  <button class="btn btn--light btn--centered btn--readMore">Cennik - więcej informacji</button>
+  <button class="btn btn--light btn--centered btn--readMore btn--openModal" data-open-modal="#priceList-more" >Cennik - więcej informacji</button>
+  <!-- atrybut data-open-modal określa selektor dla modala pokazywanego po kliknięciu przycisku -->
 
 </section>
 
@@ -386,6 +387,12 @@
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2513.999571049502!2d17.298153316280096!3d50.94222097954611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4710279ff8e3a67f%3A0xf09a185e14c3eab7!2sKino+Odra!5e0!3m2!1spl!2spl!4v1506967499588" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
   </div>  
 </footer>
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="priceList-more">
+  <h1>Modal test</h1>
+  Modal
 </div>
 
 <!-- build:js assets/scripts/App.js -->
