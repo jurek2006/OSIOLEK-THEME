@@ -5,6 +5,10 @@
 	list-style: none;
 }
 
+html{
+
+}
+
 body, button{
 	font-family: Lato;
 }
@@ -20,6 +24,16 @@ h2{
 h3{
 	font-size: 1.15rem;
 	font-weight: 600;
+}
+
+p{
+	font-size: 1.15rem;
+}
+
+em{
+	font-weight: 900;
+	font-style: normal;
+	color: $emCol;
 }
 
 /* dodanie znaku-symbolu telefonu do wszystkich linków telefonicznych (tel) */

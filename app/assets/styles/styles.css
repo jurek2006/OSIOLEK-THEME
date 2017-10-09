@@ -1,7 +1,7 @@
 @import "normalize.css";
+@import "base/_colors";
 @import "base/_global";
 @import "base/_mixins";
-@import "base/_colors";
 @import "base/_system-font";
 
 /*moduł do testowania */
@@ -38,6 +38,9 @@
 
 /* moduł responsywnej tabeli na cennik */
 @import "modules/_rTable";
+
+/* moduł dla zawartości z większą ilością tekstu */
+@import "modules/_textContent";
 
 /*moduł do testowania */
 @import "modules/_test";

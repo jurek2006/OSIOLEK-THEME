@@ -7,10 +7,16 @@
 
 	&__title{
 		font-weight: 600;
+		margin: 0;
+	}
+
+	&__info{
+		font-size: 1rem;
 	}
 
 	&__projectionsHeading{
 		font-size: 1rem;
+		margin: 0;
 	}
 
 	&__poster{
