@@ -28,6 +28,9 @@ class Modal{
             // przypadek kliknięcia "tła" modala
             this.addOutsideModalEventListener(modalObj);
 
+            // przypadek kliknięcia w klawisz ESC
+            this.addEscModalEventListener(modalObj);
+
         } else {
             console.log(`Modal.js - Nie można przypisać eventListenera ${eventType} dla "${btn.innerText}" ponieważ nie istnieje dla niego odpowiedni modal`);
         }
@@ -64,6 +67,21 @@ class Modal{
                 }
             });
     }
+
+    // metoda obsługi przypadku przyciśnięcia przycisku Esc, kiedy modal jest otwarty 
+    // przypisuje eventListener w którego obsłudze jest sprawdzane, czy kliknięto właśnie Esc
+    // jeśli tak, to modal jest ukrywany
+    addEscModalEventListener(modalObj){
+
+        // dodanie obsługi przyciśnięcia (keyup) klawisza, które sprawdza, czy jest to Esc (czy e.keyCode === 27)
+        document.addEventListener('keyup', (e) => {
+            if(e.keyCode === 27){
+                // użycie metody hideModal ukrywającej modal z przekazaniem jako this modalObj (aktualnego obiektu modala)
+                this.hideModal.bind(modalObj)();
+            }
+        });
+    }
+
 }
 
 export default Modal;
