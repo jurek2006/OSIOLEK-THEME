@@ -37,7 +37,7 @@
   <nav class="primary-nav">
     <ul>
       <li class="primary-nav__element"><a class="btn--openModal" href="#">Repertuar</a></li> <!-- TESTOWE -->
-      <li class="primary-nav__element"><a class="btn--openModal" data-open-modal=".nieMAtakiej" href="#">Filmy</a></li> <!-- TESTOWE -->
+      <li class="primary-nav__element"><a class="btn--openModal" data-open-modal="#nieMAtakiej" href="#">Filmy</a></li> <!-- TESTOWE -->
       <li class="primary-nav__element"><a href="#">Promocje</a></li>
       <li class="primary-nav__element"><a href="#">Cennik</a></li>
       <li class="primary-nav__element"><a href="#">Kontakt</a></li>
@@ -392,11 +392,24 @@
 <!-- MODAL -->
 <div class="modal" id="priceList-more">
   <section class="modal__content">
-      <span class="modal__closeBtn">&times;</span>
-      <h1>Modal test</h1>
+    <header class="modal__header group">
+        <h1 class="modal__heading">Modal test</h1>
+        <button class="modal__closeBtn btn btn--no-border">&times;</button>
+    </header>
       <p>Modal - treść</p>
   </section>
 </div>
+
+<!-- MODAL TESTOWY #nieMAtakiej do usunięcia -->
+<div class="modal" id="nieMAtakiej">
+    <section class="modal__content">
+      <header class="modal__header group">
+          <h1 class="modal__heading">Modal, którego nie ma</h1>
+          <button class="modal__closeBtn btn btn--no-border">&times;</button>
+      </header>
+        <p>Modal - treść</p>
+    </section>
+  </div>
 
 <!-- build:js assets/scripts/App.js -->
 <script src="/temp/scripts/App.js"></script>

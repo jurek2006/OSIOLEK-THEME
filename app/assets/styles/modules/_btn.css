@@ -8,6 +8,17 @@
         color: $btnLightCol-hover;
     }
 
+    &--no-border{
+        border: none;
+    }
+
+    &--centered{
+        position: relative;
+        /* wyśrodkowanie na stronie: */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
     &--aboutMovie{
         background-color: $btnAboutMovieRGBA;
         box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
@@ -29,13 +40,6 @@
 
     }
 
-    &--centered{
-        position: relative;
-        /* wyśrodkowanie na stronie: */
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
     &--readMore{
         padding: 0.5em;
         font-weight: 300;
@@ -48,6 +52,8 @@
         text-decoration: none;
         margin: 1em auto;
     }
+
+
 
     /* FLEXBOX */
     .flexbox &--projection{
