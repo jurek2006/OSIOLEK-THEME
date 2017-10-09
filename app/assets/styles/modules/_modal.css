@@ -14,20 +14,41 @@
         display: block;
     }
 
+    &__content{
+        margin: 5% 20px;
+        padding: 20px auto;
+        background-color: $modalContentBg;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+        /* animacja pojawiania się okna */
+        animation: modalopen;
+        animation-duration: 0.5s;
+    }
+
     &__header{
         position: relative;
-        background-color: red;
-        margin: 0;
+        color: $modalHeaderCol;
+        background-color: $modalHeaderBg;
+        padding: 15px;
+
+        h1{
+            margin: 0;
+            padding: 0;
+        }
     }
 
     &__heading{
         float: left;
     }
 
+    &__body{
+        padding: 20px;
+    }
+
     &__closeBtn{
         color: $modalCloseBtnCol;
         float: right;
-        font-size: 2rem;
+        font-size: 3rem;
 
         &:hover, &:focus{
             color: $modalCloseBtnHoverCol;
@@ -36,10 +57,11 @@
         }
     }
 
-    &__content{
-        margin: 5% 20px;
-        padding: 20px;
-        background-color: $modalContentBg;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    }
+
+}
+
+/* animacja pojawiania się okna */
+@keyframes modalopen{
+    from{opacity: 0}
+    to{opacity: 1}
 }

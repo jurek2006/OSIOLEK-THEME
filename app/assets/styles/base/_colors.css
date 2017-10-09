@@ -54,9 +54,11 @@ $contactAddressBg: $pomaranczowy;
 
 /* modal */
 $modalBgRGBA: rgba($szarySredni, 0.8);
+$modalHeaderCol: $bialy;
+$modalHeaderBg: $pomaranczowy;
 $modalContentBg: $szaryJasny;
-$modalCloseBtnHoverCol: $pomaranczowy;
-$modalCloseBtnCol: $szaryCiemny;
+$modalCloseBtnHoverCol: $szaryCiemny;
+$modalCloseBtnCol: $bialy;
 
 
 
