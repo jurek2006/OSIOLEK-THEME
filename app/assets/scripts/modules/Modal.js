@@ -29,7 +29,7 @@ class Modal{
             this.addOutsideModalEventListener(modalObj);
 
         } else {
-            console.log(`Modal.js - Nie można przypisać eventListenera ${eventType} dla ${btn.innerText} ponieważ nie istnieje dla niego odpowiedni modal`);
+            console.log(`Modal.js - Nie można przypisać eventListenera ${eventType} dla "${btn.innerText}" ponieważ nie istnieje dla niego odpowiedni modal`);
         }
     }
 
