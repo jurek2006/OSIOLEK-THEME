@@ -45,4 +45,19 @@
 /* fallback dla braku obsługi flexbox */
 .no-flexbox .site-header{
 	display: block;
+
+	/* przycisk pokazywania/ukrywania menu (hamburger) - tylko dla ekranów mniejszych niż medium */
+	&__showMenuBtn{
+		float: right;
+		margin: 20px 0;
+	}
+
+	/* element w którym znajduje się primary nav */
+	&__primary-nav{
+		width: 100%;
+
+		@mixin atMedium{
+			width: auto;
+		}
+	}
 }
