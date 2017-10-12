@@ -22,7 +22,6 @@
 
 	/* przycisk pokazywania/ukrywania menu (hamburger) - tylko dla ekranów mniejszych niż medium */
 	&__showMenuBtn{
-		display: block;
 
 		@mixin atMedium{
 			display: none;
@@ -51,6 +50,13 @@
 		float: right;
 		margin: 20px 0;
 	}
+
+	/* clearfix - żeby rozwinięta nawigacja nie "wyjeżdżała" poza pasek */
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	  }
 
 	/* element w którym znajduje się primary nav */
 	&__primary-nav{

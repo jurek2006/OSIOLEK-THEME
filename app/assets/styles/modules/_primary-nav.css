@@ -1,11 +1,17 @@
 .primary-nav{
-	/* border: 1px solid red; */
 	margin: 20px 0;
-	display: block;
 	font-size: 1.2rem;
 
+	/* nawigacja ukryta dla wąskich ekranów */
+	display: none;
+
+	&--is-visible{
+		display: block;
+	}
+
 	@mixin atMedium{
-		font-size: 1.2rem;
+		/* nawigacja widoczna dla szerszych ekranów */
+		display: block;
 	}
 
 	ul{
@@ -43,5 +49,6 @@
 /* fallback dla przeglądarek bez flexbox */
 .no-flexbox .primary-nav{
 	float: right;
+	background-color: $headerBg;
 	margin-top: 28px;
 }
