@@ -14,7 +14,7 @@ class GenerateSchedule{
 	// wypełnia poszczególne dni w repertuarze zdefiniowanymi projekcjami
 
 		// znajdź wszystkie elementy (article.movieSchedule__ofDay) dni repertuaru
-		const daySchedulesArr = document.querySelectorAll('.movieSchedule__ofDay');
+		const daySchedulesArr = [...document.querySelectorAll('.movieSchedule__ofDay')];
 
 		// dla każdego dnia w repertuarze (wg zdefiniowanych sekcji w index.html)
 		daySchedulesArr.forEach(function(currDayEl){
@@ -37,9 +37,14 @@ class GenerateSchedule{
 						currMovie = scheduleOfDay[currMovie];
 
 						// utworzenie etykiety dnia z daty (day) w formacie 1 wrz
-						let dayLabel = new Date(day);
-						let formatter = new Intl.DateTimeFormat("pl", { month: "short", day: 'numeric' });
-						dayLabel = formatter.format(dayLabel);
+						let dayLabel = 'xxx';
+						try{
+							dayLabel = new Date(day);
+							let formatter = new Intl.DateTimeFormat("pl", { month: "short", day: 'numeric' });
+							dayLabel = formatter.format(dayLabel);
+						} catch(err){
+							console.error(err);
+						}
 
 						// template movieBox - repertuaru konkretnego filmu w danym dniu
 						let movieBoxTemplate = '<section class="movieBox group"> <img class="movieBox__poster" src="%%image%%" alt="Plakat filmu - %%title%%."> <h2 class="movieBox__title">%%title%%</h2> <button class="movieBox__aboutBtn btn btn--light btn--aboutMovie">O filmie</button>  %%movieLabels%% 	<p class="movieBox__info movieBox__info--runtime"><span class="movieBox__lbl visually-hidden">Czas trwania: </span>%%runtime%%</p> <p class="movieBox__info movieBox__info--ageCat"><span class="movieBox__lbl visually-hidden">Kategoria wiekowa: </span>%%ageCat%%</p> <p class="movieBox__info movieBox__info--genre"><span class="movieBox__lbl visually-hidden">Gatunek: </span>%%genre%%</p> <section class="movieBox__projections"> <header><h3 class="movieBox__projectionsHeading">Seanse w dniu %%currDayLabel%%:</h3></header> <span class="movieBox__pickProjectionLbl movieBox__pickProjectionLbl--hidden">Wybierz seans:</span> <ul> %%currDayProjections%% </ul> <button href="#" class="btn btn--light movieBox__seeAllBtn">Zobacz wszystkie seanse</button> </section></section>';
