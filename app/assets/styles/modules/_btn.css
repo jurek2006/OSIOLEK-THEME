@@ -8,6 +8,12 @@
         color: $btnLightCol-hover;
     }
 
+    &--showMenu{
+    /* przycisk "hamburger" pokazywany na małych ekranach do pokazywania menu */
+        color: #ffffff; 
+        padding: 10px;
+    }
+
     &--aboutMovie{
         background-color: $btnAboutMovieRGBA;
         box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
@@ -48,6 +54,8 @@
         text-decoration: none;
         margin: 1em auto;
     }
+
+
 
     /* FLEXBOX */
     .flexbox &--projection{

@@ -1,23 +1,48 @@
 .site-header{
-	grid-area: header;
 
+	width: 100%;
 	background-color: $headerBg;
 	color: $headerCol;
-	border: 1px solid $headerBg; /* TESTOWE */
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
+	/* flexbox */
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+
+	/* logo strony */
 	&__logo{
-		height: 100px;
-		float: left;
+		height: 75px;
+
+		@mixin atMedium{
+			height: 100px;
+		}
 	}
 
-	&__heading--initUkryte{
-		display: none;
+	/* przycisk pokazywania/ukrywania menu (hamburger) - tylko dla ekranów mniejszych niż medium */
+	&__showMenuBtn{
+		display: block;
+
+		@mixin atMedium{
+			display: none;
+		}
 	}
 
-	.flexbox &{
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+	/* element w którym znajduje się primary nav */
+	&__primary-nav{
+		/* dla wąskich ekranów primary-nav musi się pokazywać "w nowej linii" na całą szerokość ekranu */
+		flex-basis: 100%;
+
+		/* dla szerszych ekranów primary-nav pokazuje się obok loga */
+		@mixin atMedium{
+			flex-basis: auto;
+		}
 	}
+
+}
+
+/* fallback dla braku obsługi flexbox */
+.no-flexbox .site-header{
+	display: block;
 }

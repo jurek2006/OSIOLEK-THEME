@@ -1,29 +1,30 @@
 .primary-nav{
-	
-	grid-area: navigation;
-	font-size: 110%;
+	/* border: 1px solid red; */
+	margin: 20px 0;
+	display: block;
+	font-size: 1.2rem;
+
+	@mixin atMedium{
+		font-size: 1.2rem;
+	}
 
 	ul{
 		list-style: none;
 		padding: 0;
-		/*border: 1px solid $primaryNavCol; /* TESTOWE */
-
-		.flexbox &{
-			display: flex;
-		}
 		
 		li {
-			/*border: 1px solid $primaryNavCol; /* TESTOWE */
-			float: left;
-			/*margin-left: 1.3em;*/
+
+			@mixin atMedium{
+				float: left;
+			}
 		}
 	}
 
 	&__element a{
-		padding: 0.5em;
-		color: $primaryNavCol; 
-		text-decoration: none;
 		display: block;
+		padding: 0.6em 0.5em; 
+		text-decoration: none;
+		color: $primaryNavCol;
 
 		&:hover{
 			color: $headerBg;
@@ -37,4 +38,10 @@
 	}
 
 
+}
+
+/* fallback dla przeglądarek bez flexbox */
+.no-flexbox .primary-nav{
+	float: right;
+	margin-top: 28px;
 }
