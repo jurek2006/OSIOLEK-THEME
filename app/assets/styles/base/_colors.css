@@ -2,8 +2,15 @@
 $szaryCiemny: #333;
 $szarySredni: #B3B3B3;
 $szaryJasny: #f6f6f6;
-$pomaranczowy: #EA7217;
+/* $pomaranczowy: #EA7217; */
 $bialy: #ffffff;
+
+/* Kolory Bartka */
+$prawieBialy: #eeeeee;
+$szaryBardzoJasny: #f2f2f2;
+$prawieCzarny: #222222;
+$czarny: #000000;
+$pomaranczowy: #ce352c;
 
 /* Użycie kolorów */
 
@@ -18,6 +25,7 @@ $btnNavBg: $pomaranczowy;
 
 /* movieBox */
 $movieBoxBg: $bialy;
+$movieBoxSeeAllBtnBorder: #cecece;
 
 /* btn */
 $btnBorder: $szarySredni;
@@ -27,11 +35,22 @@ $btnBorder: $szarySredni;
     $btnLightCol-hover: $bialy;
 
     /* btn--aboutMovie */
-    $btnAboutMovieRGBA: $bialy;
+    $btnAboutMovieBg: $prawieCzarny;
+    $btnAboutMovieBg_hov: $pomaranczowy;
+    $btnAboutMovieCol: $bialy;
+
+    /* btn--readMore */
+    $btnReadMoreCol: $bialy;
+    $btnReadMoreBg: $pomaranczowy;
+    $btnReadMoreBg_hov: $prawieCzarny;
 
     /* btn--seeCS */
-    $btnSeeCSCol: $bialy;
-
+    $btnSeeCSCol: $czarny;
+    $btnSeeCSCol_hov: $bialy;
+    $btnSeeCSBg: $szaryJasny;
+    $btnSeeCSBg_hov: $prawieCzarny;
+    
+    
 
 
 /* label */
@@ -40,7 +59,7 @@ $labelCol: $bialy;
 
 /* rTable */
 $rTableBgCol: $szarySredni;
-$rTableBorCol: $bialy;
+$rTableBorCol: $prawieBialy;
 
 /* seeCS */
 $seeCSBg: $pomaranczowy;

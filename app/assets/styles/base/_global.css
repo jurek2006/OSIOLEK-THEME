@@ -5,6 +5,8 @@
 	list-style: none;
 }
 
+/* założenie, że standardowo 1rem == 16px */
+
 body, button{
 	font-family: Lato;
 }

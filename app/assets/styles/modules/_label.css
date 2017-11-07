@@ -1,10 +1,16 @@
 .label{
     background-color: $labelBg;
     color: $labelCol;
-    padding: 3px;
+
+    text-align: center;
+    padding: 5px;
     display: block;
 
+    &--movie{
+    /* label dla filmu w movieBox (repertuarze dnia) */
+    }
+
     &--movies{
-        text-align: center;
+        /* label dla filmu w movies (sliderze filmów) */
     }
 }

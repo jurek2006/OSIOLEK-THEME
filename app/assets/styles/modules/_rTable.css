@@ -10,10 +10,14 @@
 
         /* wyśrodkowanie h4 w pionie */
         h4.priceList{
-                /* wyśrodkowanie w komórce */
-                position: relative;
-                top: 50%;
-                transform: translateY(-50%);
+            font-weight:400;
+            text-transform:uppercase;
+            font-size:  0.875rem;
+
+            /* wyśrodkowanie w komórce */
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
         }
     
         &__cell{
@@ -34,8 +38,8 @@
             box-sizing: border-box;
             flex-grow: 1;
             border: 1px solid $rTableBorCol;
-            background-color: $rTableBgCol;
-            padding: .3rem;
+            background: none;
+            padding: 1.25rem;
     
             &--label{
                 width: 50%;

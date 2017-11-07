@@ -47,7 +47,7 @@ class GenerateSchedule{
 						}
 
 						// template movieBox - repertuaru konkretnego filmu w danym dniu
-						let movieBoxTemplate = '<section class="movieBox group"> <img class="movieBox__poster" src="%%image%%" alt="Plakat filmu - %%title%%."> <h2 class="movieBox__title">%%title%%</h2> <button class="movieBox__aboutBtn btn btn--light btn--aboutMovie">O filmie</button>  %%movieLabels%% 	<p class="movieBox__info movieBox__info--runtime"><span class="movieBox__lbl visually-hidden">Czas trwania: </span>%%runtime%%</p> <p class="movieBox__info movieBox__info--ageCat"><span class="movieBox__lbl visually-hidden">Kategoria wiekowa: </span>%%ageCat%%</p> <p class="movieBox__info movieBox__info--genre"><span class="movieBox__lbl visually-hidden">Gatunek: </span>%%genre%%</p> <section class="movieBox__projections"> <header><h3 class="movieBox__projectionsHeading">Seanse w dniu %%currDayLabel%%:</h3></header> <span class="movieBox__pickProjectionLbl movieBox__pickProjectionLbl--hidden">Wybierz seans:</span> <ul> %%currDayProjections%% </ul> <button href="#" class="btn btn--light movieBox__seeAllBtn">Zobacz wszystkie seanse</button> </section></section>';
+						let movieBoxTemplate = '<section class="movieBox group"> <img class="movieBox__poster" src="%%image%%" alt="Plakat filmu - %%title%%."> <h2 class="movieBox__title">%%title%%</h2> <button class="movieBox__aboutBtn btn btn--light btn--aboutMovie btn--rounded">O filmie</button>  %%movieLabels%% 	<p class="movieBox__info movieBox__info--runtime"><span class="movieBox__lbl visually-hidden">Czas trwania: </span>%%runtime%%</p> <p class="movieBox__info movieBox__info--ageCat"><span class="movieBox__lbl visually-hidden">Kategoria wiekowa: </span>%%ageCat%%</p> <p class="movieBox__info movieBox__info--genre"><span class="movieBox__lbl visually-hidden">Gatunek: </span>%%genre%%</p> <section class="movieBox__projections"> <header><h3 class="movieBox__projectionsHeading">Seanse w dniu %%currDayLabel%%:</h3></header> <span class="movieBox__pickProjectionLbl movieBox__pickProjectionLbl--hidden">Wybierz seans:</span> <ul> %%currDayProjections%% </ul> <button href="#" class="btn btn--light movieBox__seeAllBtn">Zobacz wszystkie seanse</button> </section></section>';
 
 						// wypełnienie powyższego template danymi filmu
 						movieBoxTemplate = movieBoxTemplate.replace('%%title%%', currMovie.title);
@@ -83,7 +83,7 @@ class GenerateSchedule{
 						// iteracja po wszystkich projekcjach filmu w danym dniu
 						// (przykład obiektu Movie: anabelle.projections.2017-09-01 - iterujemy po obiektach tego obiektu)
 						for (let currProjectionHour in currMovie.projections[day]) {
-							let generatedBtn = '<li> <button class="btn btn--light btn--projection"> %%specProjLabels%% <span class="btn--projection__hour">%%projHour%%</span> <span class="btn--projection__info">%%ifProj3d%% %%projLangVer%%</span>   </button></li>';
+							let generatedBtn = '<li> <button class="btn btn--light btn--projection btn--rounded"> %%specProjLabels%% <span class="btn--projection__hour">%%projHour%%</span> <span class="btn--projection__info">%%ifProj3d%% %%projLangVer%%</span>   </button></li>';
 
 							// skip loop if the currMovieerty is from prototype
 							if(!currMovie.projections[day].hasOwnProperty(currProjectionHour)) continue;

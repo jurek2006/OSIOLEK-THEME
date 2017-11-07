@@ -9,7 +9,7 @@
 
 @import "modules/_group";
 @import "modules/_visually-hidden";
-
+@import "modules/_btn";
 @import "modules/_body";
 @import "modules/_pageContainer";
 @import "modules/_wrapper";
@@ -23,7 +23,7 @@
 @import "modules/_primary-nav";
 @import "modules/_movieBox";
 @import "modules/_seeCS";
-@import "modules/_btn";
+
 @import "modules/_label";
 
 /* dane kontaktowe w stopce */
