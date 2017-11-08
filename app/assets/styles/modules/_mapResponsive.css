@@ -1,9 +1,15 @@
 .mapResponsive{
+    max-height: 300px;
+    overflow:hidden;
+}
+
+.mapResponsive-inner{
     overflow:hidden;
     padding-bottom:56.25%;
     position:relative;
     height:0;
     min-width: 170px;
+
 
     iframe{
         left:0;

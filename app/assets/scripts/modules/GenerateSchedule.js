@@ -159,7 +159,7 @@ class Schedule{
 	generateScheduleData(){
 		// -----------------------------------------------------------------
 		// TUTAJ DOPISUJEMY PROJEKCJE - DANE TESTOWE
-		this.addProjection('2017-09-01', 'anabelle', '12:00', false, 'dubbing');
+		this.addProjection('2017-09-01', 'anabelle', '12:00', false, 'dubbing', ['seans kinomana']);
 		this.addProjection('2017-09-01', 'bodyguard', '15:00', false, 'dubbing');
 		this.addProjection('2017-09-01', 'bodyguard', '20:00', true, 'napisy');
 		this.addProjection('2017-09-01', 'o-czym-szumi-las', '18:00', false, 'dubbing');

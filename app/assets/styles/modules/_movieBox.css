@@ -4,6 +4,7 @@
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 	flex: 1;
 	padding-right: 20px;
+	overflow: hidden;
 
 	&__title{
 		font-size: 1.25rem;
@@ -28,6 +29,17 @@
 
 	&__seeAllBtn{ 
 		/* opacity: 0;  */
+		margin: 10px -20px -10px -20px;
+		padding: 10px 0;
+		text-transform:uppercase;
+		font-size: 0.93rem;
+		letter-spacing:1px;
+		border: none;
+		border-top:1px solid $movieBoxSeeAllBtnBorder;
+
+		&:hover{
+			background-color: $movieBoxSeeAllBtnBg;
+		}
 	}
 	&__seeAllBtn:focus{ opacity: 1;	}
 	&:hover &__seeAllBtn{ opacity: 1; }

@@ -1,6 +1,7 @@
 .btn{
     border: 1px solid $btnBorder;
     background-color: transparent;
+    transition:0.3s;
     
     &--light:hover, &--light:focus{
         background-color: $btnLightBg-hover;
@@ -19,7 +20,6 @@
         text-transform:uppercase;
 		font-size: 0.875rem;
 		letter-spacing: 1px;
-        transition: 0.3s;
         
         &:hover{
             background-color: $btnAboutMovieBg_hov;
@@ -27,7 +27,6 @@
     }
 
     &--projection{
-        transition:0.3s;
         border:1px solid $prawieBialy;
 
         &__hour{
@@ -56,7 +55,7 @@
     &--readMore{
         color: $btnReadMoreCol;
         background-color: $btnReadMoreBg;
-        padding:20px;
+        padding:20px 30px;
         font-weight: 300;
         font-size: 1.3rem;
         margin-bottom:60px;
@@ -64,7 +63,6 @@
         text-transform:uppercase;
         font-size: 0.93rem;
         border: 0;
-        transition:0.3s;
 
         &:hover{
             background-color: $btnReadMoreBg_hov;
@@ -72,16 +70,11 @@
     }
 
     &--seeCS{
-        /* display: block; */
         color: $btnSeeCSCol;
         background-color: $btnSeeCSBg;
         text-decoration: none;
         box-shadow:none;
-        padding-left:30px;
-        padding-right:30px;
-        padding-top:15px;
-        padding-bottom:15px;
-        
+        margin: 40px 0;
 
         &:hover{
             color: $btnSeeCSCol_hov;

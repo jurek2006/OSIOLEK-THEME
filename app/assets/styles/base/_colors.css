@@ -10,7 +10,7 @@ $prawieBialy: #eeeeee;
 $szaryBardzoJasny: #f2f2f2;
 $prawieCzarny: #222222;
 $czarny: #000000;
-$pomaranczowy: #ce352c;
+$pomaranczowy: #eb6420; /*kolor z loga KINO ODRA*/
 
 /* Użycie kolorów */
 
@@ -25,7 +25,8 @@ $btnNavBg: $pomaranczowy;
 
 /* movieBox */
 $movieBoxBg: $bialy;
-$movieBoxSeeAllBtnBorder: #cecece;
+$movieBoxSeeAllBtnBorder: $prawieBialy;
+$movieBoxSeeAllBtnBg: $pomaranczowy;
 
 /* btn */
 $btnBorder: $szarySredni;
