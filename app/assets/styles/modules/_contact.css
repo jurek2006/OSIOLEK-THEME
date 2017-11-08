@@ -25,7 +25,7 @@
             }
         }
 
-        &--phone{
+        &--phone-mail{
             flex-basis: calc(75% - 5px);
             background-color: $contactPhoneBg;
             color: $contactPhoneCol;
@@ -33,17 +33,19 @@
         }
     }
 
-    &__phone{
-        /* kolor odnośnika telefonu */
-        color: $contactPhoneCol;
+    &__mail, &__phone{
         display: block;
-        text-align: center;
-        font-weight: 900;
+        /* kolor odnośników telefonu i maila */
+        color: $contactPhoneCol;
         text-decoration-line: none;
-        /* font-size: 1.5rem; */
+    }
+
+    &__phone{
+        
+        font-weight: 900;
 
         @mixin atTiny{
-            font-size: 1.5rem;
+            font-size: 1.15rem;
         }
 
         @mixin atSmall{
@@ -53,6 +55,17 @@
         @mixin atMedium{
             font-size: 4rem;
         }
+    }
+
+    &__mail{
+        @mixin atTiny{
+            font-size: 1.15rem;
+        }
+
+        @mixin atSmall{
+            font-size: 1.7rem;
+        }
+
     }
 }
 
