@@ -9,7 +9,7 @@
   <!-- 
   <meta name="keywords" content="">
   <meta name="description" content=""> -->
-  <link rel="stylesheet" href="assets/styles/styles-292eea30a8.css"/>
+  <link rel="stylesheet" href="assets/styles/styles-7b019e2565.css"/>
   <script src="assets/scripts/Vendor-0c9e2b6f12.js"></script>
 
   <!-- PROWIZORYCZNE DODANIE KARUZELI SLICK -->
@@ -42,7 +42,7 @@
   </nav>
 </header> 
 
-<section class="movieSchedule wrapper">
+<section class="movieSchedule wrapper pageSection pageSection--noTopMargin">
   <h1>Repertuar kina</h1>
 
   <!-- dayPicker -->
@@ -159,7 +159,7 @@
 
 </section>
 
-<section class="movies wrapper">
+<section class="movies wrapper pageSection">
     <!-- Aktualnie i wkrótce w kinie -->
     <h1>Filmy</h1>
     <div class="slickCarousel slickCarousel--movies">
@@ -176,7 +176,7 @@
     </div>
   </section>
 
-<section class="promotions wrapper">
+<section class="promotions wrapper pageSection">
   <h1>Promocje kinowe</h1>
 
   <div class="fGallery group">
@@ -197,7 +197,7 @@
   
 </section>
 
-<section class="priceList wrapper">
+<section class="priceList wrapper pageSection pageSection--noBottomMargin">
   <h1>Cennik</h1>
 
   <div class="priceList__Tab">
@@ -352,15 +352,15 @@
 
   </div>
 
-  <button class="btn btn--light btn--readMore">Cennik - więcej informacji</button>
+  <button class="btn btn--light btn--centered btn--readMore btn--rounded">Cennik - więcej informacji</button>
 
 </section>
 
 <aside class="seeCS">
-  <a href="#" class="btn btn--readMore btn--seeCS">Zobacz wydarzenia kulturalne Centrum Sztuki</a>
+  <button class="btn btn--readMore btn--rounded btn--seeCS">Zobacz wydarzenia kulturalne Centrum Sztuki w Oławie</a>
 </aside>
 
-<footer class="footer wrapper">
+<footer class="footer wrapper pageSection">
   <h1>Kontakt</h1>
 
   <div class="contact">
@@ -370,20 +370,24 @@
         <p>ul. Młyńska 3</p>
         <p>55-200 Oława</p>
     </div>
-    <div class="contact__tab contact__tab--phone">
+    <div class="contact__tab contact__tab--phone-mail">
         <h3>Kasa biletowa</h3>
         <a class="contact__phone" href="tel:+48717351570">(71) 735 15 70</a>
+        <a class="contact__mail" href="mailto:bilety@kultura.olawa.pl">bilety@kultura.olawa.pl</a>
     </div>
   </div>
   
-  
-  <div class="mapResponsive">
+<div class="mapResponsive"> 
+<!-- zewnętrzny div mapResponsive odpowiada za "docięcie" elementu na stronie -->
+<!-- wewnętrzny (inner) za responsywność mapy -->
+  <div class="mapResponsive-inner">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2513.999571049502!2d17.298153316280096!3d50.94222097954611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4710279ff8e3a67f%3A0xf09a185e14c3eab7!2sKino+Odra!5e0!3m2!1spl!2spl!4v1506967499588" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-  </div>  
+  </div>
+</div> 
 </footer>
 </div>
 
-<script src="assets/scripts/App-1e3130624f.js"></script>
+<script src="assets/scripts/App-4a38b21055.js"></script>
 <!-- PROWIZORYCZNE DODANIE KARUZELI SLICK -->
 <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick.min.js"></script>
 
