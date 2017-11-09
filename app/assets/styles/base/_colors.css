@@ -35,6 +35,13 @@ $btnBorder: $szarySredni;
     $btnLightBg-hover: $szaryCiemny;
     $btnLightCol-hover: $bialy;
 
+    /* btn--projection */
+    $btnProjectionBorderRGBA: rgba($szarySredni, 0.3);
+    $btnProjectionLblBG: $pomaranczowy;
+    $btnProjectionLblCol: $bialy;
+    $btnProjectionLblNoneBG: $szaryJasny;
+    $btnProjectionLblNoneCol: $szaryCiemny;
+
     /* btn--aboutMovie */
     $btnAboutMovieBg: $prawieCzarny;
     $btnAboutMovieBg_hov: $pomaranczowy;

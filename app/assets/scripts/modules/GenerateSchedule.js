@@ -83,7 +83,14 @@ class GenerateSchedule{
 						// iteracja po wszystkich projekcjach filmu w danym dniu
 						// (przykład obiektu Movie: anabelle.projections.2017-09-01 - iterujemy po obiektach tego obiektu)
 						for (let currProjectionHour in currMovie.projections[day]) {
-							let generatedBtn = '<li> <button class="btn btn--light btn--projection btn--rounded"> %%specProjLabels%% <span class="btn--projection__hour">%%projHour%%</span> <span class="btn--projection__info">%%ifProj3d%% %%projLangVer%%</span>   </button></li>';
+							let generatedBtn = 
+							`<li>
+								<button class="btn btn--light btn--projection"> 
+									%%specProjLabels%%
+									<span class="btn--projection__hour">%%projHour%%</span> 
+									<span class="btn--projection__info">%%ifProj3d%% %%projLangVer%%</span>
+								</button>
+							</li>`;
 
 							// skip loop if the currMovieerty is from prototype
 							if(!currMovie.projections[day].hasOwnProperty(currProjectionHour)) continue;
@@ -103,7 +110,7 @@ class GenerateSchedule{
 									return `<span class="btn--projection__lbl">${currProjectionData.specProjLabelArr[0]}</span>`;
 								} else {
 									// jeśli nie ma żadnej etykiety dla projekcji to dodawany jest "placeholder" (ukrywany później stylami, ale tak, żeby zajmował miejsce)
-									return '<span class="btn--projection__noLbl">projekcja</span>';
+									return '<span class="btn--projection__lbl btn--projection__lbl--none">Kup bilet</span>';
 								}
 
 							});

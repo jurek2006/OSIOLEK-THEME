@@ -27,15 +27,12 @@
     }
 
     &--projection{
-        border:1px solid $prawieBialy;
+        border: 1px solid $btnProjectionBorderRGBA;
 
         &__hour{
             font-size: 1.5rem;
             margin-top: 10px;
-        }
-
-        &__noLbl{
-            visibility: hidden;
+            display: block;
         }
 
         &__info{
@@ -43,6 +40,18 @@
             margin-bottom:10px;
         }
 
+        &__lbl{
+        /* etykieta projekcji */
+            color: $btnProjectionLblCol;
+            background-color: $btnProjectionLblBG;
+            font-size: 0.875rem;
+
+            &--none{
+            /* gdy nie ma etykiety projekcji */
+            background-color: $btnProjectionLblNoneBG;
+            color: $btnProjectionLblNoneCol;
+            }
+        }
     }
 
     &--centered{
@@ -84,8 +93,9 @@
 
     /* FLEXBOX */
     .flexbox &--projection{
-        width: 100%;
-        height: 100%;
+        width: calc(100% - 5px);
+        height: calc(100% - 5px);
+        margin-bottom: 5px;
         display: flex;
         flex-direction: column;
         align-items: stretch;
