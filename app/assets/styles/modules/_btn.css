@@ -119,7 +119,7 @@ Oraz dwie dodatkowe klasy przycisków (muszą być użyte jako dodatkowe do któ
         @mixin lightBorder;
         @mixin borderOnlyTop;
         
-        margin: 10px -20px -10px -20px;
+        margin: 10px -20px 0px -20px;
 		padding: 10px 0;
 		text-transform:uppercase;
 		font-size: 0.93rem;

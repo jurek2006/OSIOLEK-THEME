@@ -53,21 +53,24 @@ class GenerateSchedule{
 							<h2 class="movieBox__title">%%title%%</h2> 
 							<button class="movieBox__aboutBtn btn btn--dark btn--hovColor btn--rounded btn--aboutMovie">O filmie</button>  
 							%%movieLabels%% 	
-							<p class="movieBox__info movieBox__info--runtime">
-								<span class="movieBox__lbl visually-hidden">Czas trwania: </span>%%runtime%%
-							</p> 
-							<p class="movieBox__info movieBox__info--ageCat">
-								<span class="movieBox__lbl visually-hidden">Kategoria wiekowa: </span>%%ageCat%%
-							</p> 
-							<p class="movieBox__info movieBox__info--genre">
-								<span class="movieBox__lbl visually-hidden">Gatunek: </span>%%genre%%
-							</p> 
+							<div class="movieBox__infoBox">
+								<p class="movieBox__info movieBox__info--runtime">
+									<span class="movieBox__lbl visually-hidden">Czas trwania: </span>%%runtime%% |
+								</p> 
+								<p class="movieBox__info movieBox__info--ageCat">
+									<span class="movieBox__lbl visually-hidden">Kategoria wiekowa: </span>%%ageCat%% |
+								</p> 
+								<p class="movieBox__info movieBox__info--genre">
+									<span class="movieBox__lbl visually-hidden">Gatunek: </span>%%genre%%
+								</p> 
+							</div>
 							<section class="movieBox__projections"> 
 								<header><h3 class="movieBox__projectionsHeading">Seanse w dniu %%currDayLabel%%:</h3></header> 
 								<span class="movieBox__pickProjectionLbl movieBox__pickProjectionLbl--hidden">Wybierz seans:</span> 
 								<ul> %%currDayProjections%% </ul> 
-								<button href="#" class="btn btn--light btn--transparent btn--hovColor btn--seeAllProjections">Zobacz wszystkie seanse</button> </section>
-							</section>`;
+							</section>
+							<button href="#" class="movieBox__allProjections btn btn--light btn--transparent btn--hovColor btn--seeAllProjections">Zobacz wszystkie seanse</button> 
+						</section>`;
 
 						// wypełnienie powyższego template danymi filmu
 						movieBoxTemplate = movieBoxTemplate.replace('%%title%%', currMovie.title);

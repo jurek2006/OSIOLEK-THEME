@@ -42,9 +42,11 @@
 					<span class="label label--movie"></span> <!-- może ich być więcej niż jedna -->
 				</div>
 
-	      <p class="movieBox__info movieBox__info--runtime"><span class="movieBox__lbl visually-hidden">Czas trwania: </span>XXX min</p>
-	      <p class="movieBox__info movieBox__info--ageCat"><span class="movieBox__lbl visually-hidden">Kategoria wiekowa: </span>od XX lat</p>
-	      <p class="movieBox__info movieBox__info--genre"><span class="movieBox__lbl visually-hidden">Gatunek: </span>Horror</p>
+				<div class="movieBox__infoBox">
+					<p class="movieBox__info movieBox__info--runtime"><span class="movieBox__lbl visually-hidden">Czas trwania: </span>XXX min |</p>
+					<p class="movieBox__info movieBox__info--ageCat"><span class="movieBox__lbl visually-hidden">Kategoria wiekowa: </span>od XX lat |</p>
+					<p class="movieBox__info movieBox__info--genre"><span class="movieBox__lbl visually-hidden">Gatunek: </span>Horror</p>
+				</div>
 			
 			<!-- Przyciski seansów danego filmu w danym dniu -->
 				<section class="movieBox__projections">
@@ -70,9 +72,8 @@
 						</li>
 
 					</ul>
-
-					<button href="#" class="btn btn--light btn--transparent btn--hovColor btn--seeAllProjections">Zobacz wszystkie seanse</button> <!-- na razie ukryte stylami -->
 				</section>
+				<button href="#" class="movieBox__allProjections btn btn--light btn--transparent btn--hovColor btn--seeAllProjections">Zobacz wszystkie seanse</button> <!-- na razie ukryte stylami -->
 
 				<!-- TEGO NA RAZIE NIE MA -->
 	      <!-- <div class="movieBox__allProjections movieBox__allProjections--initHidden">
