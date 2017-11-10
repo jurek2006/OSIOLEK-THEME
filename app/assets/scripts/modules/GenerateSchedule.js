@@ -49,10 +49,12 @@ class GenerateSchedule{
 						// template movieBox - repertuaru konkretnego filmu w danym dniu
 						let movieBoxTemplate = 
 						`<section class="movieBox group"> 
+							<header class="movieBox__header">
+								%%movieLabel%%
+								<h2 class="movieBox__title">%%title%%</h2> 
+							</header>
 							<img class="movieBox__poster" src="%%image%%" alt="Plakat filmu - %%title%%."> 
-							<h2 class="movieBox__title">%%title%%</h2> 
-							<button class="movieBox__aboutBtn btn btn--dark btn--hovColor btn--rounded btn--aboutMovie">O filmie</button>  
-							%%movieLabels%% 	
+							<button class="movieBox__aboutBtn btn btn--dark btn--hovColor btn--rounded btn--aboutMovie">O filmie</button>   	
 							<div class="movieBox__infoBox">
 								<p class="movieBox__info movieBox__info--runtime">
 									<span class="movieBox__lbl visually-hidden">Czas trwania: </span>%%runtime%% |
@@ -82,24 +84,29 @@ class GenerateSchedule{
 						movieBoxTemplate = movieBoxTemplate.replace('%%genre%%', currMovie.genre.join(' | '));
 						movieBoxTemplate = movieBoxTemplate.replace('%%currDayLabel%%', dayLabel);
 
-						// generowanie i wstawianie do szablonu etykiet filmu (są w tablicy, może ich być więcej niż 1)
-						movieBoxTemplate = movieBoxTemplate.replace('%%movieLabels%%', () => {
-							// ZREFAKTORYZOWAĆ
-							let labels = '';
-							if(currMovie.movieLabelsArr !== undefined && currMovie.movieLabelsArr.length > 0){
-							// jeśli zdefiniowano tablicę etykiet dla filmu i jest w niej przynajmniej 1 element placeholder %%movieLabel%% zastępowany jest etykietami (w span) - jeśli nie, od razu zwracany jest pusty string
-							// etykiety są w div.movieBox__movieLabels (jeśli nie ma żadnej to jego też nie ma)
+						// generowanie i wstawianie do szablonu etykiety filmu (są w tablicy, może ich być więcej niż 1 - ale używamy tylko jednej - pierwszej)
+						if(currMovie.movieLabelsArr !== undefined && currMovie.movieLabelsArr.length > 0){
+							movieBoxTemplate = movieBoxTemplate.replace('%%movieLabel%%', `<span class="movieBox__label label label--movie">${currMovie.movieLabelsArr[0]}</span>`);
+						} else {
+							movieBoxTemplate = movieBoxTemplate.replace('%%movieLabel%%','');
+						}
+						// movieBoxTemplate = movieBoxTemplate.replace('%%movieLabels%%', () => {
+						// 	// ZREFAKTORYZOWAĆ
+						// 	let labels = '';
+						// 	if(currMovie.movieLabelsArr !== undefined && currMovie.movieLabelsArr.length > 0){
+						// 	// jeśli zdefiniowano tablicę etykiet dla filmu i jest w niej przynajmniej 1 element placeholder %%movieLabel%% zastępowany jest etykietami (w span) - jeśli nie, od razu zwracany jest pusty string
+						// 	// etykiety są w div.movieBox__movieLabels (jeśli nie ma żadnej to jego też nie ma)
 
-								labels += '<div class="movieBox__movieLabels">';
+						// 		labels += '<div class="movieBox__movieLabels">';
 
-								currMovie.movieLabelsArr.forEach(currLabel => {
-									labels += `<span class="label label--movie">${currLabel}</span>`;
-								});
+						// 		currMovie.movieLabelsArr.forEach(currLabel => {
+						// 			labels += `<span class="label label--movie">${currLabel}</span>`;
+						// 		});
 
-								labels += '</div>';
-							}
-							return labels;
-						});
+						// 		labels += '</div>';
+						// 	}
+						// 	return labels;
+						// });
 
 						// pobranie projekcji danego filmu w danym dniu - generowanie buttons dla każdej takiej projekcji
 						let generatedProjBtns = '';
@@ -291,7 +298,8 @@ class MoviesDB{
 						'assets/images/moviesImages/fantastyczne-zwierzeta.jpg',
 						'118 min',
 						'od 7 lat',
-						['Przygodowy', 'Familijny', 'Fantasy']
+						['Przygodowy', 'Familijny', 'Fantasy'],
+						['Seans kinomana']
 						);
 
 		this.addMovie(	'vaiana', 

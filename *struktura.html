@@ -33,14 +33,12 @@
 		<h1 class="movieSchedule__ofDay__heading visually-hidden">Repertuar na YYYY-MM-DD</h1>
 		<section class="movieBox group">
 			<!-- Box dla filmu na konkretny dzień -->
-
-				<h2 class="movieBox__title">Tytuł filmu</h2>
+				<header class="movieBox__header">
+					<span class="movieBox__label label label--movie"></span> <!-- etykieta filmu (jeśli jest) - może ich być maksymalnie jedna -->
+					<h2 class="movieBox__title">Tytuł filmu</h2>
+				</header>
 				<button class="movieBox__aboutBtn btn btn--dark btn--hovColor btn--rounded btn--aboutMovie">O filmie</button> <!-- na razie ukryte stylami -->
 				<img class="movieBox__poster" src=sciezka_do_plakatu alt="Plakat filmu - %%tytul%%">
-
-				<div class="movieBox__movieLabels">
-					<span class="label label--movie"></span> <!-- może ich być więcej niż jedna -->
-				</div>
 
 				<div class="movieBox__infoBox">
 					<p class="movieBox__info movieBox__info--runtime"><span class="movieBox__lbl visually-hidden">Czas trwania: </span>XXX min |</p>
