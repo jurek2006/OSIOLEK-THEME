@@ -1,33 +1,79 @@
+/* KOLORY PRZYCISKÓW 
+Są trzy podstawowe klasy kolorów przycisków:
+(kolory definiowane w _colors.css)
+.btn--light (tło $btnLight, color $btnDark  - dla hover (i focus) odwrotnie)
+.btn--dark  (tło $btnDark,  color $btnLight - dla hover odwrotnie)
+.btn--color (tło $btnColor, color $btnLight - dla hover tło $btnDark,  color $btnLight (jak --light)
+
+Oraz dwie dodatkowe klasy przycisków (muszą być użyte jako dodatkowe do którejś z podstawowych):
+.btn--transparent(zmienia tło na przezroczyste - tylko bez hovera)
+.btn--hovColor(zmienia dla hover tło na $btnColor color na $btnLight)
+*/
+
+/* OBRAMOWANIA */
+/* Używane są mixiny (z _mixins.css) dodające określone style obramowania jak lightBorder */
+
 .btn{
-    border: 1px solid $btnBorder;
-    background-color: transparent;
+    border: none;
     transition:0.3s;
-    
-    &--light:hover, &--light:focus{
-        background-color: $btnLightBg-hover;
-        color: $btnLightCol-hover;
+
+    /* Podstawowe klasy kolorów przycisków */
+
+    &--light{
+        color: btnDark;
+        background-color: $btnLight;
+
+        &:hover, &:focus{
+            color: $btnLight;
+            background-color: $btnDark;
+        }
     }
 
+    &--dark{
+        color: $btnLight;
+        background-color: $btnDark;
+
+        &:hover, &:focus{
+            color: $btnDark;
+            background-color: $btnLight;
+        }
+    }
+
+    &--color{
+        color: $btnLight;
+        background-color: $btnColor;
+
+        &:hover, &:focus{
+            color: $btnLight;
+            background-color: $btnDark;
+        }
+    }
+    
+    /* Dodatkowe klasy kolorów przycisków */
+    &--hovColor:hover, &--hovColor:focus{
+        color: $btnLight;
+        background-color: $btnColor;
+    }
+
+    &--transparent{
+        background-color: transparent;
+    }
+    
     &--rounded{
         /* przycisk z zaokrąglonymi rogami */
         border-radius: 30px;
     }
 
-    &--aboutMovie{
-        background-color: $btnAboutMovieBg;
-		color: $btnAboutMovieCol;
-        border: none;
-        text-transform:uppercase;
-		font-size: 0.875rem;
-		letter-spacing: 1px;
-        
-        &:hover{
-            background-color: $btnAboutMovieBg_hov;
-        }
+    &--centered{
+        /* przycisk wyśrodkowany */
+        position: relative;
+        /* wyśrodkowanie na stronie: */
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     &--projection{
-        border: 1px solid $btnProjectionBorderRGBA;
+        @mixin lightBorder;
 
         &__hour{
             font-size: 1.5rem;
@@ -48,45 +94,58 @@
 
             &--none{
             /* gdy nie ma etykiety projekcji */
-            background-color: $btnProjectionLblNoneBG;
+            background-color: $btnProjectionLblNoneBg;
             color: $btnProjectionLblNoneCol;
             }
         }
     }
 
-    &--centered{
-        position: relative;
-        /* wyśrodkowanie na stronie: */
-        left: 50%;
-        transform: translateX(-50%);
+    /* kiedy użytkownik najedzie (albo na dotykowym kliknie) na ramkę filmu - pokazuje się przycisk "O filmie" */
+    .movieBox:hover &--aboutMovie{ opacity: 1; } 
+
+    &--aboutMovie{
+        opacity: 0; 
+		position: relative;
+		top:75%;
+		margin: 0 20px;
+        height:50px;
+        
+        &:focus{
+            opacity: 1;
+        }
+    }
+
+    &--seeAllProjections{
+        @mixin lightBorder;
+        @mixin borderOnlyTop;
+        
+        margin: 10px -20px -10px -20px;
+		padding: 10px 0;
+		text-transform:uppercase;
+		font-size: 0.93rem;
+		letter-spacing:1px;
+		/* border: none;
+        border-top:1px solid $movieBoxSeeAllBtnBorder; */
     }
 
     &--readMore{
-        color: $btnReadMoreCol;
-        background-color: $btnReadMoreBg;
+
         padding:20px 30px;
         font-weight: 300;
         font-size: 1.3rem;
         margin-bottom:60px;
         margin-top:40px;
+        text-decoration: none;
         text-transform:uppercase;
         font-size: 0.93rem;
         border: 0;
 
-        &:hover{
-            background-color: $btnReadMoreBg_hov;
-        }
     }
 
     &--seeCS{
-        color: $btnSeeCSCol;
-        background-color: $btnSeeCSBg;
-        text-decoration: none;
-        box-shadow:none;
         margin: 40px 0;
 
         &:hover{
-            color: $btnSeeCSCol_hov;
             border-radius:0;
         }
     }

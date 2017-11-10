@@ -1,7 +1,7 @@
 .primary-nav{
 	
 	grid-area: navigation;
-	font-size: 110%;
+	font-size: 110%; 
 
 	ul{
 		list-style: none;
@@ -31,8 +31,7 @@
 		}
 
 		&:active{
-			background-color: $pomaranczowy;
-			transform: scale(0.7, 0.7);
+			border-bottom: none;
 		}
 	}
 

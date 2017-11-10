@@ -24,42 +24,22 @@ $primaryNavCol: $szaryJasny;
 $btnNavBg: $pomaranczowy;
 
 /* movieBox */
-$movieBoxBg: $bialy;
 $movieBoxSeeAllBtnBorder: $prawieBialy;
-$movieBoxSeeAllBtnBg: $pomaranczowy;
 
 /* btn */
-$btnBorder: $szarySredni;
+/* kolory przycisków */
+$btnLight: $szaryJasny;
+$btnDark: $szaryCiemny;
+$btnColor: $pomaranczowy;
 
-    /* btn--light - kolory dla jasnego przycisku przy hoverze i focusie */
-    $btnLightBg-hover: $szaryCiemny;
-    $btnLightCol-hover: $bialy;
+/* kolory obramowania */
+$btnLightBorderRGBA: rgba($szarySredni, 0.3);
 
     /* btn--projection */
-    $btnProjectionBorderRGBA: rgba($szarySredni, 0.3);
     $btnProjectionLblBG: $pomaranczowy;
     $btnProjectionLblCol: $bialy;
-    $btnProjectionLblNoneBG: $szaryJasny;
+    $btnProjectionLblNoneBg: $prawieBialy;
     $btnProjectionLblNoneCol: $szaryCiemny;
-
-    /* btn--aboutMovie */
-    $btnAboutMovieBg: $prawieCzarny;
-    $btnAboutMovieBg_hov: $pomaranczowy;
-    $btnAboutMovieCol: $bialy;
-
-    /* btn--readMore */
-    $btnReadMoreCol: $bialy;
-    $btnReadMoreBg: $pomaranczowy;
-    $btnReadMoreBg_hov: $prawieCzarny;
-
-    /* btn--seeCS */
-    $btnSeeCSCol: $czarny;
-    $btnSeeCSCol_hov: $bialy;
-    $btnSeeCSBg: $szaryJasny;
-    $btnSeeCSBg_hov: $prawieCzarny;
-    
-    
-
 
 /* label */
 $labelBg: $pomaranczowy;

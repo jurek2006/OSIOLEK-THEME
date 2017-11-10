@@ -1,3 +1,5 @@
+/* MIXINS - MEDIA QUERIES */
+
 @define-mixin atTiny{
 	@media (min-width: 300px){
 		@mixin-content;
@@ -28,3 +30,16 @@
 	}
 }
 
+/* MIXINS - OBRAMOWANIA */
+
+/* Delikatne, jasne obramowanie */
+@define-mixin lightBorder{
+	border: 1px solid $btnLightBorderRGBA;
+}
+
+/* Obramowanie tylko górne - dodatkowe, działa tylko gdy dla elementu już jest zdefiniowane obramowanie */
+@define-mixin borderOnlyTop{
+	border-bottom: none;
+	border-left: none;
+	border-right: none;
+}
