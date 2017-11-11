@@ -51,7 +51,7 @@ class GenerateSchedule{
 						`<section class="movieBox group"> 
 							<header class="movieBox__header">
 								%%movieLabel%%
-								<h2 class="movieBox__title">%%title%%</h2> 
+								<h2 class="movieBox__title centerContent"><span>%%title%%</span></h2> 
 							</header>
 							<img class="movieBox__poster" src="%%image%%" alt="Plakat filmu - %%title%%."> 
 							<button class="movieBox__aboutBtn btn btn--dark btn--hovColor btn--rounded btn--aboutMovie">O filmie</button>   	
@@ -86,7 +86,7 @@ class GenerateSchedule{
 
 						// generowanie i wstawianie do szablonu etykiety filmu (są w tablicy, może ich być więcej niż 1 - ale używamy tylko jednej - pierwszej)
 						if(currMovie.movieLabelsArr !== undefined && currMovie.movieLabelsArr.length > 0){
-							movieBoxTemplate = movieBoxTemplate.replace('%%movieLabel%%', `<span class="movieBox__label label label--movie">${currMovie.movieLabelsArr[0]}</span>`);
+							movieBoxTemplate = movieBoxTemplate.replace('%%movieLabel%%', `<span class="movieBox__label label label--movie centerContent"><span>${currMovie.movieLabelsArr[0]}</span></span>`);
 						} else {
 							movieBoxTemplate = movieBoxTemplate.replace('%%movieLabel%%','');
 						}

@@ -1,0 +1,13 @@
+.centerContent{
+/* klasa umożliwiająca wyśrodkowanie zawartości - która jest w elemencie-dziecku span */
+
+    /* CSS Grid */
+    .cssgrid &{
+        height: 100%;
+        display: grid;
+
+        span{
+            margin: auto;
+        }
+    }
+}

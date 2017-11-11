@@ -39,6 +39,9 @@
 /* moduł responsywnej tabeli na cennik */
 @import "modules/_rTable";
 
+/* moduł wyśrodkowujący zawartość */
+@import "modules/_centerContent";
+
 /*moduł do testowania */
 @import "modules/_test";
 

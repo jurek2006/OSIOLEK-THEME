@@ -24,6 +24,8 @@ $primaryNavCol: $szaryJasny;
 $btnNavBg: $pomaranczowy;
 
 /* movieBox */
+$movieBoxHeaderBgRGBA: rgba($szarySredni, 0.25);
+$movieBoxBorderBottom: $pomaranczowy;
 $movieBoxSeeAllBtnBorder: $prawieBialy;
 
 /* btn */

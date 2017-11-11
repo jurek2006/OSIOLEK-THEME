@@ -8,9 +8,6 @@
 
     &--movie{
     /* label dla filmu w movieBox (repertuarze dnia) */
-        width: 200px;
-        /* float: left; */
-        height: 75px;
     }
 
     &--movies{
