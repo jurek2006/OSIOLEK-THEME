@@ -34,7 +34,9 @@
 @import "modules/_mapResponsive";
 
 /* karuzela slick */
-@import "modules/_slickCarousel";
+/* @import "modules/_slickCarousel"; */
+@import "modules/_owl.carousel.min";
+@import "modules/_owl.theme.default.min";
 
 /* moduł responsywnej tabeli na cennik */
 @import "modules/_rTable";

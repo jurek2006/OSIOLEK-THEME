@@ -32,10 +32,10 @@ gulp.task('watch', function(){
 	gulp.task('cssInject', ['styles'], function(){
 		return gulp.src('./app/temp/styles/styles.css')
             .pipe(browserSync.stream());
-	})
+	});
 
 	// odświeżanie przeglądarki - po wykonaniu zadania scripts (uruchamiającego webpack)
-	gulp.task('scriptsRefresh', ['scripts'], function(){
+	gulp.task('scriptsRefresh', ['scripts', 'owlcarousel'], function(){
 		browserSync.reload();
 	});
 

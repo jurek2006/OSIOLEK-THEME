@@ -12,19 +12,16 @@
   <!-- build:css assets/styles/styles.css -->
   <link rel="stylesheet" type="text/css" href="temp/styles/styles.css">
   <!-- endbuild -->
+
   <!-- build:js assets/scripts/Vendor.js -->
   <script src="/temp/scripts/Vendor.js"></script>
   <!-- endbuild -->
 
-  <!-- PROWIZORYCZNE DODANIE KARUZELI SLICK -->
-  <!-- <script
+  <!-- JQUERY DO OWLCAROUSEL -->
+  <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script> -->
-    <!-- Add the slick-theme.css if you want default styling -->
-  <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick.css"/> -->
-    <!-- Add the slick-theme.css if you want default styling -->
-  <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick-theme.css"/> -->
+  crossorigin="anonymous"></script>
 
 </head>
 <body>
@@ -178,7 +175,9 @@
 <section class="movies wrapper pageSection">
     <!-- Aktualnie i wkrótce w kinie -->
     <h1>Filmy</h1>
-    <!-- <div class="slickCarousel slickCarousel--movies">
+
+    <!-- <div class="slickCarousel slickCarousel--movies"> -->
+    <div class="owl-carousel owl-theme">
       <div class="slickCarousel--movies__el"><span class="label label--movies">Aktualnie</span><img class="slickCarousel--movies__img" src="./assets/images/moviesImages/to.jpg" alt="Plakat filmu 'To'"></div>
       <div class="slickCarousel--movies__el"><span class="label label--movies">Aktualnie</span><img class="slickCarousel--movies__img" src="./assets/images/moviesImages/anabelle.jpg" alt="Plakat filmu 'Anabelle'"></div>
       <div class="slickCarousel--movies__el"><span class="label label--movies">Aktualnie</span><img class="slickCarousel--movies__img" src="./assets/images/moviesImages/bodyguardZawodowiec.jpg" alt="Plakat filmu 'Bodyguard Zawodowiec'"></div>
@@ -189,7 +188,7 @@
       <div class="slickCarousel--movies__el"><span class="label label--movies">od 29 wrz 2017</span><img class="slickCarousel--movies__img" src="./assets/images/moviesImages/mother.jpg" alt="Plakat filmu 'Mother'"></div>
       <div class="slickCarousel--movies__el"><span class="label label--movies">od 29 wrz 2017</span><img class="slickCarousel--movies__img" src="./assets/images/moviesImages/oCzymSzumiLas.jpg" alt="Plakat filmu 'O czym szumi las'"></div>
       <div class="slickCarousel--movies__el"><span class="label label--movies">od 29 wrz 2017</span><img class="slickCarousel--movies__img" src="./assets/images/moviesImages/vaiana.jpg" alt="Plakat filmu 'Vaiana'"></div>
-    </div> -->
+    </div>
   </section>
 
 <section class="promotions wrapper pageSection">
@@ -406,8 +405,11 @@
 <!-- build:js assets/scripts/App.js -->
 <script src="/temp/scripts/App.js"></script>
 <!-- endbuild -->
-<!-- PROWIZORYCZNE DODANIE KARUZELI SLICK -->
-<!-- <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick.min.js"></script> -->
+
+<!-- OWL CAROUSEL -->
+<!-- build:js assets/scripts/owlcarousel/owl.carousel.min.js -->
+<script src="/temp/scripts/owlcarousel/owl.carousel.min.js"></script>
+<!-- endbuild -->
 
 </body>
 </html>

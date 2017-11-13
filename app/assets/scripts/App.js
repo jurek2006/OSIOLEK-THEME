@@ -2,12 +2,12 @@ import $ from 'jquery';
 import MovieSchedule from './modules/MovieSchedule';
 import ModulTestowy from './modules/ModulTestowy';
 import GenerateSchedule from './modules/GenerateSchedule';
-// import SlickCarousel from './modules/SlickCarousel';
+import OwlCarousel from './modules/OwlCarousel';
 
 const movieSchedule = new MovieSchedule();
 
-// SLICK CAROUSEL
-// const slickCarousel = new SlickCarousel();
+// OWL CAROUSEL
+const owlCarousel = new OwlCarousel();
 
 // DEVELOP
 const generateSchedule = new GenerateSchedule();

@@ -11,3 +11,10 @@ gulp.task('scripts', ['modernizr'], function(callback) {
 		callback();	
 	});
 });
+
+// Zadanie kopiujące js owlcarousel do temp
+gulp.task('owlcarousel', function(){
+	console.log('Copying owlcarousel js');
+	return gulp.src('./app/assets/scripts/owlcarousel/**')
+		.pipe(gulp.dest('./app/temp/scripts/owlcarousel'));
+});
