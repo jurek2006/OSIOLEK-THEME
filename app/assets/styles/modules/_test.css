@@ -11,3 +11,28 @@
 	display: none;
 } */
 
+/* TYMCZASOWE */
+/* Styl ramki .warning dla komunikatu w wersji show */
+.warning{
+	text-align: center;
+	background-color: yellow;
+	margin: 20px;
+	padding: 20px;
+	border: 10px solid red;
+
+	&--tooSmall{
+		background-color: palegreen;
+		@mixin atMedium{
+			display: none;
+		}
+	}
+
+	&--noGrid{
+		@supports(display: grid){
+			display: none;
+		}
+	}
+
+
+}
+
