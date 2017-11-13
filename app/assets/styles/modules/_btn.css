@@ -105,8 +105,9 @@ Oraz dwie dodatkowe klasy przycisków (muszą być użyte jako dodatkowe do któ
 
     &--aboutMovie{
         opacity: 0; 
-		position: relative;
-		top:75%;
+        position: relative;
+        top: 210px;
+        bottom: 0;
 		margin: 0 20px;
         height:50px;
         
