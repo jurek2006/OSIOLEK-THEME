@@ -4,17 +4,10 @@
     &__movie{
         display: block;
         width: 200px;
-        overflow: hidden;
-        
-
-        /* &:hover &__img{
-            transform: scale(1.1);
-        } */
     }
 
     &__movie__img{
         width: 200px;
         height: 280px;
-        transition:0.3s;
     }
 }

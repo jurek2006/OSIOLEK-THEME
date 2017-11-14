@@ -1,0 +1,27 @@
+/* Klasa hoverScale pozwala dodać jednakowe skalowanie przy hoverze (i focusie)
+    jednocześnie nie trzeba skalować całego hoverovanego elementu
+    
+    PRZYKŁAD:
+    <a href="#" class="moviesCarousel__movie hoverScale">
+        <span class="label label--movies">Aktualnie</span>
+        <div class="hoverScale__boundary">
+            <img class="moviesCarousel__movie__img hoverScale__scaled" src="./assets/images/moviesImages/to.jpg" alt="Plakat filmu 'To'">
+        </div>
+    </a>
+
+    W powyższym przykładzie hover jest aktywny dla a.hoverScale ale skalowany jest tylko obraz img.hoverScale__scaled
+    Granicami skalowania jest div.hoverScale__boundary
+    */
+.hoverScale{
+    &__scaled{
+        transition:0.3s;
+    }
+
+    &__boundary{
+        overflow: hidden;
+    }
+
+    &:hover &__scaled, &:focus &__scaled{
+        transform: scale(1.1);
+    }
+}

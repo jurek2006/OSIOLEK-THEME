@@ -14,7 +14,7 @@ class OwlCarousel{
                 autoWidth: true,
                 autoplay:true,
                 autoplayTimeout:2000,
-                autoplayHoverPause:false
+                autoplayHoverPause:true
             });
         });
     }

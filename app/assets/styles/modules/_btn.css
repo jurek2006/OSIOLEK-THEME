@@ -16,6 +16,7 @@ Oraz dwie dodatkowe klasy przycisków (muszą być użyte jako dodatkowe do któ
 .btn{
     border: none;
     transition:0.3s;
+    border-radius: 0px;
 
     /* Podstawowe klasy kolorów przycisków */
 

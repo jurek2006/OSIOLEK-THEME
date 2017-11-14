@@ -44,6 +44,9 @@
 /* moduł wyśrodkowujący zawartość */
 @import "modules/_centerContent";
 
+/* moduł skalujący element przy hoverze */
+@import "modules/_hoverScale"; 
+
 /*moduł do testowania */
 @import "modules/_test";
 
