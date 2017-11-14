@@ -18,7 +18,10 @@ class Modal{
 
         if(modalObj !== undefined && modalObj !== null){
         // jeśli w DOM istnieje element wskazujący na modal to przypisywany jest handler, który będzie po wystąpieniu zdarzenia (kliknięciu) dodawał klasę odpowiedzialną za widoczność modala
-            btn.addEventListener(eventType, () => modalObj.classList.add('modal--is-visible'));
+            btn.addEventListener(eventType, () => {
+                document.body.classList.add('noScroll'); //dodanie do body dokumentu klasy zapobiegającej jego scrollowaniu, gdy jest otwarty modal
+                return modalObj.classList.add('modal--is-visible')
+            });
 
             // przypisanie przyciskowi zamknięcia danego oraz "tłu" modala (modalObj) event handlera zamykającego modal 
             // przycisk zawsze ma klasę .modal__closeBtn
@@ -49,6 +52,7 @@ class Modal{
         // bo ukrycie modala polega na jej odebraniu
 
         if(this !== undefined && this !== null && this.classList.contains('modal--is-visible')){
+            document.body.classList.remove('noScroll'); //odebranie z body dokumentu klasy zapobiegającej jego scrollowaniu, gdy jest otwarty modal
             this.classList.remove('modal--is-visible');
         }
     }
