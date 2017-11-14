@@ -114,11 +114,11 @@ class GenerateSchedule{
 						// (przykład obiektu Movie: anabelle.projections.2017-09-01 - iterujemy po obiektach tego obiektu)
 						for (let currProjectionHour in currMovie.projections[day]) {
 							let generatedBtn = 
-							`<li>
-								<button class="btn btn--light btn--transparent btn--projection"> 
-									%%specProjLabels%%
+							`<li> 
+								<button class="btn btn--light btn--transparent btn--projection" data-visualTicketID="%%vtID%%"> 
+									%%specProjLabels%% 
 									<span class="btn--projection__hour">%%projHour%%</span> 
-									<span class="btn--projection__info">%%ifProj3d%% %%projLangVer%%</span>
+									<span class="btn--projection__info">%%ifProj3d%% %%projLangVer%%</span>   
 								</button>
 							</li>`;
 
@@ -126,6 +126,7 @@ class GenerateSchedule{
 							if(!currMovie.projections[day].hasOwnProperty(currProjectionHour)) continue;
 
 							const currProjectionData = currMovie.projections[day][currProjectionHour];
+							generatedBtn = generatedBtn.replace('%%vtID%%', currProjectionData.visualTicketID);
 							generatedBtn = generatedBtn.replace('%%projHour%%', currProjectionHour);
 							generatedBtn = generatedBtn.replace('%%projLangVer%%', currProjectionData.languageVer);
 							generatedBtn = generatedBtn.replace('%%ifProj3d%%', currProjectionData.if3d ? '3D' : '2D');
@@ -169,7 +170,7 @@ class Schedule{
 		this.generateScheduleData();
 	}
 
-	addProjection(day, movieSlug, time, if3d, languageVer, specProjLabelArr){
+	addProjection(day, movieSlug, time, visualTicketID, if3d, languageVer, specProjLabelArr){
 	// dodaje projekcję dla filmu (w dniu day, film o movieSlug)
 		
 		// sprawdzenie czy istnieje film o podanym slug w movies (zdefiniowanej bazie filmów)
@@ -177,7 +178,7 @@ class Schedule{
 		if(movieObj !== undefined && movieObj !== null){
 		// jeśli znaleziono odpowiedni film, dodanie do niego projekcji i dodanie referencji do filmu do schedule dla danego dnia
 
-			movieObj.addProjection(day, time, if3d, languageVer, specProjLabelArr);
+			movieObj.addProjection(day, time, visualTicketID, if3d, languageVer, specProjLabelArr);
 
 			// sprawdzenie czy dla danego dnia jest już jakaś projekcja (jeśli nie, to trzeba dla niego utworzyć pustą tablicę)
 			if(this.schedule[day] === undefined || this.schedule[day] === null){
@@ -196,52 +197,52 @@ class Schedule{
 	generateScheduleData(){
 		// -----------------------------------------------------------------
 		// TUTAJ DOPISUJEMY PROJEKCJE - DANE TESTOWE
-		this.addProjection('2017-09-01', 'anabelle', '12:00', false, 'dubbing', ['seans kinomana']);
-		this.addProjection('2017-09-01', 'bodyguard', '15:00', false, 'dubbing');
-		this.addProjection('2017-09-01', 'bodyguard', '20:00', true, 'napisy');
-		this.addProjection('2017-09-01', 'o-czym-szumi-las', '18:00', false, 'dubbing');
-		this.addProjection('2017-09-01', 'fantastyczne-zwierzeta', '10:00', false, 'dubbing');
-		this.addProjection('2017-09-01', 'vaiana', '10:00', true, 'dubbing');
-		this.addProjection('2017-09-01', 'vaiana', '12:00', false, 'audiodeskrypcja');
-		this.addProjection('2017-09-01', 'lotr1', '8:00', true, 'dubbing');
-		this.addProjection('2017-09-01', 'lotr1', '10:00', false, 'napisy');
-		this.addProjection('2017-09-01', 'lotr1', '8:00', true, 'dubbing');
-		this.addProjection('2017-09-01', 'lotr1', '10:00', false, 'napisy');
-		this.addProjection('2017-09-01', 'lotr1', '12:00', true, 'dubbing');
-		this.addProjection('2017-09-01', 'lotr1', '14:00', false, 'napisy');
-		this.addProjection('2017-09-01', 'lotr1', '16:00', true, 'dubbing');
-		this.addProjection('2017-09-01', 'lotr1', '18:00', false, 'napisy');
-		this.addProjection('2017-09-01', 'mother', '22:00', false, 'audiodeskrypcja');
-		this.addProjection('2017-09-01', 'to', '0:00', true, 'lektor');
+		this.addProjection('2017-09-01', 'anabelle', '12:00', 1001, false, 'dubbing', ['seans kinomana']);
+		this.addProjection('2017-09-01', 'bodyguard', '15:00', 1001, false, 'dubbing');
+		this.addProjection('2017-09-01', 'bodyguard', '20:00', 1001, true, 'napisy');
+		this.addProjection('2017-09-01', 'o-czym-szumi-las', '18:00', 1001, false, 'dubbing');
+		this.addProjection('2017-09-01', 'fantastyczne-zwierzeta', '10:00', 1001, false, 'dubbing');
+		this.addProjection('2017-09-01', 'vaiana', '10:00', 1001, true, 'dubbing');
+		this.addProjection('2017-09-01', 'vaiana', '12:00', 1001, false, 'audiodeskrypcja');
+		this.addProjection('2017-09-01', 'lotr1', '8:00', 1001, true, 'dubbing');
+		this.addProjection('2017-09-01', 'lotr1', '10:00', 1001, false, 'napisy');
+		this.addProjection('2017-09-01', 'lotr1', '8:00', 1001, true, 'dubbing');
+		this.addProjection('2017-09-01', 'lotr1', '10:00', 1001, false, 'napisy');
+		this.addProjection('2017-09-01', 'lotr1', '12:00', 1001, true, 'dubbing');
+		this.addProjection('2017-09-01', 'lotr1', '14:00', 1001, false, 'napisy');
+		this.addProjection('2017-09-01', 'lotr1', '16:00', 1001, true, 'dubbing');
+		this.addProjection('2017-09-01', 'lotr1', '18:00', 1001, false, 'napisy');
+		this.addProjection('2017-09-01', 'mother', '22:00', 1001, false, 'audiodeskrypcja');
+		this.addProjection('2017-09-01', 'to', '0:00', true, 1001, 'lektor');
 
-		this.addProjection('2017-09-02', 'mother', '10:00', false, 'na żywo', ['maraton filmowy']);
+		this.addProjection('2017-09-02', 'mother', '10:00', false, 1001, 'na żywo', ['maraton filmowy']);
 
-		this.addProjection('2017-09-03', 'vaiana', '10:00', false, 'napisy', ['filmowy poranek']);
-		this.addProjection('2017-09-03', 'lotr1', '8:00', true, 'dubbing');
+		this.addProjection('2017-09-03', 'vaiana', '10:00', false, 1001, 'napisy', ['filmowy poranek']);
+		this.addProjection('2017-09-03', 'lotr1', '8:00', true, 1001, 'dubbing');
 
-		this.addProjection('2017-09-05', 'o-czym-szumi-las', '18:00', false, 'dubbing');
-		this.addProjection('2017-09-05', 'o-czym-szumi-las', '21:00', true, 'dubbing');
-		this.addProjection('2017-09-05', 'fantastyczne-zwierzeta', '10:00', false, 'dubbing');
-		this.addProjection('2017-09-05', 'fantastyczne-zwierzeta', '12:00', false, 'dubbing');
-		this.addProjection('2017-09-05', 'fantastyczne-zwierzeta', '16:00', false, 'dubbing');
-		this.addProjection('2017-09-05', 'vaiana', '10:00', true, 'napisy');
-		this.addProjection('2017-09-05', 'vaiana', '10:00', true, 'napisy');
-		this.addProjection('2017-09-05', 'vaiana', '11:00', true, 'napisy');
-		this.addProjection('2017-09-05', 'vaiana', '12:00', true, 'napisy');
-		this.addProjection('2017-09-05', 'vaiana', '13:00', true, 'napisy');
+		this.addProjection('2017-09-05', 'o-czym-szumi-las', '18:00', 1001, false, 'dubbing');
+		this.addProjection('2017-09-05', 'o-czym-szumi-las', '21:00', 1001, true, 'dubbing');
+		this.addProjection('2017-09-05', 'fantastyczne-zwierzeta', '10:00', 1001, false, 'dubbing');
+		this.addProjection('2017-09-05', 'fantastyczne-zwierzeta', '12:00', 1001, false, 'dubbing');
+		this.addProjection('2017-09-05', 'fantastyczne-zwierzeta', '16:00', 1001, false, 'dubbing');
+		this.addProjection('2017-09-05', 'vaiana', '10:00', 1001, true, 'napisy');
+		this.addProjection('2017-09-05', 'vaiana', '10:00', 1001, true, 'napisy');
+		this.addProjection('2017-09-05', 'vaiana', '11:00', 1001, true, 'napisy');
+		this.addProjection('2017-09-05', 'vaiana', '12:00', 1001, true, 'napisy');
+		this.addProjection('2017-09-05', 'vaiana', '13:00', 1001, true, 'napisy');
 
-		this.addProjection('2017-09-06', 'lotr1', '7:00', false, 'dubbing');
-		this.addProjection('2017-09-06', 'mother', '10:00', false, 'dubbing', ['filmowy poranek']);
-		this.addProjection('2017-09-06', 'vaiana', '10:00', true, 'napisy', ['filmowy poranek']);
-		this.addProjection('2017-09-06', 'vaiana', '12:00', false, 'napisy');
-		this.addProjection('2017-09-06', 'vaiana', '14:00', true, 'napisy');
-		this.addProjection('2017-09-06', 'vaiana', '16:00', true, 'napisy');
+		this.addProjection('2017-09-06', 'lotr1', '7:00', 1001, false, 'dubbing');
+		this.addProjection('2017-09-06', 'mother', '10:00', 1001, false, 'dubbing', ['filmowy poranek']);
+		this.addProjection('2017-09-06', 'vaiana', '10:00', 1001, true, 'napisy', ['filmowy poranek']);
+		this.addProjection('2017-09-06', 'vaiana', '12:00', 1001, false, 'napisy');
+		this.addProjection('2017-09-06', 'vaiana', '14:00', 1001, true, 'napisy');
+		this.addProjection('2017-09-06', 'vaiana', '16:00', 1001, true, 'napisy');
 
-		this.addProjection('2017-09-07', 'anabelle', '12:00', false, 'dubbing');
-		this.addProjection('2017-09-07', 'bodyguard', '15:00', false, 'dubbing');
-		this.addProjection('2017-09-07', 'bodyguard', '20:00', true, 'napisy', ['kino seniora', 'kinomaniak'] );
-		this.addProjection('2017-09-07', 'o-czym-szumi-las', '18:00', false, 'dubbing');
-		this.addProjection('2017-09-07', 'vaiana', '14:00', true, 'napisy');
+		this.addProjection('2017-09-07', 'anabelle', '12:00', 1001, false, 'dubbing');
+		this.addProjection('2017-09-07', 'bodyguard', '15:00', 1001, false, 'dubbing');
+		this.addProjection('2017-09-07', 'bodyguard', '20:00', 1001, true, 'napisy', ['kino seniora', 'kinomaniak'] );
+		this.addProjection('2017-09-07', 'o-czym-szumi-las', '18:00', 1001, false, 'dubbing');
+		this.addProjection('2017-09-07', 'vaiana', '14:00', 1001, true, 'napisy');
 
 	}
 
@@ -353,13 +354,14 @@ class Movie{
 		this.movieLabelsArr = movieLabelsArr;
 	}
 
-	addProjection(day, time, if3d, languageVer, specProjLabelArr){
+	addProjection(day, time, visualTicketID, if3d, languageVer, specProjLabelArr){
 
 		// sprawdzenie czy są już projekcje dla danego dnia - jeśli nie to trzeba utworzyć dla niego puste pole
 		if(this.projections[day] === undefined || this.projections[day] === null){
 			this.projections[day] = {};
 		}
-		this.projections[day][time] = {	'if3d': if3d,
+		this.projections[day][time] = {	'visualTicketID': visualTicketID,
+										'if3d': if3d,
 										'languageVer': languageVer,
 										'specProjLabelArr': specProjLabelArr};
 	}

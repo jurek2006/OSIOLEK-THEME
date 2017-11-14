@@ -61,5 +61,15 @@ $contactPhoneBg: $bialy;
 $contactAddressCol: $bialy;
 $contactAddressBg: $pomaranczowy;
 
+/* modal */
+$modalBgRGBA: rgba($szarySredni, 0.8);
+$modalHeaderCol: $bialy;
+$modalHeaderBg: $pomaranczowy;
+$modalContentBg: $szaryJasny;
+$modalCloseBtnHoverCol: $szaryCiemny;
+$modalCloseBtnCol: $bialy;
+
+/* em */
+$emCol: $pomaranczowy;
 
 

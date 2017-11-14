@@ -152,6 +152,8 @@ Oraz dwie dodatkowe klasy przycisków (muszą być użyte jako dodatkowe do któ
         }
     }
 
+
+
     /* FLEXBOX */
     .flexbox &--projection{
         width: calc(100% - 5px);

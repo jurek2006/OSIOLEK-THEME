@@ -1,7 +1,7 @@
 @import "normalize.css";
+@import "base/_colors";
 @import "base/_global";
 @import "base/_mixins";
-@import "base/_colors";
 @import "base/_system-font";
 
 /*moduł do testowania */
@@ -26,6 +26,7 @@
 @import "modules/_seeCS"; 
 
 @import "modules/_label";
+@import "modules/_modal";
 
 /* dane kontaktowe w stopce */
 @import "modules/_contact";
@@ -46,6 +47,9 @@
 
 /* moduł skalujący element przy hoverze */
 @import "modules/_hoverScale"; 
+
+/* moduł dla zawartości z większą ilością tekstu */
+@import "modules/_textContent";
 
 /*moduł do testowania */
 @import "modules/_test";
