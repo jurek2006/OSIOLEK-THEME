@@ -24,6 +24,10 @@ h3{
 	font-weight: 600;
 }
 
+a{
+	text-decoration: none;
+}
+
 /* dodanie znaku-symbolu telefonu do wszystkich linków telefonicznych (tel) */
 a[href^="tel:"]:before {
 	content: "\260e";

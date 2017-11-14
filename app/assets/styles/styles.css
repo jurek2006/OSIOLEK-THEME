@@ -33,10 +33,10 @@
 /* responsywna Google Maps */
 @import "modules/_mapResponsive";
 
-/* karuzela slick */
-/* @import "modules/_slickCarousel"; */
+/* karuzela owlCarousel */
 @import "modules/_owl.carousel.min";
 @import "modules/_owl.theme.default.min";
+@import "modules/_moviesCarousel";
 
 /* moduł responsywnej tabeli na cennik */
 @import "modules/_rTable";
