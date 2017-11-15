@@ -1,0 +1,18 @@
+.textContent{
+
+    h2{
+        /* color: red; */
+        margin-top: 3rem;
+        margin-bottom: 0.75rem;
+    }
+
+    p{
+        line-height: 1.5;
+        margin-bottom: 0.75rem;
+    }
+
+    em{
+        font-weight: 600;
+    }
+
+}

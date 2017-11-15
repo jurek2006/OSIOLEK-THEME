@@ -12,19 +12,16 @@
   <!-- build:css assets/styles/styles.css -->
   <link rel="stylesheet" type="text/css" href="temp/styles/styles.css">
   <!-- endbuild -->
+
   <!-- build:js assets/scripts/Vendor.js -->
   <script src="/temp/scripts/Vendor.js"></script>
   <!-- endbuild -->
 
-  <!-- PROWIZORYCZNE DODANIE KARUZELI SLICK -->
+  <!-- JQUERY DO OWLCAROUSEL -->
   <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
-  <!-- Add the slick-theme.css if you want default styling -->
-  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick.css"/>
-  <!-- Add the slick-theme.css if you want default styling -->
-  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick-theme.css"/>
 
 </head>
 <body>
@@ -48,7 +45,7 @@
   <img class="site-header__logo" src="assets/images/logo_kino_odra.png" alt="Logo Kina Odra w Oławie">
   <nav class="primary-nav">
     <ul>
-      <li class="primary-nav__element"><a href="#">Repertuar</a></li>
+      <li class="primary-nav__element"><a href="#">Repertuar</a></li> 
       <li class="primary-nav__element"><a href="#">Filmy</a></li>
       <li class="primary-nav__element"><a href="#">Promocje</a></li>
       <li class="primary-nav__element"><a href="#">Cennik</a></li>
@@ -178,17 +175,18 @@
 <section class="movies wrapper pageSection">
     <!-- Aktualnie i wkrótce w kinie -->
     <h1>Filmy</h1>
-    <div class="slickCarousel slickCarousel--movies">
-      <div class="slickCarousel--movies__el"><span class="label label--movies">Aktualnie</span><img class="slickCarousel--movies__img" src="./assets/images/moviesImages/to.jpg" alt="Plakat filmu 'To'"></div>
-      <div class="slickCarousel--movies__el"><span class="label label--movies">Aktualnie</span><img class="slickCarousel--movies__img" src="./assets/images/moviesImages/anabelle.jpg" alt="Plakat filmu 'Anabelle'"></div>
-      <div class="slickCarousel--movies__el"><span class="label label--movies">Aktualnie</span><img class="slickCarousel--movies__img" src="./assets/images/moviesImages/bodyguardZawodowiec.jpg" alt="Plakat filmu 'Bodyguard Zawodowiec'"></div>
-      <div class="slickCarousel--movies__el"><span class="label label--movies">od 29 wrz 2017</span><img class="slickCarousel--movies__img" src="./assets/images/moviesImages/fantastyczne-zwierzeta.jpg" alt="Plakat filmu 'Fantastyczne-zwierzeta'"></div>
-      <div class="slickCarousel--movies__el"><span class="label label--movies">od 29 wrz 2017</span><img class="slickCarousel--movies__img" src="./assets/images/moviesImages/gangWiewiora.jpg" alt="Plakat filmu 'Gang wiewióra'"></div>
-      <div class="slickCarousel--movies__el"><span class="label label--movies">od 29 wrz 2017</span><img class="slickCarousel--movies__img" src="./assets/images/moviesImages/lotr1.jpg" alt="Plakat filmu 'Łotr 1'"></div>
-      <div class="slickCarousel--movies__el"><span class="label label--movies">od 29 wrz 2017</span><img class="slickCarousel--movies__img" src="./assets/images/moviesImages/mamuskiWychodne.jpg" alt="Plakat filmu 'Mamuśki mają wychodne'"></div>
-      <div class="slickCarousel--movies__el"><span class="label label--movies">od 29 wrz 2017</span><img class="slickCarousel--movies__img" src="./assets/images/moviesImages/mother.jpg" alt="Plakat filmu 'Mother'"></div>
-      <div class="slickCarousel--movies__el"><span class="label label--movies">od 29 wrz 2017</span><img class="slickCarousel--movies__img" src="./assets/images/moviesImages/oCzymSzumiLas.jpg" alt="Plakat filmu 'O czym szumi las'"></div>
-      <div class="slickCarousel--movies__el"><span class="label label--movies">od 29 wrz 2017</span><img class="slickCarousel--movies__img" src="./assets/images/moviesImages/vaiana.jpg" alt="Plakat filmu 'Vaiana'"></div>
+
+    <div class="moviesCarousel owl-carousel owl-theme">
+      <a href="#" class="moviesCarousel__movie hoverScale"><span class="label label--movies">Aktualnie</span><div class="hoverScale__boundary"><img class="moviesCarousel__movie__img hoverScale__scaled" src="./assets/images/moviesImages/to.jpg" alt="Plakat filmu 'To'"></div></a>
+      <a href="#" class="moviesCarousel__movie hoverScale"><span class="label label--movies">Aktualnie</span><div class="hoverScale__boundary"><img class="moviesCarousel__movie__img hoverScale__scaled" src="./assets/images/moviesImages/anabelle.jpg" alt="Plakat filmu 'Anabelle'"></div></a>
+      <a href="#" class="moviesCarousel__movie hoverScale"><span class="label label--movies">Aktualnie</span><div class="hoverScale__boundary"><img class="moviesCarousel__movie__img hoverScale__scaled" src="./assets/images/moviesImages/bodyguardZawodowiec.jpg" alt="Plakat filmu 'Bodyguard Zawodowiec'"></div></a>
+      <a href="#" class="moviesCarousel__movie hoverScale"><span class="label label--movies">od 29 wrz 2017</span><div class="hoverScale__boundary"><img class="moviesCarousel__movie__img hoverScale__scaled" src="./assets/images/moviesImages/fantastyczne-zwierzeta.jpg" alt="Plakat filmu 'Fantastyczne-zwierzeta'"></div></a>
+      <a href="#" class="moviesCarousel__movie hoverScale"><span class="label label--movies">od 29 wrz 2017</span><div class="hoverScale__boundary"><img class="moviesCarousel__movie__img hoverScale__scaled" src="./assets/images/moviesImages/gangWiewiora.jpg" alt="Plakat filmu 'Gang wiewióra'"></div></a>
+      <a href="#" class="moviesCarousel__movie hoverScale"><span class="label label--movies">od 29 wrz 2017</span><div class="hoverScale__boundary"><img class="moviesCarousel__movie__img hoverScale__scaled" src="./assets/images/moviesImages/lotr1.jpg" alt="Plakat filmu 'Łotr 1'"></div></a>
+      <a href="#" class="moviesCarousel__movie hoverScale"><span class="label label--movies">od 29 wrz 2017</span><div class="hoverScale__boundary"><img class="moviesCarousel__movie__img hoverScale__scaled" src="./assets/images/moviesImages/mamuskiWychodne.jpg" alt="Plakat filmu 'Mamuśki mają wychodne'"></div></a>
+      <a href="#" class="moviesCarousel__movie hoverScale"><span class="label label--movies">od 29 wrz 2017</span><div class="hoverScale__boundary"><img class="moviesCarousel__movie__img hoverScale__scaled" src="./assets/images/moviesImages/mother.jpg" alt="Plakat filmu 'Mother'"></div></a>
+      <a href="#" class="moviesCarousel__movie hoverScale"><span class="label label--movies">od 29 wrz 2017</span><div class="hoverScale__boundary"><img class="moviesCarousel__movie__img hoverScale__scaled" src="./assets/images/moviesImages/oCzymSzumiLas.jpg" alt="Plakat filmu 'O czym szumi las'"></div></a>
+      <a href="#" class="moviesCarousel__movie hoverScale"><span class="label label--movies">od 29 wrz 2017</span><div class="hoverScale__boundary"><img class="moviesCarousel__movie__img hoverScale__scaled" src="./assets/images/moviesImages/vaiana.jpg" alt="Plakat filmu 'Vaiana'"></div></a>
     </div>
   </section>
 
@@ -197,16 +195,37 @@
 
   <div class="fGallery group">
     <div class="fGallery__subgallery fGallery__subgallery--3 group">
-      <div class="fGallery__el"><img class="fGallery__img" src="./assets/images/promotionsImages/plakat-01.jpg" alt="Tania środa. W każdą środę bilet za 11 zł"></div>
-      <div class="fGallery__el"><img class="fGallery__img" src="./assets/images/promotionsImages/plakat-02.jpg" alt="Kino w spódnicy. Raz w miesiącu. Bilet za 12 zł"></div>
-      <div class="fGallery__el"><img class="fGallery__img" src="./assets/images/promotionsImages/plakat-03.jpg" alt="Kino seniora. Raz w miesiącu. Bilet za 10 zł"></div>
+      <button class="fGallery__el btn btn--openModal " data-open-modal="#taniaSroda-more">
+        <span class="visually-hidden">Tania środa</span> <!-- nazwa promocji - wizualnie ukrywana (zgodnie z accessibility) -->
+        <img class="fGallery__img" src="./assets/images/promotionsImages/plakat-01.jpg" alt="Tania środa. W każdą środę bilet za 11 zł">
+      </button>
+      <button class="fGallery__el btn btn--openModal " data-open-modal="#kinoWspodnicy-more">  
+        <span class="visually-hidden">Kino w spódnicy</span> <!-- nazwa promocji - wizualnie ukrywana (zgodnie z accessibility) -->
+        <img class="fGallery__img" src="./assets/images/promotionsImages/plakat-02.jpg" alt="Kino w spódnicy. Raz w miesiącu. Bilet za 12 zł">
+      </button>
+      <button class="fGallery__el btn btn--openModal " data-open-modal="#kinoSeniora-more">
+        <span class="visually-hidden">Kino seniora</span> <!-- nazwa promocji - wizualnie ukrywana (zgodnie z accessibility) -->
+        <img class="fGallery__img" src="./assets/images/promotionsImages/plakat-03.jpg" alt="Kino seniora. Raz w miesiącu. Bilet za 10 zł">
+      </button>
     </div>
     
     <div class="fGallery__subgallery fGallery__subgallery--4 group">
-      <div class="fGallery__el"><img class="fGallery__img" src="./assets/images/promotionsImages/plakat-04.jpg" alt="Seans Kinomaniaka. Raz w miesiącu. Bilet za 10 zł"></div>
-      <div class="fGallery__el"><img class="fGallery__img" src="./assets/images/promotionsImages/plakat-05.jpg" alt="Niedzielne poranki. W niedziele o godz. 11, bilet 12zł"></div>
-      <div class="fGallery__el"><img class="fGallery__img" src="./assets/images/promotionsImages/plakat-06.jpg" alt="Rodzina chodzi do kina. 20% zniżki z Oławską Kartą Dużej Rodziny"></div>
-      <div class="fGallery__el"><img class="fGallery__img" src="./assets/images/promotionsImages/plakat-07.jpg" alt="Seanse z figlorajem"></div>
+      <button class="fGallery__el btn btn--openModal " data-open-modal="#seansKinomana-more">
+        <span class="visually-hidden">Seans kinomana</span> <!-- nazwa promocji - wizualnie ukrywana (zgodnie z accessibility) -->
+        <img class="fGallery__img" src="./assets/images/promotionsImages/plakat-04.jpg" alt="Seans Kinomana. Raz w miesiącu. Bilet za 10 zł">
+      </button>
+      <button class="fGallery__el btn btn--openModal " data-open-modal="#niedzielnePoranki-more">
+        <span class="visually-hidden">Niedzielne poranki</span> <!-- nazwa promocji - wizualnie ukrywana (zgodnie z accessibility) -->
+        <img class="fGallery__img" src="./assets/images/promotionsImages/plakat-05.jpg" alt="Niedzielne poranki. W niedziele o godz. 11, bilet 12zł">
+      </button>
+      <button class="fGallery__el btn btn--openModal " data-open-modal="#rodzinaDoKina-more">
+        <span class="visually-hidden">Rodzina chodzi do kina</span> <!-- nazwa promocji - wizualnie ukrywana (zgodnie z accessibility) -->
+        <img class="fGallery__img" src="./assets/images/promotionsImages/plakat-06.jpg" alt="Rodzina chodzi do kina. 20% zniżki z Oławską Kartą Dużej Rodziny">
+      </button>
+      <button class="fGallery__el btn btn--openModal " data-open-modal="#seanseZfiglorajem-more">
+        <span class="visually-hidden">Seans z Figlorajem</span> <!-- nazwa promocji - wizualnie ukrywana (zgodnie z accessibility) -->
+        <img class="fGallery__img" src="./assets/images/promotionsImages/plakat-07.jpg" alt="Seanse z figlorajem">
+      </button>
     </div>
     
   </div>
@@ -368,7 +387,8 @@
 
   </div>
 
-  <button class="btn btn--color btn--centered btn--readMore btn--rounded">Cennik - więcej informacji</button>
+  <button class="btn btn--color btn--centered btn--readMore btn--rounded btn--openModal" data-open-modal="#priceList-more" >Cennik - więcej informacji</button>
+  <!-- atrybut data-open-modal określa selektor dla modala pokazywanego po kliknięciu przycisku -->
 
 </section>
 
@@ -400,14 +420,314 @@
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2513.999571049502!2d17.298153316280096!3d50.94222097954611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4710279ff8e3a67f%3A0xf09a185e14c3eab7!2sKino+Odra!5e0!3m2!1spl!2spl!4v1506967499588" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
   </div>
 </div> 
+<p class="version">Wersja 2</p>
 </footer>
 </div>
+
+<!-- MODAL SZCZEGÓŁÓW CENNIKA -->
+<div class="modal" id="priceList-more">
+  <section class="modal__content">
+    <header class="modal__header group">
+        <button class="modal__closeBtn btn btn--dark btn--transparent">&times;</button>
+        <h1 class="modal__heading">Cennik - szczegóły</h1>
+    </header>
+    <div class="modal__body">
+
+      <!-- Responsywna tabela cennika 2D -->
+      <section class="priceList__Elem priceList__Elem--2d">
+        <h2 class="priceList">Bilety na seanse 2D</h2>
+        <div class="rTable rTable--3cols rTable--collapse rTable--priceList">
+  
+          <!-- cennik wt-czw (--firstRegion - co oznacza, że 'podkolumna' --label NIE będzie w nim znikać na szerokim ekranie  -->
+            <div style="order: 1" class="rTable__cell rTable__cell--firstRegion rTable__cell--head">
+              <div class="rTable__subcell rTable__subcell--label rTable__subcell--empty"></div>
+              <div class="rTable__subcell rTable__subcell--value"><h3 class="priceList">wt, czw</h3></div>
+            </div>
+            <div style="order: 2" class="rTable__cell rTable__cell--firstRegion">
+              <div class="rTable__subcell rTable__subcell--label"><h4 class="priceList">normalny 2D</h4></div>
+              <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">16</span><span class="priceList__currency">zł</span></div>
+            </div>
+            <div style="order: 3" class="rTable__cell rTable__cell--firstRegion">
+              <div class="rTable__subcell rTable__subcell--label"><h4 class="priceList">ulgowy 2D</h4></div>
+              <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">13</span><span class="priceList__currency">zł</span></div>
+            </div>
+            <div style="order: 4" class="rTable__cell rTable__cell--firstRegion">
+              <div class="rTable__subcell rTable__subcell--label"><h4 class="priceList">rodzinny 2D</h4></div>
+              <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">13</span><span class="priceList__currency">zł</span></div>
+            </div>
+            <div style="order: 5" class="rTable__cell rTable__cell--firstRegion rTable__cell--foot">
+              <div class="rTable__subcell rTable__subcell--label"><h4 class="priceList">grupowy 2D</h4></div>
+              <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">12</span><span class="priceList__currency">zł</span></div>
+            </div>
+  
+          <!-- cennik tania środa (--otherRegion - co oznacza, że 'podkolumna' --label będzie w nim znikać na szerokim ekranie  -->
+            <div style="order: 1" class="rTable__cell rTable__cell--otherRegion rTable__cell--head">
+              <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig rTable__subcell--empty"></div>
+              <div class="rTable__subcell rTable__subcell--value"><h3 class="priceList">tania środa</h3></div>
+            </div>
+            <div style="order: 2" class="rTable__cell rTable__cell--otherRegion">
+              <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig"><h4 class="priceList">normalny 2D</h4></div>
+              <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">11</span><span class="priceList__currency">zł</span></div>
+            </div>
+            <div style="order: 3" class="rTable__cell rTable__cell--otherRegion">
+              <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig"><h4 class="priceList">ulgowy 2D</h4></div>
+              <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">11</span><span class="priceList__currency">zł</span></div>
+            </div>
+            <div style="order: 4" class="rTable__cell rTable__cell--otherRegion">
+              <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig"><h4 class="priceList">rodzinny 2D</h4></div>
+              <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">11</span><span class="priceList__currency">zł</span></div>
+            </div>
+            <div style="order: 5" class="rTable__cell rTable__cell--otherRegion rTable__cell--foot">
+              <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig"><h4 class="priceList">grupowy 2D</h4></div>
+              <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">11</span><span class="priceList__currency">zł</span></div>
+            </div>
+  
+          <!-- cennik weekendy i święta (--otherRegion - co oznacza, że 'podkolumna' --label będzie w nim znikać na szerokim ekranie  -->
+            <div style="order: 1" class="rTable__cell rTable__cell--otherRegion rTable__cell--head">
+              <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig rTable__subcell--empty"></div>
+              <div class="rTable__subcell rTable__subcell--value"><h3 class="priceList">pt-nd, święta</h3></div>
+            </div>
+            <div style="order: 2" class="rTable__cell rTable__cell--otherRegion">
+              <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig"><h4 class="priceList">normalny 2D</h4></div>
+              <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">18</span><span class="priceList__currency">zł</span></div>
+            </div>
+            <div style="order: 3" class="rTable__cell rTable__cell--otherRegion">
+              <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig"><h4 class="priceList">ulgowy 2D</h4></div>
+              <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">15</span><span class="priceList__currency">zł</span></div>
+            </div>
+            <div style="order: 4" class="rTable__cell rTable__cell--otherRegion">
+              <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig"><h4 class="priceList">rodzinny 2D</h4></div>
+              <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">15</span><span class="priceList__currency">zł</span></div>
+            </div>
+            <div style="order: 5" class="rTable__cell rTable__cell--otherRegion rTable__cell--foot">
+              <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig"><h4 class="priceList">grupowy 2D</h4></div>
+              <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">14</span><span class="priceList__currency">zł</span></div>
+            </div>
+  
+        </div>
+      </section>
+
+      <!-- Responsywna tabela cennika 3D -->
+      <section class="priceList__Elem priceList__Elem--3d">
+        <h2 class="priceList">Bilety na seanse 3D</h2>
+        <div class="rTable rTable--3cols rTable--collapse rTable--priceList">
+  
+          <!-- cennik wt-czw (--firstRegion - co oznacza, że 'podkolumna' --label NIE będzie w nim znikać na szerokim ekranie  -->
+            <div style="order: 1" class="rTable__cell rTable__cell--firstRegion rTable__cell--head">
+              <div class="rTable__subcell rTable__subcell--label rTable__subcell--empty"></div>
+              <div class="rTable__subcell rTable__subcell--value"><h3 class="priceList">wt, czw</h3></div>
+            </div>
+            <div style="order: 2" class="rTable__cell rTable__cell--firstRegion">
+              <div class="rTable__subcell rTable__subcell--label"><h4 class="priceList">normalny 3D</h4></div>
+              <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">19</span><span class="priceList__currency">zł</span></div>
+            </div>
+            <div style="order: 3" class="rTable__cell rTable__cell--firstRegion">
+              <div class="rTable__subcell rTable__subcell--label"><h4 class="priceList">ulgowy 3D</h4></div>
+              <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">16</span><span class="priceList__currency">zł</span></div>
+            </div>
+            <div style="order: 4" class="rTable__cell rTable__cell--firstRegion">
+              <div class="rTable__subcell rTable__subcell--label"><h4 class="priceList">rodzinny 3D</h4></div>
+              <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">17</span><span class="priceList__currency">zł</span></div>
+            </div>
+            <div style="order: 5" class="rTable__cell rTable__cell--firstRegion rTable__cell--foot">
+              <div class="rTable__subcell rTable__subcell--label"><h4 class="priceList">grupowy 3D</h4></div>
+              <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">16</span><span class="priceList__currency">zł</span></div>
+            </div>
+  
+          <!-- cennik tania środa (--otherRegion - co oznacza, że 'podkolumna' --label będzie w nim znikać na szerokim ekranie  -->
+            <div style="order: 1" class="rTable__cell rTable__cell--otherRegion rTable__cell--head">
+              <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig rTable__subcell--empty"></div>
+              <div class="rTable__subcell rTable__subcell--value"><h3 class="priceList">tania środa</h3></div>
+            </div>
+            <div style="order: 2" class="rTable__cell rTable__cell--otherRegion">
+              <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig"><h4 class="priceList">normalny 3D</h4></div>
+              <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">15</span><span class="priceList__currency">zł</span></div>
+            </div>
+            <div style="order: 3" class="rTable__cell rTable__cell--otherRegion">
+              <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig"><h4 class="priceList">ulgowy 3D</h4></div>
+              <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">15</span><span class="priceList__currency">zł</span></div>
+            </div>
+            <div style="order: 4" class="rTable__cell rTable__cell--otherRegion">
+              <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig"><h4 class="priceList">rodzinny 3D</h4></div>
+              <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">15</span><span class="priceList__currency">zł</span></div>
+            </div>
+            <div style="order: 5" class="rTable__cell rTable__cell--otherRegion rTable__cell--foot">
+              <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig"><h4 class="priceList">grupowy 3D</h4></div>
+              <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">15</span><span class="priceList__currency">zł</span></div>
+            </div>
+  
+          <!-- cennik weekendy i święta (--otherRegion - co oznacza, że 'podkolumna' --label będzie w nim znikać na szerokim ekranie  -->
+            <div style="order: 1" class="rTable__cell rTable__cell--otherRegion rTable__cell--head">
+              <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig rTable__subcell--empty"></div>
+              <div class="rTable__subcell rTable__subcell--value"><h3 class="priceList">pt-nd, święta</h3></div>
+            </div>
+            <div style="order: 2" class="rTable__cell rTable__cell--otherRegion">
+              <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig"><h4 class="priceList">normalny 3D</h4></div>
+              <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">21</span><span class="priceList__currency">zł</span></div>
+            </div>
+            <div style="order: 3" class="rTable__cell rTable__cell--otherRegion">
+              <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig"><h4 class="priceList">ulgowy 3D</h4></div>
+              <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">18</span><span class="priceList__currency">zł</span></div>
+            </div>
+            <div style="order: 4" class="rTable__cell rTable__cell--otherRegion">
+              <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig"><h4 class="priceList">rodzinny 3D</h4></div>
+              <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">19</span><span class="priceList__currency">zł</span></div>
+            </div>
+            <div style="order: 5" class="rTable__cell rTable__cell--otherRegion rTable__cell--foot">
+              <div class="rTable__subcell rTable__subcell--label rTable__subcell--hideBig"><h4 class="priceList">grupowy 3D</h4></div>
+              <div class="rTable__subcell rTable__subcell--value"><span class="priceList__value">17</span><span class="priceList__currency">zł</span></div>
+            </div>
+  
+        </div>
+      </section>
+
+      <!-- Szczegóły cennika -->
+      <div class="textContent">
+        <h2>Opłata za okulary 3D</h2>
+        <p>Do ceny biletów na seanse 3D doliczana jest fakultatywna <em> opłata w wysokości 2 zł za okulary 3D</em>. Wg specyfikacji technicznej są one przeznaczone do użytku jednorazowego. Widz podejmuje samodzielną decyzję o ich ewentualnym ponownym wykorzystaniu. Prosimy o sprawdzenie zaraz po zakupie, czy okulary 3D nie są uszkodzone lub zarysowane. Okulary używane nie podlegają reklamacji.</p>
+
+        <h2>Tania środa</h2>
+        <p><em>Tania środa</em> uprawnia wszystkich do korzystania z promocyjnej ceny</p>
+
+        <h2>Poranki filmowe</h2>
+        <p><em>Poranki filmowe</em> – seanse niedzielne dla dzieci do godz. 12:00</p>
+
+        <h2>Bilety ulgowe</h2>
+        <p>
+            <em>Bilety ulgowe</em> przysługują uczniom i studentom do 26. roku życia, a także rencistom, emerytom, posiadaczom Oławskiej Karty Seniora oraz osobom niepełnosprawnym. Bilety ulgowe nie przysługują opiekunom osób niepełnosprawnych. Bilety ulgowe są honorowane za okazaniem ważnej legitymacji uprawniającej do korzystania z nich. Posiadaczom Oławskiej Karty Dużej Rodziny przysługuje 20% zniżki na bilety normalne i ulgowe odnośnie wszystkich wydarzeń kulturalnych i seansów filmowych. Zniżka nie dotyczy promocyjnych seansów Taniej Środy. Ulga nie dotyczy sprzedaży okularów 3D.
+        </p>
+
+        <h2>Bilety grupowe</h2>
+        <p><em>Bilety grupowe</em> przysługują wyłącznie grupom zorganizowanym, min. 15 osób (ze szkół, zakładów pracy, stowarzyszeń, fundacji) dotyczy wybranych seansów i obowiązuje tylko przy wcześniej telefonicznie zgłoszonej rezerwacji</p>
+        
+        <h2>Bilety rodzinne</h2>
+        <p><em>Bilety rodzinne</em> przysługują min. 3-osobowym rodzinom, z co najmniej jednym dzieckiem do lat 12 i co najmniej jedną osobą dorosłą</p>
+        
+        <h2>Oławska Karta Dużej Rodziny</h2>
+        <p><em>Oławska Karta Dużej Rodziny</em> uprawnia do 20 procent zniżki na bilety normalne i ulgowe oraz seanse Poranek z wyłączeniem Taniej Środy. Ulga nie dotyczy sprzedaży okularów 3D.</p>
+        
+        <h2>Bilet otwarty</h2>
+        <p><em>Bilet otwarty</em> – idealna propozycja pracodawcy dla pracowników. Zakup <em>biletu otwartego</em> do kina Odra prowadzonego przez Centrum Sztuki w Oławie na na filmy 2D i 3D z terminem ważności maksymalnie 6 miesiące od daty nabycia.</p>
+        <p><em>Bilet otwarty</em> może nabyć firma lub osoba prywatna przy zakupie min. 50 sztuk biletów w cenie: 2D - 15 zł., 3D - 18 zł.</p>
+        <p><em>Bilet otwarty</em> honoruje się przez cały tydzień w kinie ODRA w Oławie, zgodnie z wytycznymi cenowymi.</p>
+        <p>Jeden <em>bilet otwarty</em> wymienia się w kasie kina na jeden bilet na wybrany film.</p>
+        <p><em>Bilet otwarty</em> nie upoważnia do pierwszeństwa w obsłudze przy kasie, ani nie gwarantuje miejsca na sali, zachęcamy do wcześniejszej rezerwacji biletu na odpowiedni seans.</p>
+        <p><em>Bilet otwarty</em> nie może być opłacane kartami płatniczymi, kredytowymi czy też za pomocą kuponów handlowych.</p>
+        <p><em>Bilet otwarty</em> obowiązuje także na premiery i pokazy przedpremierowe, nie obowiązuje natomiast na pokazy specjalne (kino zastrzega sobie prawo do zdefiniowania co jest wydarzenie specjalnym) oraz maratony filmowe.</p>
+        <p><em>Bilet otwarty</em> nie podlega zwrotom.</p>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+  <!-- MODALE POSZCZEGÓLNYCH PROMOCJI -->
+
+    <!-- tania środa -->
+    <div class="modal" id="taniaSroda-more">
+      <section class="modal__content">
+        <header class="modal__header group">
+            <button class="modal__closeBtn btn btn--dark btn--transparent">&times;</button>
+            <h1 class="modal__heading">Tania środa</h1>
+        </header>
+        <div class="modal__body">
+            <p>Modal - treść</p>
+        </div>
+          
+      </section>
+  </div>
+<!-- kino w spódnicy -->
+  <div class="modal" id="kinoWspodnicy-more">
+      <section class="modal__content">
+        <header class="modal__header group">
+            <button class="modal__closeBtn btn btn--dark btn--transparent">&times;</button>
+            <h1 class="modal__heading">Kino w spódnicy</h1>
+        </header>
+        <div class="modal__body">
+            <p>Modal - treść</p>
+        </div>
+          
+      </section>
+  </div>
+
+<!-- kino seniora -->
+  <div class="modal" id="kinoSeniora-more">
+      <section class="modal__content">
+        <header class="modal__header group">
+            <button class="modal__closeBtn btn btn--dark btn--transparent">&times;</button>
+            <h1 class="modal__heading">Kino seniora</h1>
+        </header>
+        <div class="modal__body">
+            <p>Modal - treść</p>
+        </div>
+          
+      </section>
+  </div>
+
+<!-- seans kinomana -->
+  <div class="modal" id="seansKinomana-more">
+      <section class="modal__content">
+        <header class="modal__header group">
+            <button class="modal__closeBtn btn btn--dark btn--transparent">&times;</button>
+            <h1 class="modal__heading">Seans Kinomana</h1>
+        </header>
+        <div class="modal__body">
+            <p>Modal - treść</p>
+        </div>
+          
+      </section>
+  </div>
+
+<!-- niedzielne poranki -->
+  <div class="modal" id="niedzielnePoranki-more">
+      <section class="modal__content">
+        <header class="modal__header group">
+            <button class="modal__closeBtn btn btn--dark btn--transparent">&times;</button>
+            <h1 class="modal__heading">Niedzielne poranki</h1>
+        </header>
+        <div class="modal__body">
+            <p>Modal - treść</p>
+        </div>
+          
+      </section>
+  </div>
+
+<!-- rodzina chodzi do kina -->
+  <div class="modal" id="rodzinaDoKina-more">
+      <section class="modal__content">
+        <header class="modal__header group">
+            <button class="modal__closeBtn btn btn--dark btn--transparent">&times;</button>
+            <h1 class="modal__heading">Rodzina chodzi do kina</h1>
+        </header>
+        <div class="modal__body">
+            <p>Modal - treść</p>
+        </div>
+          
+      </section>
+  </div>
+
+<!-- seanse z figlorajem -->
+  <div class="modal" id="seanseZfiglorajem-more">
+      <section class="modal__content">
+        <header class="modal__header group">
+            <button class="modal__closeBtn btn btn--dark btn--transparent">&times;</button>
+            <h1 class="modal__heading">Seanse z figlorajem</h1>
+        </header>
+        <div class="modal__body">
+            <p>Modal - treść</p>
+        </div>
+          
+      </section>
+  </div>
 
 <!-- build:js assets/scripts/App.js -->
 <script src="/temp/scripts/App.js"></script>
 <!-- endbuild -->
-<!-- PROWIZORYCZNE DODANIE KARUZELI SLICK -->
-<script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick.min.js"></script>
+
+<!-- OWL CAROUSEL -->
+<!-- build:js assets/scripts/owlcarousel/owl.carousel.min.js -->
+<script src="/temp/scripts/owlcarousel/owl.carousel.min.js"></script>
+<!-- endbuild -->
 
 </body>
 </html>

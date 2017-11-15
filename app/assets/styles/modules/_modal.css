@@ -1,0 +1,69 @@
+.modal{
+    position: fixed;
+    z-index: 5;
+    background-color: $modalBgRGBA;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: auto;
+    min-width: 250px;
+
+    display: none;
+
+    &--is-visible{
+        display: block;
+    }
+
+    &__content{
+        margin: 5% 20px;
+        padding: 20px auto;
+        background-color: $modalContentBg;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+        /* animacja pojawiania się okna */
+        animation: modalopen;
+        animation-duration: 0.5s;
+    }
+
+    &__header{
+        position: relative;
+        color: $modalHeaderCol;
+        background-color: $modalHeaderBg;
+        padding: 15px;
+
+        h1{
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    &__heading{
+        float: left;
+        width: calc(100% - 1em); /* taka szerokość, aby mieścił się closeBtn */
+    }
+
+    &__body{
+        padding: 20px;
+    }
+
+    &__closeBtn{
+        color: $modalCloseBtnCol;
+        float: right;
+        font-size: 3rem;
+
+        &:hover, &:focus{
+            color: $modalCloseBtnHoverCol;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+
+
+}
+
+/* animacja pojawiania się okna */
+@keyframes modalopen{
+    from{opacity: 0}
+    to{opacity: 1}
+}

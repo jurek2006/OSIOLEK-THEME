@@ -1,0 +1,13 @@
+/* style owl carousel w sekcji movies*/
+.moviesCarousel{
+    
+    &__movie{
+        display: block;
+        width: 200px;
+    }
+
+    &__movie__img{
+        width: 200px;
+        height: 280px;
+    }
+}
